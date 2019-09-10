@@ -1,0 +1,30 @@
+
+.session-form {
+   font-size: 18px;
+   display: flex;
+   margin: auto;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.session-form input {
+    border: 1px solid black;
+    height: 34px;
+    width: 266px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.session-form button {
+   border: 1px solid #51D9AC;
+   background-color: #51D9AC;
+   padding: 5px;
+   color: #FFFFFF;
+}
+
+
+.session-form button:hover {
+   background-color: #FFFFFF;
+   color: #51D9AC;
+}

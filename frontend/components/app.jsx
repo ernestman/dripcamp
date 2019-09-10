@@ -3,19 +3,27 @@ import GreetingContainer from "../components/greeting/greeting_container";
 import {AuthRoute} from "../util/route_util";
 import LoginContainer from "./login/login_container";
 import SignupContainer from "./signup/signup_container";
+import Modal from "../components/modal/modal";
 
+
+// don't need routes for login and signup b/c modal
 class App extends React.Component {
 
     render() {
         return (
             <div>
+                <Modal />
                 <header>
-                    <h1>Hipcamp baby</h1>
-                    <GreetingContainer />
+                    <div className="container">
+                        <img src="/assets/logo.png" />
+                        <GreetingContainer />
+                    </div>
                 </header>
-
-                <AuthRoute path="/login" component={LoginContainer}/>
-                <AuthRoute path="/signup" component={SignupContainer}/>
+                <footer>
+                    <div className="container">
+                        <img src="/assets/footer_logo.svg" />
+                    </div>
+                </footer>
             </div>
         )
     }
