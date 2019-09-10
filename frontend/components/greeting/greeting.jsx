@@ -3,14 +3,26 @@ import React from "react";
 
 const Greeting = (props) => {
     
-    const {currentUser, signOut, openModal} = props;
+    const {currentUser, signOut, openModal, clearErrors} = props;
+    
+    const handleLoginModal = () => {
+        event.preventDefault()
+        clearErrors();
+        openModal("login");
+    }
+
+    const handleSignupModal = () => {
+        event.preventDefault();
+        clearErrors();
+        openModal("signup")
+    }
     
     // nbsp = non breaking space
     const modalLinks = () => (
         <nav className="login-signup">
-            <button onClick={ () => openModal("login")}>Log in</button>
-            &nbsp;or&nbsp;
-            <button onClick={ () => openModal("signup")}>Sign up</button>
+            <button onClick={handleLoginModal}>Log in</button>
+            &nbsp;
+            <button onClick={handleSignupModal}>Sign up</button>
         </nav>
     );
     
@@ -28,32 +40,3 @@ const Greeting = (props) => {
 
     export default Greeting;
 
-
-// class Greeting extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-
-//     render() {
-//         const {currentUser, signOut, openModal} = this.props;
-//         const display = currentUser ? (
-//             <div>
-//                 <h3>Welcome, {currentUser.first_name}!</h3>
-//                 <button onClick={signOut}>Sign Out</button>
-//             </div>
-//         ) : (
-//             <div>
-//                 <Link to="/signup">Sign Up</Link>
-//                 <br/>
-//                 <Link to="/login">Log In</Link>
-//             </div>
-//         );
-
-
-//         return (
-//             <div>
-//                 {display}
-//             </div>
-//         )
-//     }
-// }

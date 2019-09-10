@@ -14,12 +14,16 @@ class App extends React.Component {
             <div>
                 <Modal />
                 <header>
-                    <h1>Hipcamp baby</h1>
-                    <GreetingContainer />
+                    <div className="container">
+                        <img src="/assets/logo.png" />
+                        <GreetingContainer />
+                    </div>
                 </header>
-
-                {/* <AuthRoute path="/login" component={LoginContainer}/> */}
-                {/* <AuthRoute path="/signup" component={SignupContainer}/> */}
+                <footer>
+                    <div className="container">
+                        <img src="/assets/footer_logo.svg" />
+                    </div>
+                </footer>
             </div>
         )
     }

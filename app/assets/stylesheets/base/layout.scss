@@ -1,0 +1,49 @@
+body {
+   font-family: Calibre;
+}
+
+header img {
+   float: left;
+   padding-top: 25px;
+   padding-left: 25px;
+   height: 24px;
+   width: 144px;
+}
+
+footer {
+   background-color: #41305C;
+   position: absolute;
+   bottom: 0;
+   height: 40%;
+   width: 100%;
+}
+
+footer img {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+}
+
+/* in header.scss */
+nav {
+   float: right;
+}
+
+nav button {
+   display: inline-block;
+   padding-top: 20px;
+   padding-right: 30px;
+   text-decoration: underline;
+   text-decoration-color: lightgray;
+}
+
+nav button:hover {
+   text-decoration: underline;
+}
+
+input {
+   border: 1px solid lightgray;
+   height: 40px;
+   padding: 5px;
+   cursor: text;
+}

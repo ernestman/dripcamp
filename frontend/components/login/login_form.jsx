@@ -21,39 +21,41 @@ class loginForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.login(user);
+        this.props.login(user)
+            .then( () => dispatch(this.props.closeModal()))
     }
 
     render() {
         const {errors} = this.props;
         const myErrors = errors.map(error => (
-            <li>{error}</li>
+            <ul>{error}</ul>
         ))
         return (
-            <div>
-                <h2>Log In:</h2>
+            <div className="session-form">
                 <h4>{myErrors}</h4>
                 <form>
-                    <label>Email address:
+                    <label>
                         <input
                             type="text"
                             onChange={this.handleInput("email")}
                             value={this.state.email}
+                            placeholder="Email address"
                         />
                     </label>
                     <br/>
-                    <label>Password:
+                    <label>
                         <input
                             type="password"
                             onChange={this.handleInput("password")}
                             value={this.state.password}
+                            placeholder="Password"
                         />
                     </label>
                     <br/>
                     <button onClick={this.handleSubmit}>Log In</button>
                 </form>
                 <br/>
-                <Link to="/signup">Sign Up</Link>
+                {/* <Link to="/signup">Sign Up</Link> */}
             </div>
         )
     }
