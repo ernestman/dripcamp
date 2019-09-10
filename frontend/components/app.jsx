@@ -14,8 +14,8 @@ class App extends React.Component {
                     <GreetingContainer />
                 </header>
 
-                <AuthRoute path="/login" component={LoginContainer}/>
-                <AuthRoute path="/signup" component={SignupContainer}/>
+                {/* <AuthRoute path="/login" component={LoginContainer}/>
+                <AuthRoute path="/signup" component={SignupContainer}/> */}
             </div>
         )
     }
