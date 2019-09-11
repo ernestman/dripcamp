@@ -29,8 +29,8 @@ class App extends React.Component {
                                 <h2>Dripcamp is everywhere you want to camp.</h2>
                                 <p>
                                     Welcome to Dripcamp homies! My name is Ernie and I hate CSS.
-                                    What I have learned so far is that Michelle knows how to do everything and Elliot
-                                    is a CSS beast.
+                                    What I have learned so far is that Michelle is a beast and Elliot
+                                    is a CSS master. Also, Jason sucks at debugging because he can't spell.
                                 </p>
                             </div>
                             {/* <img src={window.footerLogoURL} /> */}
