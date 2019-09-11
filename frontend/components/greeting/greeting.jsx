@@ -19,22 +19,32 @@ const Greeting = (props) => {
     
     // nbsp = non breaking space
     const modalLinks = () => (
-        <nav className="login-signup">
-            <button onClick={handleLoginModal}>Log in</button>
-            &nbsp;
-            <button onClick={handleSignupModal}>Sign up</button>
+        <nav className="main-nav">
+            <a href="http://github.com/ernestman/" target="_blank">Github</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="http://linkedin.com/in/ernest-man/" target="_blank">LinkedIn</a>
+            &nbsp;&nbsp;&nbsp;
+            <button onClick={handleLoginModal}><span>Log in</span></button>
+            &nbsp;&nbsp;&nbsp;
+            <button onClick={handleSignupModal}><span>Sign up</span></button>
         </nav>
     );
+
+    const myGreeting = () => (
+        <div className="tent-icon">
+            <div className="dropdown">
+                <img className="menu-button" src={window.tentIconURL} />
+                <div className="dropdown-menu">
+                    <button onClick={signOut}>Log out</button>
+                </div>
+            </div>
+        </div>
+    )
     
-    const headGreeting = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name"> Welcome, {currentUser.first_name}</h2>
-            <button className="header-button" onClick={signOut}>Log out</button>
-        </hgroup>
-    );
-    
+    // headGreeting(currentUser, signOut)
+
     return (
-        currentUser ? headGreeting(currentUser, signOut) : modalLinks()
+        currentUser ? myGreeting() : modalLinks()
     );
 }
 

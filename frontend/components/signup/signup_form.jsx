@@ -31,14 +31,14 @@ class signupForm extends React.Component {
     render() {
         const {errors} = this.props;
         const myErrors = errors.map(error => (
-            <ul>{error}</ul>
+            <li>{error}</li>
         ))
 
 
         return (
             <div className="session-form">
-                <h4>{myErrors}</h4>
-                <br/>
+                <b>Join Dripcamp</b>
+                <h2>Discover the best camping near me</h2>
                 <form>
                     <label> 
                         <input 
@@ -85,9 +85,9 @@ class signupForm extends React.Component {
                         />
                     </label>
                     <br/>
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button className="login-signup-button" onClick={this.handleSubmit}>Sign Up</button>
                 </form>
-                <br/>
+                <ul>{myErrors}</ul>
                 {/* <Link to="/login">Log In</Link> */}
             </div>
         )

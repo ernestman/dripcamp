@@ -9,13 +9,23 @@ class loginForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     handleInput(type) {
         return (event) => {
             this.setState({[type]: event.target.value})
         }
+    }
+
+    handleDemoUser(event) {
+        event.preventDefault();
+        const demoUser = {
+            email: "guest@aa.io",
+            password: "111111"
+        }
+        this.props.login(demoUser)
+            .then( () => dispatch(this.props.closeModal()))
     }
 
     handleSubmit(event) {
@@ -28,11 +38,14 @@ class loginForm extends React.Component {
     render() {
         const {errors} = this.props;
         const myErrors = errors.map(error => (
-            <ul>{error}</ul>
+            <li>{error}</li>
         ))
         return (
             <div className="session-form">
-                <h4>{myErrors}</h4>
+                <b>Welcome back!</b>
+                <h2>It's about time for another camping trip</h2>
+                <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
+                    <ul>{myErrors}</ul>
                 <form>
                     <label>
                         <input
@@ -40,7 +53,7 @@ class loginForm extends React.Component {
                             onChange={this.handleInput("email")}
                             value={this.state.email}
                             placeholder="Email address"
-                        />
+                            />
                     </label>
                     <br/>
                     <label>
@@ -49,12 +62,11 @@ class loginForm extends React.Component {
                             onChange={this.handleInput("password")}
                             value={this.state.password}
                             placeholder="Password"
-                        />
+                            />
                     </label>
                     <br/>
-                    <button onClick={this.handleSubmit}>Log In</button>
+                    <button className="login-signup-button" onClick={this.handleSubmit}>Log In</button>
                 </form>
-                <br/>
                 {/* <Link to="/signup">Sign Up</Link> */}
             </div>
         )
