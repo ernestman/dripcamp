@@ -18,6 +18,11 @@ nav {
     margin-top: 35px;
 }
 
+.main-nav a {
+    border-bottom: solid 1px transparent;
+    padding-bottom: 1px;
+}
+
 .main-nav button span {
    display: inline-block;
     border-bottom: solid 1px lightgray;
@@ -26,12 +31,12 @@ nav {
 
 .main-nav button:hover span {
 //    text-decoration: underline;
-    border-bottom: solid 2px black;
+    border-bottom: solid 1px black;
     padding-bottom: 1px;
 }
 
 .main-nav a:hover {
-    border-bottom: solid 2px #51D9AC;
+    border-bottom: solid 1px #51D9AC;
     padding-bottom: 1px;
     // text-decoration-color: #51D9AC;
 }
@@ -53,29 +58,40 @@ nav {
 
 .dropdown-menu {
     display: none;
+    top: 53px;
     position: absolute;
+    height: 200px;
+    width: 200px;
+    left: -149px;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
-    padding: 15px 15px;
+    // padding: 15px 15px;
 }
 
 .dropdown-menu button {
     display: block;
+    border: 1px solid red;
+    padding: 10px
 }
 
-.dropdown-menu button:hover {
-    background-color: #FFFFFF;
-}
+// .dropdown-menu button:hover {
+//     background-color: #FFFFFF;
+// }
 
 .dropdown:hover .dropdown-menu {
     display: block;
-    position: relative;
+    // position: relative;
 }
 
-.dropdown:hover .menu-button {
-    display: block;
-    position: absolute;
-}
+// .dropdown:hover .dropdown-menu {
+//     display: block;
+//     position: relative;
+// }
+
+// .menu-button:hover {
+//     display: block;
+//     position: absolute;
+// }
 
 .dropdown img {
    width: 30px;

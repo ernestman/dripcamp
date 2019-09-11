@@ -35,7 +35,9 @@ const Greeting = (props) => {
             <div className="dropdown">
                 <img className="menu-button" src={window.tentIconURL} />
                 <div className="dropdown-menu">
-                    <button onClick={signOut}>Log out</button>
+                    <div className="drop-button-container">
+                        <button onClick={signOut}>Log out</button>
+                    </div>
                 </div>
             </div>
         </div>
