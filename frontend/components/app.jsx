@@ -15,7 +15,7 @@ class App extends React.Component {
                 <Modal />
                 <header>
                     <div className="container">
-                        <img src="/assets/logo.png" />
+                        <img src={window.logoURL} />
                         <GreetingContainer />
                     </div>
                 </header>
