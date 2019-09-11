@@ -21,7 +21,7 @@ class App extends React.Component {
                 </header>
                 <footer>
                     <div className="container">
-                        <img src="/assets/footer_logo.svg" />
+                        <img src={window.footerLogoURL} />
                     </div>
                 </footer>
             </div>
