@@ -44,9 +44,11 @@ class loginForm extends React.Component {
 
     render() {
         const {errors} = this.props;
-        const myErrors = errors.map(error => (
-            <li>{error}</li>
-        ))
+        // const myErrors = errors.map(error => (
+        //     <li>{error}</li>
+        // ))
+        const myErrors = errors[0];
+
         return (
             <div className="session-form">
                 <b>Welcome back!</b>
