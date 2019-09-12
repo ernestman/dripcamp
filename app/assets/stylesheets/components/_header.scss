@@ -1,14 +1,29 @@
 header img {
    float: left;
-    padding-top: 25px;
+    padding-top: 29px;
    padding-left: 25px;
    height: 24px;
    width: 144px;
 }
 
+.main-container {
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 nav {
    float: right;
 }
+
 
 .main-nav {
     display: flex;
@@ -19,13 +34,19 @@ nav {
 }
 
 .main-nav a {
-    border-bottom: solid 1px transparent;
+    border-bottom: solid 2px transparent;
     padding-bottom: 1px;
+    margin-top: 1px;
+}
+
+.main-icon {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .main-nav button span {
    display: inline-block;
-    border-bottom: solid 1px lightgray;
+    border-bottom: solid 1px #EFEEEE;
     padding-bottom: 1px;
 }
 
@@ -36,7 +57,7 @@ nav {
 }
 
 .main-nav a:hover {
-    border-bottom: solid 1px #51D9AC;
+    border-bottom: solid 2px #51D9AC;
     padding-bottom: 1px;
     // text-decoration-color: #51D9AC;
 }

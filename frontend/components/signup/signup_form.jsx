@@ -104,7 +104,7 @@ class signupForm extends React.Component {
                         type="text"
                         onChange={this.handleInput("zipcode")}
                         value={this.state.zipcode}
-                        placeholder="Zip code..."
+                        placeholder="Zip code (optional)..."
                         />
                     <button className="login-signup-button" onClick={this.handleSubmit}>Join Dripcamp</button>
                 </form>

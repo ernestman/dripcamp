@@ -11,15 +11,16 @@ import {Redirect, Switch} from "react-router-dom";
 class App extends React.Component {
     render() {
 
-        const localUrl = "http://localhost:3000/";
         const herokuUrl = "http://dripcamp.herokuapp.com"
         return (
             <div>
                 <Modal />
                 <header>
-                    <div className="header-container">
-                        <a href={herokuUrl}><img src={window.logoURL} /></a>
-                        <GreetingContainer />
+                    <div className="main-container">
+                        <div className="header-container">
+                            <a href={herokuUrl}><img src={window.logoURL} /></a>
+                            <GreetingContainer />
+                        </div>
                     </div>
                 </header>
                 <footer>

@@ -24,9 +24,9 @@ const Greeting = (props) => {
             &nbsp;&nbsp;&nbsp;
             <a href="http://linkedin.com/in/ernest-man/" target="_blank">LinkedIn</a>
             &nbsp;&nbsp;&nbsp;
-            <button onClick={handleLoginModal}><span>Log in</span></button>
-            &nbsp;&nbsp;&nbsp;
             <button onClick={handleSignupModal}><span>Sign up</span></button>
+            &nbsp;&nbsp;&nbsp;
+            <button onClick={handleLoginModal}><span>Log in</span></button>
         </nav>
     );
 
