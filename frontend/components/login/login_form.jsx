@@ -55,7 +55,7 @@ class loginForm extends React.Component {
                 <h2>It's about time for another camping trip</h2>
                 <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
                 <div className="or">
-                    <p>or</p>
+                    <span>or</span>
                 </div>
                 <form>
                     <input
