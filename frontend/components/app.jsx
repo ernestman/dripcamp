@@ -18,7 +18,7 @@ class App extends React.Component {
                 <Modal />
                 <header>
                     <div className="header-container">
-                        <a href={localUrl}><img src={window.logoURL} /></a>
+                        <a href={herokuUrl}><img src={window.logoURL} /></a>
                         <GreetingContainer />
                     </div>
                 </header>
