@@ -6,6 +6,13 @@
 //    width: 100%;
 // }
 
+footer {
+   background-color: #3E7D96;
+   display: block;
+   box-sizing: border-box;
+   // position: relative;
+}
+
 // footer img {
 //    position: absolute;
 //    bottom: 0;
@@ -13,33 +20,35 @@
 //    height: auto;
 // }
 
-footer section.footer-main {
+footer .footer-main {
    background-color: #41305C;
-   background-size: auto 149px;
+   background-size: auto 55px auto 209px;
    background-repeat: repeat-x;
    background-position: bottom center;
    // padding-top: 200px;
    position: absolute;
    // padding-top: 100px;
    bottom: 0;
-   height: 350px;
+   height: 475px;
    width: 100%;
    background-image: image-url("footer_logo.svg");
 }
 
+
 .footer-about {
    width: 300px;
-   font-size: 14px;
+   font-size: 13px;
 }
 
 .footer-about h2 {
    margin-left: 15px;
    color: #6E519D;
    padding-top: 30px;
-   padding-bottom: 20px;
+   padding-bottom: 12px;
 }
 
 .footer-about p {
    margin-left: 15px;
    color: #FFFFFF;
+   font-size: 0.975em;
 }
