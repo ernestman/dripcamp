@@ -28,9 +28,12 @@ class App extends React.Component {
                             <div className="footer-about">
                                 <h2>Dripcamp is everywhere you want to camp.</h2>
                                 <p>
-                                    Welcome to Dripcamp homies! My name is Ernie and I hate CSS.
+                                    Welcome to Dripcamp homies! My name is Ernie and I HATE CSS.
                                     What I have learned so far is that Michelle is a beast and Elliot
-                                    is a CSS master. Also, Jason sucks at debugging because he can't spell.
+                                    is a CSS master. Dolly is also a CSS connoisseur.
+                                    Also, Jason can't debug cause he can't spell. Carlos personifies 
+                                    ball-is-life. Andrew doesn't care anymore and wears rainbows to the office. I should
+                                    do the same. Thanks for coming to my TED-Talk
                                 </p>
                             </div>
                             {/* <img src={window.footerLogoURL} /> */}

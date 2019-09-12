@@ -13,6 +13,7 @@ class signupForm extends React.Component {
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRedirect = this.handleRedirect.bind(this);
     }
 
     handleSubmit(event) {
@@ -28,67 +29,89 @@ class signupForm extends React.Component {
         }
     }
 
+    handleRedirect(event) {
+        event.preventDefault();
+        this.props.openModal("login");
+    }
+
     render() {
         const {errors} = this.props;
-        const myErrors = errors.map(error => (
-            <li>{error}</li>
-        ))
 
+        const firstNameErrors = [];
+        const lastNameErrors = [];
+        const emailErrors = [];
+        const passwordErrors = [];
+
+        errors.forEach(error => {
+            if (error.includes("First")) {
+                firstNameErrors.push(error);
+                firstNameErrors.map( err => (
+                    <li>{err}</li>
+                ))
+            } else if (error.includes("Last")) {
+                lastNameErrors.push(error);
+                lastNameErrors.map( err => (
+                    <li>{err}</li>
+                ))
+            } else if (error.includes("Email")) {
+                emailErrors.push(error);
+                emailErrors.map( err => (
+                    <li>{err}</li>
+                ))
+            } else if (error.includes("Password")) {
+                passwordErrors.push(error);
+                passwordErrors.map( err => (
+                    <li>{err}</li>
+                ))
+            }
+        })
 
         return (
             <div className="session-form">
                 <b>Join Dripcamp</b>
                 <h2>Discover the best camping near me</h2>
                 <form>
-                    <label> 
-                        <input 
-                        type="text"
-                        onChange={this.handleInput("first_name")}
-                        value={this.state.first_name}
-                        placeholder="First name..."
-                        />
-                    </label>
-                    <br/>
-                    <label> 
+                    <input 
+                    type="text"
+                    onChange={this.handleInput("first_name")}
+                    value={this.state.first_name}
+                    placeholder="First name..."
+                    />
+                    <ul>{firstNameErrors}</ul>
                         <input
                         type="text"
                         onChange={this.handleInput("last_name")}
                         value={this.state.last_name}
                         placeholder={"Last name..."}
                         />
-                    </label>
-                    <br/>
-                    <label>
+                    <ul>{lastNameErrors}</ul>
                         <input
                         type="text"
                         onChange={this.handleInput("email")}
                         value={this.state.email}
                         placeholder="Email address..."
                         />
-                    </label>
-                    <br/>
-                    <label>
+                    <ul>{emailErrors}</ul>
                         <input
                         type="password"
                         onChange={this.handleInput("password")}
                         value={this.state.password}
                         placeholder="Password..."
                         />
-                    </label>
-                    <br/>
-                    <label>
+                    <ul>{passwordErrors}</ul>
                         <input
                         type="text"
                         onChange={this.handleInput("zipcode")}
                         value={this.state.zipcode}
                         placeholder="Zip code..."
                         />
-                    </label>
-                    <br/>
-                    <button className="login-signup-button" onClick={this.handleSubmit}>Sign Up</button>
+                    <button className="login-signup-button" onClick={this.handleSubmit}>Join Dripcamp</button>
                 </form>
-                <ul>{myErrors}</ul>
-                {/* <Link to="/login">Log In</Link> */}
+
+                <div className="form-redirect">
+                    <p>Already a Dripcamper?</p>
+                    <button className="redirect-button" onClick={this.handleRedirect}>Log in!</button>
+                </div>
             </div>
         )
     }

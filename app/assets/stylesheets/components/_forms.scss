@@ -2,7 +2,7 @@
 .session-form {
    font-size: 18px;
    display: flex;
-   margin: auto;
+   margin: 10px 10px;
    align-items: center;
    justify-content: center;
    flex-direction: column;
@@ -16,12 +16,22 @@
 .session-form h2{
     margin-bottom: 15px;
     font-size: 18px;
+    color: #757575
 }
 
-.session-form input {
-    border: 1px solid black;
-    height: 34px;
-    width: 266px;
-    padding: 16px;
-    margin-bottom: 15px;
+.session-form ul {
+    color: #bd3200;
+    font-size: 14px;
 }
+
+// .session-form form input {
+//     border: 1px solid black;
+//     height: 34px;
+//     width: 272px;
+//     padding: 16px;
+//     // margin-top: 7.5px;
+//     // margin-bottom: 7.5px;
+//     margin: 7.5px auto;
+// }
+
+

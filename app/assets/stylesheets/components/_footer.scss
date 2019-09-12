@@ -15,7 +15,7 @@
 
 footer section.footer-main {
    background-color: #41305C;
-   background-size: auto 150px;
+   background-size: auto 149px;
    background-repeat: repeat-x;
    background-position: bottom center;
    // padding-top: 200px;
@@ -24,11 +24,12 @@ footer section.footer-main {
    bottom: 0;
    height: 350px;
    width: 100%;
-   background-image: url("footer_logo.svg");
+   background-image: image-url("footer_logo.svg");
 }
 
 .footer-about {
    width: 300px;
+   font-size: 14px;
 }
 
 .footer-about h2 {
