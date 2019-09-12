@@ -10,6 +10,9 @@ footer {
    background-color: #3E7D96;
    display: block;
    box-sizing: border-box;
+   bottom: 0;
+   position: absolute;
+   width: 100%;
    // position: relative;
 }
 
@@ -22,13 +25,13 @@ footer {
 
 footer .footer-main {
    background-color: #41305C;
-   background-size: auto 55px auto 209px;
+   background-size: auto 215px;
    background-repeat: repeat-x;
    background-position: bottom center;
    // padding-top: 200px;
-   position: absolute;
+   // position: absolute;
    // padding-top: 100px;
-   bottom: 0;
+   // bottom: 0;
    height: 475px;
    width: 100%;
    background-image: image-url("footer_logo.svg");
@@ -51,4 +54,17 @@ footer .footer-main {
    margin-left: 15px;
    color: #FFFFFF;
    font-size: 0.975em;
+}
+
+.footer-bar {
+   height: 39px;
+   border-top: 5px solid #FAE0AB;
+}
+
+.footer-p {
+   display: flex;
+   align-items: center;
+   font-size: 10px;
+   color: #FFFFFF;
+   margin-left: 50px;
 }

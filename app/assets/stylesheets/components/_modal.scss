@@ -112,12 +112,12 @@
 
 .redirect-button {
     font-weight: 900;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 1px;
+    padding-bottom: 0.5px;
     margin-left: 7px;
 }
 
 .form-redirect button:hover {
-    border-bottom: 2px solid black;
+    text-decoration: underline;
+    text-decoration-color: black;
     padding-bottom: 0.5px;
 }

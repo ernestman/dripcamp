@@ -39,6 +39,13 @@ class App extends React.Component {
                             {/* <img src={window.footerLogoURL} /> */}
                         </div>
                     </section>
+                    <section className="footer-bottom">
+                        <div className="footer-bar">
+                            <div className="footer-p">
+                                <p>Made in California. A Hipcamp clone</p>
+                            </div>
+                        </div>
+                    </section>
                 </footer>
                 <Redirect to="/" />
             </div>
