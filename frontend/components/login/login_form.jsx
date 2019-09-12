@@ -53,7 +53,9 @@ class loginForm extends React.Component {
             <div className="session-form">
                 <b>Welcome back!</b>
                 <h2>It's about time for another camping trip</h2>
-                <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
+                <div className="demo-container">
+                    <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
+                </div>
                 <div className="or">
                     <span>or</span>
                 </div>
