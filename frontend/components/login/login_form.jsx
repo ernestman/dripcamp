@@ -38,6 +38,7 @@ class loginForm extends React.Component {
 
     handleRedirect(event) {
         event.preventDefault();
+        this.props.clearErrors();
         this.props.openModal("signup")
     }
 
