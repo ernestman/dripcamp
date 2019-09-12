@@ -54,6 +54,9 @@ class loginForm extends React.Component {
                 <b>Welcome back!</b>
                 <h2>It's about time for another camping trip</h2>
                 <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
+                <div className="or">
+                    <p>or</p>
+                </div>
                 <form>
                     <input
                         type="text"
@@ -61,15 +64,15 @@ class loginForm extends React.Component {
                         value={this.state.email}
                         placeholder="Email address"
                         />
-
+                    <div className="errors-cont">
                         <ul>{myErrors}</ul>
+                    </div>
                     <input
                         type="password"
                         onChange={this.handleInput("password")}
                         value={this.state.password}
                         placeholder="Password"
                         />
-                    <br/>
                     <button className="login-signup-button" onClick={this.handleSubmit}>Log In</button>
                 </form>
 

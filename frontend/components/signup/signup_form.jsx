@@ -78,28 +78,36 @@ class signupForm extends React.Component {
                     value={this.state.first_name}
                     placeholder="First name..."
                     />
-                    <ul>{firstNameErrors}</ul>
+                    <div className="errors-cont">
+                        <ul>{firstNameErrors}</ul>
+                    </div>
                         <input
                         type="text"
                         onChange={this.handleInput("last_name")}
                         value={this.state.last_name}
                         placeholder={"Last name..."}
                         />
-                    <ul>{lastNameErrors}</ul>
+                    <div className="errors-cont">
+                        <ul>{lastNameErrors}</ul>
+                    </div>
                         <input
                         type="text"
                         onChange={this.handleInput("email")}
                         value={this.state.email}
                         placeholder="Email address..."
                         />
-                    <ul>{emailErrors}</ul>
+                    <div className="errors-cont">
+                        <ul>{emailErrors}</ul>
+                    </div>
                         <input
                         type="password"
                         onChange={this.handleInput("password")}
                         value={this.state.password}
                         placeholder="Password..."
                         />
-                    <ul>{passwordErrors}</ul>
+                    <div className="errors-cont">
+                        <ul>{passwordErrors}</ul>
+                    </div>
                         <input
                         type="text"
                         onChange={this.handleInput("zipcode")}
