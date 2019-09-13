@@ -1,8 +1,10 @@
 import {combineReducers} from "redux";
 import usersReducer from "./users_reducer";
+import campgroundReducer from "./campgrounds_reducer";
 
 const entitiesReducer = combineReducers({
-    users: usersReducer
+    users: usersReducer,
+    campgrounds: campgroundReducer
 })
 
 export default entitiesReducer;

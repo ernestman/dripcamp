@@ -47,5 +47,8 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    has_one :hosted_campground,
+        foreign_key: :host_id,
+        class_name: "Campground"
 
 end
