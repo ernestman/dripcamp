@@ -51,7 +51,7 @@ class loginForm extends React.Component {
 
         return (
             <div className="session-form">
-                <b>Welcome back!</b>
+                <h1>Welcome back!</h1>
                 <h2>It's about time for another camping trip</h2>
                 <div className="demo-container">
                     <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>

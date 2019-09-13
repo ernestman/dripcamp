@@ -39,8 +39,8 @@ footer .footer-main {
 
 
 .footer-about {
-   width: 300px;
-   font-size: 13px;
+   width: 380px;
+   font-size: 14px;
 }
 
 .footer-about h2 {
@@ -48,12 +48,14 @@ footer .footer-main {
    color: #6E519D;
    padding-top: 30px;
    padding-bottom: 12px;
+   font-size: 16px;
 }
 
 .footer-about p {
    margin-left: 20px;
    color: #FFFFFF;
-   font-size: 0.975em;
+   font-size: 14px;
+   line-height: 20px;
 }
 
 .footer-bar {
@@ -64,7 +66,7 @@ footer .footer-main {
 .footer-p {
    display: flex;
    align-items: center;
-   font-size: 10px;
+   font-size: 12px;
    color: #FFFFFF;
    margin-left: 50px;
 }

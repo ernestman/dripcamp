@@ -69,7 +69,7 @@ class signupForm extends React.Component {
 
         return (
             <div className="session-form">
-                <b>Join Dripcamp</b>
+                <h1>Join Dripcamp</h1>
                 <h2>Discover the best camping near me</h2>
                 <form>
                     <input 
