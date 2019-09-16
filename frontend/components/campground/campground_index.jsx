@@ -1,4 +1,6 @@
 import React from "react";
+import CampgroundIndexItem from "./campground_index_item";
+import {Link} from "react-router-dom";
 
 class CampgroundIndex extends React.Component{
     constructor(props) {
@@ -14,13 +16,17 @@ class CampgroundIndex extends React.Component{
 
         const campgroundsIndex = campgrounds.map( campground => (
             <div>
-                <h1>{campground.name}</h1>
-                <h3>{campground.location}</h3>
+                <Link to={`/campgrounds/${campground.id}`}>
+                    <CampgroundIndexItem
+                        key={campground.id}
+                        campground={campground}
+                    />
+                </Link>
             </div>
         ))
 
         return (
-            <div>
+            <div className="campground-index-main">
                 {campgroundsIndex}
             </div>
         )

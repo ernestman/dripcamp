@@ -24,40 +24,24 @@ const Modal = (props) => {
     if (!modal) {
         return null;
     }
-    // let component;
-    // switch (modal) {
-    //     case "login":
-    //         component = <LoginContainer />;
-    //         break;
-    //     case "signup":
-    //         component = <SignupContainer />;
-    //         break;
-    //     default:
-    //         return null;
-    // }
 
     const loginModal = (
         <div className="login-modal" onClick={e => e.stopPropagation()}>
-            <LoginContainer />
+            <div className="login-form">
+                <LoginContainer />
+            </div>
         </div>
     );
 
     const signupModal = (
         <div className="signup-modal" onClick={e => e.stopPropagation()}>
-            <SignupContainer />
+            <div className="signup-form"m>
+                <SignupContainer />
+            </div>
         </div>
     );
+    
     const myModal = (modal === "login") ? loginModal : signupModal;
-
-    // *** only for now ***
-    // if login container do this modal as child
-    // else do signup container modal as child
-
-    // then have 2 different sizes for each modal child in css
-    // <div className="modal-child" onClick={e => e.stopPropagation()}>
-    //     {component}
-    // </div>
-
 
     return (
         <div className="modal-background" onClick={closeModal}>

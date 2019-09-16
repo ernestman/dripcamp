@@ -1,0 +1,78 @@
+.campground-show-container {
+    border: 5px solid blue;
+   height: 100%;
+   margin: 0px auto;
+   max-width: 1000px;
+   padding: 10px 10px;
+   display: flex;
+   flex-direction: column;
+}
+
+.campground-show-2 {
+    display: flex;
+    border: 5px solid darkviolet;
+}
+
+.show-images {
+    display: flex;
+    border: 5px solid saddlebrown;
+    // height: 100%;
+    width: 100%;
+}
+
+// .image-container {
+//     border: 5px solid burlywood;
+//     height: 500px;
+//     width: 500px;
+// }
+
+.show-main {
+    border: 5px solid aqua;
+
+}
+
+.show-info {
+    border: 5px solid #ffcc00;
+    display: flex;
+    flex-direction: column;
+}
+
+.show-buckets {
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid green;
+}
+
+.show-bucket-container {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid red;
+}
+
+.show-details {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid deeppink;
+}
+
+.show-activities {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid greenyellow;
+}
+
+.booking-form-container {
+    border: 5px solid orange;
+    height: 250px; // temporary
+    // position: sticky;
+}
+
+.show-reviews-container {
+    border: 5px solid darksalmon;
+    height: 700px;
+}
+
+.show-map-container {
+    border: 5px solid #800000;
+    height: 350px;
+}

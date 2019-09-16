@@ -48,6 +48,8 @@ class Campground < ApplicationRecord
     validates :picnic_table, inclusion: { in: [true, false] }
     validates :kitchen, inclusion: { in: [true, false] }
 
+    has_many_attached :photos
+
     belongs_to :host,
         foreign_key: :host_id,
         class_name: "User"

@@ -19,21 +19,25 @@ const Greeting = (props) => {
     
     // nbsp = non breaking space
     const modalLinks = () => (
-        <nav className="main-nav">
-            <a href="http://github.com/ernestman/" target="_blank">Github</a>
+        <div className="header-nav">
+            <a href="http://github.com/ernestman/" id="github" target="_blank">
+                <i class="fab fa-github"></i>&nbsp;Github
+            </a>
             &nbsp;&nbsp;&nbsp;
-            <a href="http://linkedin.com/in/ernest-man/" target="_blank">LinkedIn</a>
+            <a href="http://linkedin.com/in/ernest-man/" id="linkedin" target="_blank">
+                <i class="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
+            </a>
             &nbsp;&nbsp;&nbsp;
             <button onClick={handleSignupModal}><span>Sign up</span></button>
             &nbsp;&nbsp;&nbsp;
             <button onClick={handleLoginModal}><span>Log in</span></button>
-        </nav>
+        </div>
     );
 
     const myGreeting = () => (
         <div className="tent-icon">
             <div className="dropdown">
-                <img className="menu-button" src={window.tentIconURL} />
+                <img className="menu-button" src={window.tentIconUrl} />
                 <div className="dropdown-menu">
                     <div className="drop-button-container">
                         <button onClick={signOut}>Log out</button>

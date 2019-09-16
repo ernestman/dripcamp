@@ -16,7 +16,7 @@ class Api::CampgroundsController < ApplicationController
             :min_nights, :max_guests, :num_sites, :cabin, :parking, :campfires,
             :toilets, :pets, :wifi, :bins, :potable_water, :showers,
             :picnic_table, :kitchen, :activities, :checkin_time, :checkout_time, 
-            :description
+            :description, photos: []
         )
     end
 
