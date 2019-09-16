@@ -1,0 +1,44 @@
+.large-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid green;
+    padding: 10px 10px;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.large-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border: 5px solid yellow;
+    height: 33%; //temporary
+    width: 500px;
+    text-align: center;
+}
+
+.large-icon img {
+    height: 300px;
+    width: 300px;
+}
+
+.large-icon-text {
+    margin: 0 50px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.large-icon a {
+    font-size: 16px;
+    margin: 12px 0;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+}
+
+.large-icon a:hover {
+    border-bottom: 1px solid black;
+    padding-bottom: 1px;
+}

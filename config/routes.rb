@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     resources :campgrounds, only: [:index, :show]
   end
 
-  
 
 end

@@ -10,6 +10,6 @@ export const allCampgrounds = () => {
 export const campground = (id) => {
     return $.ajax({
         method: "GET",
-        url: `/api/campground/${id}`
+        url: `/api/campgrounds/${id}`
     })
 };
