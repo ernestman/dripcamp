@@ -21,14 +21,14 @@ const Footer = () => {
                     </div>
                     <div className="footer-links">
                         <h2>Social</h2>
-                        <a href="http://github.com/ernestman/" target="_blank">
-                            <i class="fab fa-github"></i>&nbsp;Github
+                        <a href="http://github.com/ernestman/" id="github" target="_blank">
+                            <i className="fab fa-github"></i>&nbsp;Github
                         </a>
-                        <a href="http://linkedin.com/in/ernest-man/" target="_blank">
-                            <i class="fab fa-linkedin fa-s"></i>&nbsp;LinkedIn
+                        <a href="http://linkedin.com/in/ernest-man/" id="linkedin" target="_blank">
+                            <i className="fab fa-linkedin fa-s"></i>&nbsp;LinkedIn
                         </a>
-                        <a href="https://open.spotify.com/user/ernestman?si=KXLgRmtoTH-fwD44bLknBQ" target="_blank">
-                            <i class="fab fa-spotify"></i>&nbsp;Spotify
+                        <a href="https://open.spotify.com/user/ernestman?si=KXLgRmtoTH-fwD44bLknBQ" id="spotify" target="_blank">
+                            <i className="fab fa-spotify"></i>&nbsp;Spotify
                         </a>
                     </div>
                 </div>

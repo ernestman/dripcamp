@@ -21,11 +21,11 @@ const Greeting = (props) => {
     const modalLinks = () => (
         <div className="header-nav">
             <a href="http://github.com/ernestman/" id="github" target="_blank">
-                <i class="fab fa-github"></i>&nbsp;Github
+                <i className="fab fa-github"></i>&nbsp;Github
             </a>
             &nbsp;&nbsp;&nbsp;
             <a href="http://linkedin.com/in/ernest-man/" id="linkedin" target="_blank">
-                <i class="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
+                <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
             </a>
             &nbsp;&nbsp;&nbsp;
             <button onClick={handleSignupModal}><span>Sign up</span></button>

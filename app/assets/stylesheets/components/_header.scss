@@ -12,15 +12,14 @@
 
 header {
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 
 .header-container {
     background-color: #FFFFFF;
-
     height: 70px;
     width: 100%;
-    z-index: 8;
     display: flex;
     justify-content: space-between;
 }
