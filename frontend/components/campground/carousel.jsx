@@ -25,6 +25,7 @@ class Carousel extends React.Component {
                 //     this.setState({ counter: this.state.counter - 2 })
                 //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 if (this.state.counter < 0) {
+                    // carouselSlide.style.transition = "none";
                     carouselSlide.style.transform = "translateX(" + ((-size * (this.props.photoUrls.length - 1))) + "px)";
                     this.setState({ counter: this.props.photoUrls.length - 1 });
                 } else {
@@ -50,6 +51,7 @@ class Carousel extends React.Component {
                 //     this.setState({ counter: this.state.counter - 2})
                 //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 if (this.state.counter >= this.props.photoUrls.length) {
+                    // carouselSlide.style.transition = "none";
                     carouselSlide.style.transform = "translateX(" + ((-size * 0)) + "px)";
                     this.setState({ counter: 0});
                 } else {

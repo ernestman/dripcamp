@@ -7,7 +7,7 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font-family: 'Calibre', Helvetica, Arial, Helvetica, sans-serif;
+  font-family: "Calibre-Medium", Helvetica, Arial, Helvetica, sans-serif;
   // font: inherit;
   color: #333333;
   text-align: inherit;
@@ -15,6 +15,11 @@ span, article, footer, time, small {
   vertical-align: baseline;
   box-sizing: inherit;
   background: transparent
+}
+
+@font-face {
+  font-family: "Calibre-Medium";
+  src: font-url("/assets/fonts/CalibreMedium.otf");
 }
 
 h1, h2, h3, h4, h5, h6, strong {
