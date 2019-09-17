@@ -35,7 +35,7 @@ const Modal = (props) => {
 
     const signupModal = (
         <div className="signup-modal" onClick={e => e.stopPropagation()}>
-            <div className="signup-form"m>
+            <div className="signup-form">
                 <SignupContainer />
             </div>
         </div>

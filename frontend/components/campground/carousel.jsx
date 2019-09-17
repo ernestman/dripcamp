@@ -67,7 +67,7 @@ class Carousel extends React.Component {
                 <div className="carousel-container">
                     <div className="carousel-slide">
                         <img src={photoUrls[photoUrls.length - 1]} className="img" id="last-clone" />
-                        {photoUrls.map(url => (<img className="img" src={url} />))}
+                        {photoUrls.map( (url, i) => (<img key={i} className="img" src={url} />))}
                         <img src={photoUrls[0]} className="img" id="first-clone" />
                     </div>
                     {/* <span className="arrows"> */}

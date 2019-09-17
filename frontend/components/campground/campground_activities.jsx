@@ -5,7 +5,7 @@ const CampgroundActivities = (props) => {
     const {campground} = props;
 
     let imgUrl;
-    const actIcons = campground.activities.map(act => {
+    const actIcons = campground.activities.map( (act, i) => {
         if (act === "Biking") imgUrl = window.bikingUrl;
         else if (act === "Boating") imgUrl = window.boatingUrl;
         else if (act === "Hiking") imgUrl = window.hikingUrl;
@@ -17,7 +17,7 @@ const CampgroundActivities = (props) => {
         else if (act === "Climbing") imgUrl = window.climbingUrl;
 
         return (
-            <div className="act-icon-container">
+            <div key={i} className="act-icon-container">
                 <div className="act-icon">
                     <img src={imgUrl} />
                 </div>

@@ -14,15 +14,11 @@ class CampgroundIndex extends React.Component{
     render() {
         const {campgrounds} = this.props;
 
-        const campgroundsIndex = campgrounds.map( campground => (
-            <div>
-                <Link to={`/campgrounds/${campground.id}`}>
-                    <CampgroundIndexItem
-                        key={campground.id}
-                        campground={campground}
-                    />
-                </Link>
-            </div>
+        const campgroundsIndex = campgrounds.map( campground => (      
+            <CampgroundIndexItem
+                key={campground.id}
+                campground={campground}
+            />
         ))
 
         return (

@@ -43,6 +43,7 @@ export const createUser = (user) => (dispatch) => {
                 newUser => dispatch(receiveCurrentUser(newUser)),
                 // on failure, dispatch receiveErrors with result
                 errors => dispatch(receiveErrors(errors.responseJSON))
+                // errors => console.log(errors)
             )
     )
 }
