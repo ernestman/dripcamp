@@ -53,5 +53,9 @@ class Campground < ApplicationRecord
     belongs_to :host,
         foreign_key: :host_id,
         class_name: "User"
+
+    has_many :bookings, 
+        foreign_key: :campground_id,
+        class_name: "Booking"
     
 end

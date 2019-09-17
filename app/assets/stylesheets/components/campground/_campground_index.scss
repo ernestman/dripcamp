@@ -13,9 +13,9 @@
 .campground-item {
     display: flex;
     flex-direction: column;
-    border: 1px solid #F4F4F4;
+    border: 1px solid #EBEBEB;
     border-radius: 5px;
-    box-shadow: 0 0 5px lightgray;
+    box-shadow: 0 0 5px #EBEBEB;
     height: 280px;
     width: 300px;
     margin: 10px;
@@ -68,6 +68,7 @@
 
 
 #item-loc {
+    width: 15%;
     padding-left: 10px;
     padding-bottom: 10px;
     color: #757575;
@@ -86,6 +87,10 @@
 .item-bottom {
     display: flex;
     justify-content: space-between;
+}
+
+.item-bottom i {
+    color: #51D9AC;
 }
 
 #item-rating {

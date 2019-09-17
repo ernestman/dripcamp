@@ -53,4 +53,8 @@ class User < ApplicationRecord
         foreign_key: :host_id,
         class_name: "Campground"
 
+    has_many :bookings, 
+        foreign_key: :user_id,
+        class_name: "Booking"
+
 end
