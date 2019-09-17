@@ -9,11 +9,12 @@
 
 .dropdown-menu {
     display: none;
-    top: 53px;
+    top: 34px;
     position: absolute;
     height: 136px;
     width: 200px;
-    left: -149px;
+    right: 2px;
+    // left: -149px;
     background-color: #FFFFFF;
     border: 1px solid lightgray;
 }
@@ -28,12 +29,13 @@
 }
 
 .dropdown img {
-   width: 36px;
-   height: 38px;
+   width: 37px;
+   height: 37px;
 }
 
 .tent-icon {
    display: flex;
    justify-content: flex-end;
    margin-right: 50px;
+   margin-top: 20px;
 }

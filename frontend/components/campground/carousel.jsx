@@ -21,6 +21,9 @@ class Carousel extends React.Component {
         this.setState({ counter: this.state.counter - 1 })
         setTimeout(
             () => {
+                // if (carouselImages[counter].id === "last-clone") {
+                //     this.setState({ counter: this.state.counter - 2 })
+                //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 if (this.state.counter < 0) {
                     carouselSlide.style.transform = "translateX(" + ((-size * (this.props.photoUrls.length - 1))) + "px)";
                     this.setState({ counter: this.props.photoUrls.length - 1 });
@@ -43,6 +46,9 @@ class Carousel extends React.Component {
         // making carouselSlide asynchronous
         setTimeout(
             () => {
+                // if (carouselImages[counter].id === "first-clone") {
+                //     this.setState({ counter: this.state.counter - 2})
+                //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 if (this.state.counter >= this.props.photoUrls.length) {
                     carouselSlide.style.transform = "translateX(" + ((-size * 0)) + "px)";
                     this.setState({ counter: 0});
@@ -60,9 +66,9 @@ class Carousel extends React.Component {
             <div className="carousel">
                 <div className="carousel-container">
                     <div className="carousel-slide">
-                        {/* <img src={photoUrls[photoUrls.length - 1]} className="img" id="last-clone" /> */}
+                        <img src={photoUrls[photoUrls.length - 1]} className="img" id="last-clone" />
                         {photoUrls.map(url => (<img className="img" src={url} />))}
-                        {/* <img src={photoUrls[0]} className="img" id="first-clone" /> */}
+                        <img src={photoUrls[0]} className="img" id="first-clone" />
                     </div>
                     {/* <span className="arrows"> */}
                     {/* </span> */}
