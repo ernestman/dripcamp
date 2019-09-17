@@ -1,0 +1,93 @@
+.campground-index-main {
+//    border: 5px solid orange;
+   height: 100%;
+   margin: 0px auto;
+   max-width: 1060px;
+   padding: 10px 10px;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+
+}
+
+.campground-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #F4F4F4;
+    border-radius: 5px;
+    box-shadow: 0 0 5px lightgray;
+    height: 280px;
+    width: 300px;
+    margin: 10px;
+}
+
+.item-image {
+    // border: 5px solid blue;
+    height: 65%; //temporary
+}
+
+.item-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    // border: 5px solid yellow;
+    height: 35%;
+}
+
+.item-info-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 10px 0 10px;
+    // padding-top: 10px;
+}
+
+// .item-info-top h1 {
+// }
+
+.item-info-top img {
+    height: 30px;
+    width: 30px;
+}
+
+.campground-item:hover .item-info{
+    background-color: #F9F9F9;
+}
+
+
+
+#item-loc {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.item-info a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.item-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#item-rating {
+    color: #49D9AC;
+    // font-size: 16px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+#item-price {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 500;
+    padding-right: 10px;
+    padding-bottom: 6px;
+}

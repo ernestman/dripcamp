@@ -37,7 +37,7 @@ const Greeting = (props) => {
     const myGreeting = () => (
         <div className="tent-icon">
             <div className="dropdown">
-                <img className="menu-button" src={window.tentIconUrl} />
+                <img className="menu-button" src={window.tentDropUrl} />
                 <div className="dropdown-menu">
                     <div className="drop-button-container">
                         <button onClick={signOut}>Log out</button>

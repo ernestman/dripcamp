@@ -1,6 +1,6 @@
 import React from "react";
 
-class ImageSlider extends React.Component {
+class Carousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +15,7 @@ class ImageSlider extends React.Component {
         event.preventDefault();
         const carouselSlide = document.querySelector(".carousel-slide")
         const carouselImages = document.querySelectorAll(".img");
-        let size = carouselImages[0].clientWidth + 25;
+        let size = carouselImages[0].clientWidth + 16;
         // debugger
         carouselSlide.style.transition = "transform 0.75s ease-in-out"
         this.setState({ counter: this.state.counter - 1 })
@@ -66,8 +66,14 @@ class ImageSlider extends React.Component {
                     </div>
                     {/* <span className="arrows"> */}
                     {/* </span> */}
-                    <button onClick={this.handlePrev} id="prev">&#10094;</button>
-                    <button onClick={this.handleNext} id="next">&#10095;</button>
+                    <div className="arrows">
+                        <div className="prev-button">
+                            <button onClick={this.handlePrev} id="prev">&#10094;</button>
+                        </div>
+                        <div className="next-button">
+                            <button onClick={this.handleNext} id="next">&#10095;</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -75,4 +81,4 @@ class ImageSlider extends React.Component {
     }
 }
 
-export default ImageSlider;
+export default Carousel;

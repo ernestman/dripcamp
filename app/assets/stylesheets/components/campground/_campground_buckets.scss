@@ -1,0 +1,11 @@
+.show-buckets {
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid green;
+}
+
+.show-bucket-container {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid red;
+}

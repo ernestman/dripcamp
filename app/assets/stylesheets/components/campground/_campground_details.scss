@@ -1,0 +1,35 @@
+.show-details-container {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    // border: 5px solid deeppink;
+    border-top: 1px solid lightgray;
+    font-size: 18px;
+    padding: 24px 0;
+}
+
+.show-details-container strong {
+    font-weight: 550;
+}
+
+.detail-header {
+    width: 15%;
+}
+
+.show-details {
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+    // flex-direction: column;
+    // font-size: 18px;
+}
+
+.details-cont-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-cont-2 {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,39 @@
+
+
+.show-activities {
+    display: flex;
+    flex-direction: column;
+    // border: 5px solid greenyellow;
+    border-top: 1px solid lightgray;
+    padding: 24px 0;
+}
+
+.show-activities h3 {
+    color: #757575;
+    font-weight: 400;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+    flex-wrap: wrap;
+    // padding: 10px;
+}
+
+.act-icon-container {
+    text-align: center;
+    margin: 20px 20px 14px 20px;
+    padding-bottom: 6px;
+}
+
+.act-icon {
+    border: 1px solid lightgray;
+    margin-bottom: 6px;
+}
+
+.act-icon img{
+    height: 100px;
+    width: 100px;
+}

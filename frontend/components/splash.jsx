@@ -6,6 +6,12 @@ const Splash = () => {
 
     return (
         <div className="splash-container">
+            <div className="splash-info">
+                <h1 id="splash-head">Everywhere you want to camp.</h1>
+                <div id="splash-text">
+                    <p>Book unique camping experiences on over <span>300,000</span> campsites, ranches, vineyards, public parks, and more.</p>
+                </div>
+            </div>
             <div className="search-bar-container">
                 <Link to="/campgrounds">Placeholder for Searchbar (link to campgrounds index)</Link>
             </div>

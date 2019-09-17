@@ -17,6 +17,13 @@ span, article, footer, time, small {
   background: transparent
 }
 
+h1, h2, h3, h4, h5, h6, strong {
+  font-size: 18px;
+  font-weight: 500;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
 ol, ul {
     list-style: none
 }
