@@ -1,11 +1,42 @@
 .show-buckets {
     display: flex;
     justify-content: space-around;
-    border: 5px solid green;
+    // border: 5px solid green;
+    padding: 30px 0;
 }
 
 .show-bucket-container {
     display: flex;
     flex-direction: column;
-    border: 5px solid red;
+    border: 1px solid lightgray;
+    width: 30%;
+    height: 300px;
+}
+
+.bucket-main {
+    margin-left: 12px;
+}
+
+.bucket-line {
+    display: flex;
+}
+
+// .show-buckets ul {
+//     display: inline-block;
+// }
+
+.show-buckets h2 {
+    font-size: 24px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.show-buckets img {
+    height: 28px;
+    width: 28px;
+}
+
+.show-buckets ul {
+    margin-top: 6px;
+    font-size: 18px;
 }
