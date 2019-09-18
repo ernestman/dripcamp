@@ -24,14 +24,20 @@ span, article, footer, time, small {
 
 @font-face {
   font-family: "Calibre";
-  src: font-url("CalibreMedium.otf");
-  font-weight: 400;
+  src: font-url("CalibreBold.otf");
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "Calibre";
-  src: font-url("CalibreBold.otf");
-  font-weight: 700;
+  src: font-url("CalibreLight.otf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: font-url("CalibreMedium.otf");
+  font-weight: 400;
 }
 
 @font-face {
@@ -39,11 +45,6 @@ span, article, footer, time, small {
   src: font-url("CalibreSemibold.otf");
   font-weight: 500;
 
-}
-@font-face {
-  font-family: "Calibre";
-  src: font-url("CalibreLight.otf");
-  font-weight: 200;
 }
 
 @font-face {

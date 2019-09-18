@@ -17,7 +17,10 @@ const CampgroundIndexItem = (props) => {
                         <img src={campground.cabin ? window.cabinUrl : window.tentIconUrl}/>
                     </div>
                     {/* <Link to="/campgrounds" id="item-loc">{campground.location}</Link> */}
-                    <p id="item-loc" onMouseDown={ () => history.push("/campgrounds")}>{campground.location}</p>
+                    <p id="item-loc" onMouseUp={ (e) => {
+                        e.stopPropagation()
+                        history.replace("/campgrounds")
+                    }}>{campground.location}</p>
                     <div className="item-bottom">
                         <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;100%</p>
                         <p id="item-price">${campground.price}/night</p>

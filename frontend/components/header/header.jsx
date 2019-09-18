@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "../modal/modal";
 import GreetingContainer from "../greeting/greeting_container";
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -8,7 +9,8 @@ const Header = () => {
         <div className="header-container">
             <Modal />
             <div className="header-icon">
-                <a href="http://localhost:3000"><img src={window.logoUrl} /></a>
+                <Link to="/"><img src={window.logoUrl} /></Link>
+                {/* <a href="http://dripcamp.herokuapp.com"><img src={window.logoUrl} /></a> */}
             </div>
             <div className="header-greeting">
                 <GreetingContainer />
