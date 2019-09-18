@@ -27,7 +27,7 @@ const CampgroundBuckets = (props) => {
                     <div className="bucket-line">
                         <img src={campground.parking ? window.parkingTrueUrl : window.parkingFalseUrl}/>
                         &nbsp;
-                        <ul>{campground.parking ? "Park at listing" : "Short walk"}</ul>
+                        <ul>{campground.parking ? "Park at listing" : <span>Short walk</span>}</ul>
                     </div>
                 </div>
             </div>
@@ -38,17 +38,17 @@ const CampgroundBuckets = (props) => {
                     <div className="bucket-line">
                         <img src={campground.campfires ? window.campfireTrueUrl : window.campfireFalseUrl}/>
                         &nbsp;
-                        <ul>{campground.campfires ? "Campfires allowed" : "No campfires"}</ul>
+                        <ul>{campground.campfires ? "Campfires allowed" : <span>No campfires</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={window.toiletTrueUrl} />
                         &nbsp;
-                        <ul>{campground.toilets ? "Toilet available" : "No toilets"}</ul>
+                        <ul>{campground.toilets ? "Toilet available" : <span>No toilets</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={campground.pets ? window.petsTrueUrl : window.petsFalseUrl} />
                         &nbsp;
-                        <ul>{campground.pets ? "Pets allowed" : "No pets"}</ul>
+                        <ul>{campground.pets ? "Pets allowed" : <span>No pets</span>}</ul>
                     </div>
                 </div>
             </div>
@@ -59,27 +59,27 @@ const CampgroundBuckets = (props) => {
                     <div className="bucket-line">
                         <img src={campground.kitchen ? window.kitchenTrueUrl : window.kitchenFalseUrl} />
                         &nbsp;
-                        <ul>{campground.kitchen ? "Kitchen available" : "No kitchen"}</ul>
+                        <ul>{campground.kitchen ? "Kitchen available" : <span>No kitchen</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={campground.potable_water ? window.waterTrueUrl : window.waterFalseUrl} />
                         &nbsp;
-                        <ul>{campground.potable_water ? "Potable water available" : "No potable water"}</ul>
+                        <ul>{campground.potable_water ? "Potable water available" : <span>No potable water</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={campground.wifi ? window.wifiTrueUrl : window.wifiFalseUrl} />
                         &nbsp;
-                        <ul>{campground.wifi ? "Wifi available" : "No wifi"}</ul>
+                        <ul>{campground.wifi ? "Wifi available" : <span>No wifi</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={campground.showers ? window.showerTrueUrl : window.showerFalseUrl} />
                         &nbsp;
-                        <ul>{campground.showers ? "Showers available" : "No showers"}</ul>
+                        <ul>{campground.showers ? "Showers available" : <span>No showers</span>}</ul>
                     </div>
                     <div className="bucket-line">
                         <img src={campground.bins ? window.binsTrueUrl : window.binsFalseUrl} />
                         &nbsp;
-                        <ul>{campground.bins ? "Bins" : "Pack it out"}</ul>
+                        <ul>{campground.bins ? "Bins" : <span>Pack it out</span>}</ul>
                     </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ class Api::BookingsController < ApplicationController
         if @booking.update_attributes(booking_params)
             render :show
         else
-
+            
         end
     end
 

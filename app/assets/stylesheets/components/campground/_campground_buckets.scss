@@ -3,6 +3,11 @@
     justify-content: space-around;
     // border: 5px solid green;
     padding: 30px 0;
+    
+}
+
+.show-buckets span {
+    color: gray;
 }
 
 .show-bucket-container {
@@ -40,4 +45,5 @@
 .show-buckets ul {
     margin-top: 6px;
     font-size: 18px;
+    color: #525252;
 }
