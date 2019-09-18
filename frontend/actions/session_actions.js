@@ -5,10 +5,10 @@ export const LOGOUT_CURRENT_USER  = "LOGOUT_CURRENT_USER";
 export const RECEIVE_ERRORS  = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
-export const receiveCurrentUser = (currentUser) => {
+export const receiveCurrentUser = (payload) => {
     return {
         type: RECEIVE_CURRENT_USER,
-        currentUser
+        payload
     }
 }
 
@@ -38,7 +38,7 @@ export const createUser = (user) => (dispatch) => {
         ApiUtil.signup(user)
             .then(
                 // on success, dispatch receiveCurrentUser with result
-                newUser => dispatch(receiveCurrentUser(newUser)),
+                payload => dispatch(receiveCurrentUser(payload)),
                 // on failure, dispatch receiveErrors with result
                 errors => dispatch(receiveErrors(errors.responseJSON))
                 // errors => console.log(errors)

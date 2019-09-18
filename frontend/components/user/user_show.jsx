@@ -15,7 +15,7 @@ class UserShow extends React.Component {
     }
 
     render() {
-        
+        // debugger
         const {currentUser} = this.props;
         // debugger
         if (currentUser === undefined) {
