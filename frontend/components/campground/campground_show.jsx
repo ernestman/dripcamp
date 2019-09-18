@@ -7,6 +7,7 @@ import CampgroundInfo from "./campground_info";
 import CampgroundBuckets from "./campground_buckets";
 import CampgroundDetails from "./campground_details";
 import CampgroundActivities from "./campground_activities";
+import BookingFormContainer from "../booking/booking_form_container";
 
 class CampgroundShow extends React.Component {
     constructor(props) {
@@ -46,7 +47,8 @@ class CampgroundShow extends React.Component {
                         </div>
 
                         <div className="booking-form-container">
-                            <h1>Placeholder for Booking Form</h1>
+                            <div><BookingFormContainer campground={campground}/></div>
+                            {/* <h1>Placeholder for Booking Form</h1> */}
                         </div>
                     </div>
                 </div>

@@ -8,22 +8,14 @@ import Splash from "./splash";
 
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import CampgroundShowContainer from "../components/campground/campground_show_container";
+import UserShowContainer from "../components/user/user_show_container";
 
 // don't need routes for login and signup b/c modal
 class App extends React.Component {
     render() {
 
-        const herokuUrl = "http://dripcamp.herokuapp.com"
-
-
-        // <HeaderContainer />
-
         // <Route path="/" component={} />
-        // <Route path="/campgrounds" component={CampgroundIndex} />
-        // <Route path="/campgrounds/:id" component={CampgroundShow} />
         // <Route path="/users/:currentUserId" component={UserShow} />
-
-        // <FooterContainer /> (Component)
         
         return (
             <div className="sensei">
@@ -34,10 +26,10 @@ class App extends React.Component {
                 <main>
                     <div className="senpai">
                 
+                        <Route exact path="/users/:userId" component={UserShowContainer} />
                         <Route exact path="/campgrounds/:campId" component={CampgroundShowContainer} />
                         <Route exact path="/campgrounds" component={CampgroundIndexContainer} />
                         <Route exact path="/" component={Splash} />
-                        
                     </div>
                 </main>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import {Link} from "react-router-dom";
+import UserShowContainer from "../components/user/user_show_container";
 
 const Splash = () => {
 
@@ -12,9 +13,13 @@ const Splash = () => {
                     <p>Book unique camping experiences on over <span>300,000</span> campsites, ranches, vineyards, public parks, and more.</p>
                 </div>
             </div>
-            <div className="search-bar-container">
+            {/* <div className="search-bar-container">
                 <Link to="/campgrounds">Placeholder for Searchbar (link to campgrounds index)</Link>
-            </div>
+            </div> */}
+
+            {/* <div className="user-show-container">
+                <UserShowContainer />
+            </div> */}
 
             <CampgroundIndexContainer />
     

@@ -1,17 +1,17 @@
 import React from "react";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Greeting = (props) => {
-    
+    // debugger
     const {currentUser, signOut, openModal, clearErrors} = props;
     
-    const handleLoginModal = () => {
+    const handleLoginModal = (event) => {
         event.preventDefault()
         clearErrors();
         openModal("login");
     }
 
-    const handleSignupModal = () => {
+    const handleSignupModal = (event) => {
         event.preventDefault();
         clearErrors();
         openModal("signup")
@@ -40,7 +40,8 @@ const Greeting = (props) => {
                 <img className="menu-button" src={window.tentDropUrl} />
                 <div className="dropdown-menu">
                     <div className="drop-button-container">
-                        <button onClick={signOut}>Log out</button>
+                        <button onClick={signOut}>Logout</button>
+                        <Link to={`/users/${currentUser.id}`}>Profile</Link>
                     </div>
                 </div>
             </div>

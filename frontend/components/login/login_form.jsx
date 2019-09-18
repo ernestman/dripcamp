@@ -26,14 +26,14 @@ class loginForm extends React.Component {
             password: "password"
         }
         this.props.login(demoUser)
-            .then( () => dispatch(this.props.closeModal()))
+            .then( () => this.props.closeModal())
     }
 
     handleSubmit(event) {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user)
-            .then( () => dispatch(this.props.closeModal()))
+            .then( () => this.props.closeModal())
     }
 
     handleRedirect(event) {

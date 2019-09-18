@@ -10,8 +10,10 @@ require "open-uri"
 
 User.destroy_all
 Campground.destroy_all
+Booking.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("campgrounds")
+ActiveRecord::Base.connection.reset_pk_sequence!("bookings")
 
 # Users
 
@@ -322,3 +324,15 @@ a_ranch_urls = [
 a_ranch_urls.each_with_index do |url, i|
     arabica_ranch.photos.attach(io: open(url), filename: "arabica_ranch#{i+1}.jpg")
 end
+
+
+# Bookings
+
+booking_1 = Booking.create!(
+    campground_id: 1,
+    user_id: 1,
+    num_guests: 4,
+    booked_price: 93,
+    checkin_date: Date.new(2019, 9, 30),
+    checkout_date: Date.new(2019, 10, 2)
+)

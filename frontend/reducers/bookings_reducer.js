@@ -1,0 +1,22 @@
+import {GET_BOOKING, DESTROY_BOOKING} from "../actions/booking_actions";
+import {GET_CURRENT_USER} from "../actions/user_actions";
+
+const bookingsReducer = (state={}, action) => {
+    Object.freeze(state);
+    let nextState = Object.assign({}, state);
+
+    switch(action.type) {
+        case GET_CURRENT_USER:
+            return Object.assign({}, state, action.payload.bookings)
+        case GET_BOOKING:
+            nextState[action.booking.id] = action.booking;
+            return nextState;
+        case DESTROY_BOOKING:
+            delete nextState[action.bookingId]
+            return nextState;
+        default:
+            return state;
+    }
+}
+
+export default bookingsReducer;
