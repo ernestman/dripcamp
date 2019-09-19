@@ -2,6 +2,8 @@ import * as BookingApiUtil from "../util/booking_api_util";
 
 export const GET_BOOKING = "GET_BOOKING";
 export const DESTROY_BOOKING = "DESTROY_BOOKING";
+export const CLEAR_BOOKINGS = "CLEAR_BOOKINGS";
+
 export const BOOKING_ERRORS = "BOOKING_ERRORS";
 export const CLEAR_BOOK_ERRORS = "CLEAR_BOOK_ERRORS"
 
@@ -19,18 +21,24 @@ export const deleteBooking = (bookingId) => {
     }
 }
 
-export const bookingErrors = (errors) => {
+export const clearBookings = () => {
     return {
-        type: BOOKING_ERRORS,
-        errors
+        type: CLEAR_BOOKINGS,
     }
 }
 
-export const clearBookErrors = () => {
-    return {
-        type: CLEAR_BOOK_ERRORS
-    }
-}
+// export const bookingErrors = (errors) => {
+//     return {
+//         type: BOOKING_ERRORS,
+//         errors
+//     }
+// }
+
+// export const clearBookErrors = () => {
+//     return {
+//         type: CLEAR_BOOK_ERRORS
+//     }
+// }
 
 export const fetchBooking = (bookingId) => (dispatch) => {
     BookingApiUtil.singleBooking(bookingId)

@@ -27,6 +27,9 @@ class CampgroundIndex extends React.Component{
                 <h1 id="index-title">Discover Campgrounds</h1>
                 <div className="campground-index-main">
                     {campgroundsIndex}
+                    <i aria-hidden="true" className="filler-item"></i>
+                    <i aria-hidden="true" className="filler-item"></i>
+                    {/* <i aria-hidden="true" className="filler-item"></i> */}
                 </div>
             </div>
         )

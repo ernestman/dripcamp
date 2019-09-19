@@ -1,4 +1,4 @@
-import {GET_ALL_CAMPGROUNDS, GET_CAMPGROUND} from "../actions/campground_actions";
+import {GET_ALL_CAMPGROUNDS, GET_CAMPGROUND, CLEAR_CAMPGROUNDS} from "../actions/campground_actions";
 import {GET_CURRENT_USER} from "../actions/user_actions";
 
 const campgroundReducer = (state={}, action) => {
@@ -15,6 +15,8 @@ const campgroundReducer = (state={}, action) => {
             nextState[action.campground.id] = action.campground;
             // debugger
             return nextState;
+        case CLEAR_CAMPGROUNDS:
+            return {};
         default:
             return state;
     }

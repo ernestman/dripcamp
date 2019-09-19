@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :campgrounds, only: [:index, :show]
-    resources :bookings, only: [:create, :show, :index, :destroy]
+    resources :bookings, only: [:create, :show, :destroy]
   end
 
 

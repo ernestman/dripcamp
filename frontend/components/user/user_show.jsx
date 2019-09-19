@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
 
 
 class UserShow extends React.Component {
@@ -10,9 +10,10 @@ class UserShow extends React.Component {
         if (!this.props.currentUser) {
             return <Redirect to="/" />
         }
-        
-        
-        this.props.fetchUser(this.props.currentUser.id)
+
+        this.props.clearCampgrounds();
+        this.props.clearBookings();
+        this.props.fetchUser(this.props.currentUser.id);
     }
 
     render() {
@@ -30,6 +31,23 @@ class UserShow extends React.Component {
             const month = months[joinDate.getMonth()];
             const year = joinDate.getFullYear().toString();
 
+            // debugger
+            
+            const myBookings = Object.values(bookings).map( book => (
+                
+                    <div className="booking-main">
+                        <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
+                        <div className="booking-info">
+                            <h1>Campground: &nbsp;{booked_campgrounds[book.campground_id].name}</h1>
+                            <h2>Location: &nbsp;{booked_campgrounds[book.campground_id].location}</h2>
+                            <p><span>Check-in:</span>&nbsp; {book.checkin_date}</p>
+                            <p><span>Check-out:</span>&nbsp; {book.checkout_date}</p>
+                            <p><span>Guests:</span>&nbsp; {book.num_guests}</p>
+                        </div>
+                        <button className="booking-delete">Cancel</button>
+                    </div>
+            ))
+
             return (
                 <div className="user-show-main">
                     <div className="user-info-container">
@@ -44,7 +62,7 @@ class UserShow extends React.Component {
                                 </div>
                             </div>
                             <div className="user-info">
-                                <p><i className="fas fa-heart fa-xs"></i>&nbsp;&nbsp;Dripcamper since: {month} {year}</p>
+                                <p><i className="fas fa-heart fa-xs"></i>&nbsp;&nbsp;Dripcamper since:&nbsp;{month} {year}</p>
                             </div>
                         </div>
                         <div className="user-info-bottom">
@@ -53,7 +71,10 @@ class UserShow extends React.Component {
                         </div>
                     </div>
                     <div className="booking-info-container">
-                        <h1>Placeholder for User Bookings</h1>
+                        <p id="booking-header">My Bookings</p>
+                        <div className="booking-container">
+                            {myBookings}
+                        </div>
                     </div>
                 </div>
             )
@@ -62,4 +83,9 @@ class UserShow extends React.Component {
 
 }
 
+UserShow.defaultProps = {
+    currentUser: {},
+    bookings: {},
+    booked_campgrounds: {}
+}
 export default UserShow;

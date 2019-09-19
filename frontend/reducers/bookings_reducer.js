@@ -1,4 +1,4 @@
-import {GET_BOOKING, DESTROY_BOOKING} from "../actions/booking_actions";
+import {GET_BOOKING, DESTROY_BOOKING, CLEAR_BOOKINGS} from "../actions/booking_actions";
 import {GET_CURRENT_USER} from "../actions/user_actions";
 
 const bookingsReducer = (state={}, action) => {
@@ -16,6 +16,8 @@ const bookingsReducer = (state={}, action) => {
         case DESTROY_BOOKING:
             delete nextState[action.bookingId]
             return nextState;
+        case CLEAR_BOOKINGS:
+            return {};
         default:
             return state;
     }

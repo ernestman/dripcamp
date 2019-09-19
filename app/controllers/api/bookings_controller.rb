@@ -15,10 +15,10 @@ class Api::BookingsController < ApplicationController
         end
     end
 
-    def index
+    # def index
         # debugger
-        @bookings = current_user.bookings
-    end
+    #     @bookings = current_user.bookings
+    # end
 
     def show
         @booking = current_user.bookings.find(params[:id])
