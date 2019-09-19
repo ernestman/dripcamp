@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     // border: 5px solid yellowgreen;
-    // background-image: image-url("main7.png");
-    max-width: 90%;
-    height: 400px;
+    // background-image: url("https://dripcamp-seed.s3-us-west-1.amazonaws.com/main11.jpg");
+    background-size: cover;
+    max-width: 95%;
+    height: 900px;
     padding: 10px 10px;
     margin: 0 auto;
     // margin-top: 50px;
@@ -13,12 +14,15 @@
 #splash-head {
     font-size: 48px;
     font-weight: 600;
+    margin-top: 80px;
+    margin-left: 90px;
 }
 
 #splash-text {
     font-size: 23px;
     width: 500px;
     padding-top: 10px;
+    margin-left: 90px;
 }
 
 #splash-text span {

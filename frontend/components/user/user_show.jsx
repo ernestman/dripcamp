@@ -11,17 +11,18 @@ class UserShow extends React.Component {
             return <Redirect to="/" />
         }
         
+        
         this.props.fetchUser(this.props.currentUser.id)
     }
 
     render() {
         // debugger
-        const {currentUser} = this.props;
+        const {currentUser, bookings, booked_campgrounds} = this.props;
         // debugger
         if (currentUser === undefined) {
             return <Redirect to="/" />
         } else {
-            // debugger
+
             const months = [
                 "January", "February", "March", "April", "May", "June", "July",
                 "August", "September", "October", "November", "December"];

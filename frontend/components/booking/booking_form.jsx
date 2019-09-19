@@ -54,13 +54,13 @@ class BookingForm extends React.Component {
                         <input
                             type="date"
                             onChange={this.handleInput("checkin_date")}
-                            value={this.state.checkin_date}
+                            // value={this.state.checkin_date}
                             placeholder="Select date"
                         />
                         <input
                             type="date"
                             onChange={this.handleInput("checkout_date")}
-                            value={this.state.checkout_date}
+                            // value={this.state.checkout_date}
                             placeholder="Select date"
                         />
                         <input

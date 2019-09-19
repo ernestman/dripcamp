@@ -15,6 +15,7 @@ json.bookings do
             json.extract! booking,
                 :id, :campground_id, :user_id, :num_guests, :booked_price,
                 :checkin_date, :checkout_date, :created_at
+                
         end
     end
 end
@@ -29,8 +30,9 @@ json.campgrounds do
             :picnic_table, :kitchen, :activities, :checkin_time, :checkout_time,
             :description, :host, :bookings
             json.photoUrls campground.photos.map { |file| url_for(file) }
-            json.campground_name campground.name
-            json.campground_location campground.location
         end
     end
 end
+
+# json.campground_name campground.name
+# json.campground_location campground.location

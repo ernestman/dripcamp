@@ -5,6 +5,8 @@ import {RECEIVE_CURRENT_USER} from "../actions/session_actions";
 const usersReducer = (state={}, action) => {
     Object.freeze(state);
 
+
+    // replace state instead of merging?
     switch(action.type) {
         case GET_CURRENT_USER:
             return Object.assign({}, state, action.payload.users)
