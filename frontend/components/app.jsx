@@ -15,7 +15,6 @@ class App extends React.Component {
     render() {
 
         // <Route path="/" component={} />
-        // <Route path="/users/:currentUserId" component={UserShow} />
         
         return (
             <div className="sensei">

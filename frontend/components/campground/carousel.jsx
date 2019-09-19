@@ -72,8 +72,6 @@ class Carousel extends React.Component {
                         {photoUrls.map( (url, i) => (<img key={i} className="img" src={url} />))}
                         <img src={photoUrls[0]} className="img" id="first-clone" />
                     </div>
-                    {/* <span className="arrows"> */}
-                    {/* </span> */}
                     <div className="arrows">
                         <div className="prev-button">
                             <button onClick={this.handlePrev} id="prev">&#10094;</button>

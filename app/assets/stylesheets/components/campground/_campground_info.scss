@@ -71,9 +71,15 @@
 
 .show-user-icon {
     font-size: 14px;
-    border: 5px solid black;
-    width: 15%;
+    border: 3px solid black;
+    position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 85px;
+//   padding: 50% 0;
+  border-radius: 50%;
     margin: 30px 30px;
+    text-align: center;
 }
 
 .info-bottom h3{

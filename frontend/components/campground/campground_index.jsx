@@ -23,8 +23,11 @@ class CampgroundIndex extends React.Component{
         ))
 
         return (
-            <div className="campground-index-main">
-                {campgroundsIndex}
+            <div className="campground-index-container">
+                <h1 id="index-title">Discover Campgrounds</h1>
+                <div className="campground-index-main">
+                    {campgroundsIndex}
+                </div>
             </div>
         )
     }

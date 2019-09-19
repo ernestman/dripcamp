@@ -4,6 +4,7 @@ import {fetchCampground} from "../../actions/campground_actions";
 import CampgroundShow from "./campground_show";
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     const campgroundId = ownProps.match.params.campId;
     // const result = state.entities.campgrounds[campgroundId];
     return {

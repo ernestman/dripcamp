@@ -20,25 +20,43 @@ class UserShow extends React.Component {
         // debugger
         if (currentUser === undefined) {
             return <Redirect to="/" />
-        }
+        } else {
+            // debugger
+            const months = [
+                "January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"];
+            const joinDate = new Date(currentUser.created_at);
+            const month = months[joinDate.getMonth()];
+            const year = joinDate.getFullYear().toString();
 
-        return (
-            <div className="user-show-main">
-                <div className="user-info-container">
-                    <div className="user-icon">
-                        <h1>Placeholder for User Icon</h1>
+            return (
+                <div className="user-show-main">
+                    <div className="user-info-container">
+                        <div className="user-info-main">
+                            <div className="user-info-top">
+                                <div className="user-icon">
+                                    Icon
+                                </div>
+                                <div className="user-info-name">
+                                    <p>Welcome back, </p>
+                                    <h1>{currentUser.first_name} {currentUser.last_name[0]}.</h1>
+                                </div>
+                            </div>
+                            <div className="user-info">
+                                <p><i className="fas fa-heart fa-xs"></i>&nbsp;&nbsp;Dripcamper since: {month} {year}</p>
+                            </div>
+                        </div>
+                        <div className="user-info-bottom">
+                            <p>Trusted Dripcamper</p>
+                            <p><i className="fas fa-check-circle fa-xs">&nbsp;&nbsp;</i>Email:&nbsp;<span>{currentUser.email}</span></p>
+                        </div>
                     </div>
-                    <h1>Welcome back, </h1>
-                    <h1>{currentUser.first_name} {currentUser.last_name[0]}.</h1>
-                    <h2>{currentUser.email}</h2>
-                    <h3>Dripcamper since: {currentUser.created_at}</h3>
+                    <div className="booking-info-container">
+                        <h1>Placeholder for User Bookings</h1>
+                    </div>
                 </div>
-                <div className="booking-info-container">
-                    <h1>Placeholder for Booking info</h1>
-                </div>
-            </div>
-        )
-
+            )
+        }
     }
 
 }

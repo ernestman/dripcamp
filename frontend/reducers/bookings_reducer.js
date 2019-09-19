@@ -5,6 +5,8 @@ const bookingsReducer = (state={}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
+    // debugger
+
     switch(action.type) {
         case GET_CURRENT_USER:
             return Object.assign({}, state, action.payload.bookings)

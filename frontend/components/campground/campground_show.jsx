@@ -48,7 +48,6 @@ class CampgroundShow extends React.Component {
 
                         <div className="booking-form-container">
                             <div><BookingFormContainer campground={campground}/></div>
-                            {/* <h1>Placeholder for Booking Form</h1> */}
                         </div>
                     </div>
                 </div>

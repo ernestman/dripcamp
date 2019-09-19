@@ -23,23 +23,3 @@ export const singleBooking = (id) => {
     })
 }
 
-// export const allBookings = () => {
-//     return $.ajax({
-//         method: "GET",
-//         url: "/api/bookings"
-//     })
-// }
-
-// export const editBooking = (id) => {
-//     return $.ajax({
-//         method: "GET",
-//         url: `/api/bookings/${id}`
-//     })
-// }
-
-// export const updateBooking = (id) => {
-//     return $.ajax({
-//         method: "PATCH",
-//         url: `api/bookings/${id}`
-//     })
-// }

@@ -2,7 +2,7 @@ import React from "react";
 import {Link, withRouter} from "react-router-dom";
 
 const CampgroundIndexItem = (props) => {
-
+    // debugger
     const {campground, history} = props;
 
     return (

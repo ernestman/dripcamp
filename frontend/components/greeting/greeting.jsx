@@ -39,9 +39,11 @@ const Greeting = (props) => {
             <div className="dropdown">
                 <img className="menu-button" src={window.tentDropUrl} />
                 <div className="dropdown-menu">
+                    <div className="drop-link-container">
+                        <Link to={`/users/${currentUser.id}`}>My Account</Link>
+                    </div>
                     <div className="drop-button-container">
                         <button onClick={signOut}>Logout</button>
-                        <Link to={`/users/${currentUser.id}`}>Profile</Link>
                     </div>
                 </div>
             </div>

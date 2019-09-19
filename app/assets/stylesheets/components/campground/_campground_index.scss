@@ -1,8 +1,21 @@
+.campground-index-container {
+    max-width: 1060px;
+    // padding: 10px 10px;
+    margin: 20px auto;
+    // font-size: 40px;
+}
+
+#index-title {
+    margin-left: 34px;
+    font-size: 40px;
+}
+
 .campground-index-main {
 //    border: 5px solid orange;
    height: 100%;
    margin: 0px auto;
-   max-width: 1060px;
+//    max-width: 1060px;
+    width: 100%;
    padding: 10px 10px;
    display: flex;
    justify-content: space-around;

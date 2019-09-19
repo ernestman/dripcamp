@@ -2,7 +2,10 @@ import {GET_BOOKING, BOOKING_ERRORS, CLEAR_BOOK_ERRORS} from "../actions/booking
 
 const bookingErrorsReducer = (state=[], action) => {
     Object.freeze(state);
+    // debugger
     let nextState = state.slice();
+    
+    // debugger
 
     switch(action.type) {
         case GET_BOOKING:

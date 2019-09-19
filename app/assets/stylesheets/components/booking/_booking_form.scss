@@ -1,0 +1,62 @@
+.booking-form-container {
+    border: 5px solid orange;
+    // height: 250px; // temporary
+    width: 30%;
+    height: 400px;
+    // position: sticky;
+}
+
+.book-form-container {
+    border: 5px solid green;
+    height: 400px;
+}
+
+.book-form-top {
+    border: 5px solid red;
+    height: 33%;
+    width: 100%;
+}
+
+.book-form {
+    border: 5px solid blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 66%;
+}
+
+.book-input {
+    border: 5px solid pink;
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.book-input input {
+    height: 50px;
+    width: 33%;
+}
+
+.book-bottom {
+    border: 5px solid purple;
+    width: 100%;
+    height: 50%;
+}
+
+.book-button {
+    border: 4px solid #51D9AC;
+   background-color: #51D9AC;
+   padding: 5px;
+   color: #FFFFFF;
+   height: 34px;
+   width: 270px;
+   padding: 16px;
+   text-align: center;
+   margin-top: 30px;
+   font-size: 19px;
+}
+
+.book-button:hover {
+    background-color: #FFFFFF;
+   color: #51D9AC;
+}

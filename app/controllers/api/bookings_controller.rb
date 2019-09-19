@@ -8,7 +8,8 @@ class Api::BookingsController < ApplicationController
         @booking.user_id = current_user.id
 
         if @booking.save 
-            render "api/users/show"
+            render :show
+            # render "api/users/show"
         else
             render json: @booking.errors.full_messages, status: 401
         end
