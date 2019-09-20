@@ -46,7 +46,7 @@ class UserShow extends React.Component {
             
             const myBookings = bookings.map( book => (
                 
-                    <div className="booking-main">
+                    <div key={book.id} className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
                         <div className="booking-info">
                             <h1>Campground: &nbsp;{booked_campgrounds[book.campground_id].name}</h1>
