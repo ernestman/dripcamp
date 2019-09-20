@@ -3,6 +3,10 @@ import {Redirect, Link} from "react-router-dom";
 
 
 class UserShow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this);
+    }
 
     componentDidMount() {
         // debugger
@@ -17,6 +21,7 @@ class UserShow extends React.Component {
     }
 
     handleDelete(bookingId) {
+        // debugger
         event.preventDefault();
         this.props.deleteBooking(bookingId)
     }
@@ -50,7 +55,7 @@ class UserShow extends React.Component {
                             <p><span>Check-out:</span>&nbsp; {book.checkout_date}</p>
                             <p><span>Guests:</span>&nbsp; {book.num_guests}</p>
                         </div>
-                        <button className="booking-delete">Cancel</button>
+                        <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel</button>
                     </div>
             ))
 
