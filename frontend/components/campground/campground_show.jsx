@@ -51,9 +51,9 @@ class CampgroundShow extends React.Component {
                         {/* </div> */}
                     </div>
                 </div>
-                <div className="show-map-container">
+                {/* <div className="show-map-container">
                     <h1>Placeholder for Map</h1>
-                </div>
+                </div> */}
             </div>
         )
     } 

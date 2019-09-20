@@ -67,7 +67,7 @@ class UserShow extends React.Component {
                         <div className="user-info-main">
                             <div className="user-info-top">
                                 <div className="user-icon">
-                                    <img src={currentUser.photoUrl}/>
+                                    <img id="user-img"src={currentUser.photoUrl}/>
                                 </div>
                                 <div className="user-info-name">
                                     <p>Welcome back, </p>

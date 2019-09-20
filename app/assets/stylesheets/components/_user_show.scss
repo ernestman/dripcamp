@@ -36,7 +36,7 @@
 .user-icon {
     margin-top: 20px;
     margin-left: 18px;
-    border: 1px solid gray;
+    // border: 1px solid gray;
 
     position: relative;
   display: inline-block;
@@ -45,7 +45,13 @@
 //   padding: 50% 0;
   border-radius: 50%;
   
-  text-align: center;
+//   text-align: center;
+}
+
+#user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .user-info-name {
