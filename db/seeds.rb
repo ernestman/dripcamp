@@ -320,7 +320,7 @@ cappuccino_creekside = Campground.create!({
     ], 
     checkin_time: "After 2PM", 
     checkout_time: "Before 12PM",
-    description: "Camp out right neat the bank of the Cappucino Creek in the beautiful Pacific Northwest! Only 2 miles from two huge lakes, this campsite is great for paddling, swimming, and fishing. Also, there are plenty of hiking trails and sightseeing spots close by!"
+    description: "Camp out right near the bank of the Cappucino Creek in the beautiful Pacific Northwest! Only 2 miles from two huge lakes, this campsite is great for paddling, swimming, and fishing. Also, there are plenty of hiking trails and sightseeing spots close by!"
 }) 
 
 cc_urls = [

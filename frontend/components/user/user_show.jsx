@@ -49,7 +49,7 @@ class UserShow extends React.Component {
                     <div key={book.id} className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
                         <div className="booking-info">
-                            <h1>Campground: &nbsp;{booked_campgrounds[book.campground_id].name}</h1>
+                            <h1>{booked_campgrounds[book.campground_id].name}</h1>
                             <h2>Location: &nbsp;{booked_campgrounds[book.campground_id].location}</h2>
                             <p><span>Check-in:</span>&nbsp; {book.checkin_date}</p>
                             <p><span>Check-out:</span>&nbsp; {book.checkout_date}</p>
@@ -59,13 +59,15 @@ class UserShow extends React.Component {
                     </div>
             ))
 
+            // debugger
+
             return (
                 <div className="user-show-main">
                     <div className="user-info-container">
                         <div className="user-info-main">
                             <div className="user-info-top">
                                 <div className="user-icon">
-                                    Icon
+                                    <img src={currentUser.photoUrl}/>
                                 </div>
                                 <div className="user-info-name">
                                     <p>Welcome back, </p>

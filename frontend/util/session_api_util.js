@@ -23,3 +23,4 @@ export const logout = () => {
     })
 }
 
+window.signup = signup
