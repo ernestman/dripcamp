@@ -2,8 +2,11 @@
     // border: 5px solid orange;
     // height: 250px; // temporary
     width: 30%;
-    // height: 50%;
-    // position: sticky;
+    height: fit-content;
+    position: sticky;
+    top: 70px;
+    margin-top: -50px;
+    background-color: white;
 }
 
 .book-form-container {
@@ -13,7 +16,7 @@
     flex-direction: column;
     // justify-content: space-between;
     // width: 100%
-    position: sticky;
+    // position: sticky;
 }
 
 .book-form-top {

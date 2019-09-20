@@ -25,8 +25,9 @@ class BookingForm extends React.Component {
             const currentUserId = this.props.currentUser.id
             this.setState({user_id: currentUserId})
             const booking = Object.assign({}, this.state);
-            this.props.newBooking(booking);
-            // return <Redirect to={`/users/${currentUserId}`}/>
+            this.props.newBooking(booking)
+                // .then( () => this.props.history.push(`/users/${currentUserId}`))
+            return <Redirect to={`/users/${currentUserId}`}/>
         } else {
             this.props.openModal("login");
         }
