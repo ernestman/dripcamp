@@ -25,6 +25,8 @@ demo_user = User.create!({
     zipcode: 94030
 })
 
+demo_user.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/waterdrop.png"), filename: "demo_user_avi.png")
+
 gary_payton = User.create!({
     first_name: "Gary",
     last_name: "Payton",
@@ -32,6 +34,8 @@ gary_payton = User.create!({
     password: "password",
     zipcode: 12345
 })
+
+gary_payton.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/garyp.jpg"), filename: "garyp_avi.jpg")
 
 shawn_kemp = User.create!({
     first_name: "Shawn",
@@ -41,6 +45,9 @@ shawn_kemp = User.create!({
     zipcode: 12345
 })
 
+shawn_kemp.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/shawnk.jpg"), filename: "shawnk_avi.jpg")
+
+
 detlef_schrempf = User.create!({
     first_name: "Detlef",
     last_name: "Schrempf",
@@ -48,6 +55,9 @@ detlef_schrempf = User.create!({
     password: "password",
     zipcode: 12345
 })
+
+detlef_schrempf.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/detlefs.jpeg"), filename: "detlefs_avi.jpeg")
+
 
 andre_iguodala = User.create!({
     first_name: "Andre",
@@ -57,6 +67,9 @@ andre_iguodala = User.create!({
     zipcode: 12345
 })
 
+andre_iguodala.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/andrei.jpg"), filename: "andrei_avi.jpg")
+
+
 bob_myers = User.create!({
     first_name: "Bob",
     last_name: "Myers",
@@ -64,6 +77,9 @@ bob_myers = User.create!({
     password: "password",
     zipcode: 12345
 })
+
+bob_myers.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/bobm.jpg"), filename: "bobm_avi.jpg")
+
 
 shaun_livingston = User.create!({
     first_name: "Shaun",
@@ -73,6 +89,9 @@ shaun_livingston = User.create!({
     zipcode: 12345
 })
 
+shaun_livingston.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/shaunl.jpg"), filename: "shaunl_avi.jpg")
+
+
 spencer_dinwiddie = User.create!({
     first_name: "Spencer",
     last_name: "Dinwiddie",
@@ -80,6 +99,9 @@ spencer_dinwiddie = User.create!({
     password: "password",
     zipcode: 12345
 })
+
+spencer_dinwiddie.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/spencerd.png"), filename: "spencerd_avi.png")
+
 
 caris_levert = User.create!({
     first_name: "Caris",
@@ -89,6 +111,9 @@ caris_levert = User.create!({
     zipcode: 12345
 })
 
+caris_levert.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/carisl.jpg"), filename: "carisl_avi.jpg")
+
+
 deandre_jordan = User.create!({
     first_name: "Deandre",
     last_name: "Jordan",
@@ -96,6 +121,9 @@ deandre_jordan = User.create!({
     password: "password",
     zipcode: 12345
 })
+
+deandre_jordan.avi_photo.attach(io: open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/deandrej.jpg"), filename: "deandrej_avi.jpg")
+
 
 # Campgrounds
 
@@ -355,7 +383,7 @@ end
 
 sf_a = Campground.create!({
     host_id: andre_iguodala.id,
-    name: "Peets Car Van Trailer", 
+    name: "Peets Campground", 
     location: "San Francisco", 
     price: 45, 
     latitude: 48.426412, 
@@ -396,7 +424,7 @@ end
 
 sf_b = Campground.create!({
     host_id: shaun_livingston.id,
-    name: "Blue Bottle Campground", 
+    name: "Blue Bottle Camp", 
     location: "San Francisco", 
     price: 80, 
     latitude: 48.426412, 
@@ -438,7 +466,7 @@ end
 
 sf_c = Campground.create!({
     host_id: bob_myers.id,
-    name: "Cento Steep Ravine Cabins", 
+    name: "Cento Ravine", 
     location: "San Francisco", 
     price: 72, 
     latitude: 48.426412, 
@@ -484,7 +512,7 @@ end
 
 ny_a = Campground.create!({
     host_id: spencer_dinwiddie.id,
-    name: "Reveille Valley Farm Camping", 
+    name: "Reveille Valley", 
     location: "New York", 
     price: 30, 
     latitude: 48.426412, 
@@ -512,7 +540,7 @@ ny_a = Campground.create!({
 })
 
 ny_a_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/nya/b.png",
+    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/nya/nya1.png",
     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/nya/nya2.png",
     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/nya/nya3.png",
     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/nya/nya4.png",
@@ -525,7 +553,7 @@ end
 
 ny_b = Campground.create!({
     host_id: caris_levert.id,
-    name: "Mocha Mountains Camping Ground", 
+    name: "Mocha Mountains", 
     location: "New York", 
     price: 55, 
     latitude: 48.426412, 
@@ -567,7 +595,7 @@ end
 
 ny_c = Campground.create!({
     host_id: deandre_jordan.id,
-    name: "Robusta Hidden Cabin", 
+    name: "Robusta Cabin", 
     location: "New York", 
     price: 90, 
     latitude: 48.426412, 
