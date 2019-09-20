@@ -43,7 +43,7 @@ const Greeting = (props) => {
     const myGreeting = () => (
         <div className="tent-icon">
             <div className="dropdown">
-                <img className="menu-button" src={window.tentDropUrl} />
+                <img className="menu-button" src={window.waterDropUrl} />
                 <div className="dropdown-menu">
                     <div className="drop-link-container">
                         <Link to={`/users/${currentUser.id}`}>My Account</Link>
