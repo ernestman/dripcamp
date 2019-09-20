@@ -20,9 +20,9 @@ class CampgroundShow extends React.Component {
     }
 
     render() {
-        const {campground} = this.props;
+        const {campground, hostImgUrl} = this.props;
         
-        if (!campground) {
+        if (!campground && !hostImgUrl) {
             return null;
         }
 
@@ -33,7 +33,7 @@ class CampgroundShow extends React.Component {
 
                     <div className="campground-show-2">
                         <div className="show-main">
-                            <div><CampgroundInfo campground={campground}/></div>
+                            <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div>
 
                             <div><CampgroundBuckets campground={campground}/></div>
 

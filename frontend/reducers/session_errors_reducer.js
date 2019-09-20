@@ -2,10 +2,10 @@ import {RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS} from "../actions/ses
 
 // initial state is array because that's what our errors are like
 
-const sessionErrorsReducer = (state=[], action) => {
+const sessionErrorsReducer = (state={}, action) => {
     Object.freeze(state);
     // since state is an aray, we dupe with slice
-    let nextState = state.slice();
+    let nextState = Object.assign({}, state)
 
     switch(action.type) {
         case RECEIVE_ERRORS:

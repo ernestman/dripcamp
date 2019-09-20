@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const CampgroundInfo = (props) => {
 
-    const { campground } = props;
+    const { campground, hostImgUrl } = props;
 
     return (
         <div className="show-info">
@@ -18,7 +18,7 @@ const CampgroundInfo = (props) => {
             </div>
             <div className="info-bottom">
                 <div className="show-user-icon">
-                    <h2></h2>
+                    <img src={hostImgUrl}/>
                 </div>
                 <h3>Hosted by {campground.host.first_name} {campground.host.last_name[0]}.</h3>
                 <p>{campground.description}</p>

@@ -54,6 +54,10 @@ class Campground < ApplicationRecord
         foreign_key: :host_id,
         class_name: "User"
 
+    # has_many :host_img,
+    #     through: :host,
+    #     source: :avi_photo
+
     has_many :bookings, 
         foreign_key: :campground_id,
         class_name: "Booking"

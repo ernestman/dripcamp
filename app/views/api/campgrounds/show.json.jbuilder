@@ -7,3 +7,5 @@ json.extract! @campground,
     :description, :host, :bookings
 
     json.photoUrls @campground.photos.map { |file| url_for(file) }
+
+json.hostImgUrl url_for(@campground.host.avi_photo)

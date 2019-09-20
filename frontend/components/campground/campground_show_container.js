@@ -6,9 +6,12 @@ import CampgroundShow from "./campground_show";
 const mapStateToProps = (state, ownProps) => {
     // debugger
     const campgroundId = ownProps.match.params.campId;
+    const hostImgUrl = (state.entities.campgrounds[campgroundId]) ? state.entities.campgrounds[campgroundId].hostImgUrl : "";
     // const result = state.entities.campgrounds[campgroundId];
+    // debugger
     return {
-        campground: state.entities.campgrounds[campgroundId]
+        campground: state.entities.campgrounds[campgroundId],
+        hostImgUrl: hostImgUrl
     }
 }
 
