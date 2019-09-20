@@ -23,7 +23,7 @@ class UserShow extends React.Component {
     handleDelete(bookingId) {
         // debugger
         event.preventDefault();
-        this.props.deleteBooking(bookingId)
+        this.props.destroyBooking(bookingId)
     }
 
     render() {

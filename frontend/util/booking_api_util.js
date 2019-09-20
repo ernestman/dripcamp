@@ -1,9 +1,10 @@
 
 
 export const deleteBooking = (id) => {
+    // debugger
     return $.ajax({
         method: "DELETE",
-        url: `api/bookings/${id}`
+        url: `/api/bookings/${id}`
     })
 }
 

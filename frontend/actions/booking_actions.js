@@ -14,10 +14,10 @@ export const getBooking = (booking) => {
     }
 }
 
-export const deleteBooking = (bookingId) => {
+export const deleteBooking = (booking) => {
     return {
         type: DESTROY_BOOKING,
-        bookingId
+        bookingId: booking.id
     }
 }
 
@@ -27,38 +27,38 @@ export const clearBookings = () => {
     }
 }
 
-// export const bookingErrors = (errors) => {
-//     return {
-//         type: BOOKING_ERRORS,
-//         errors
-//     }
-// }
-
-// export const clearBookErrors = () => {
-//     return {
-//         type: CLEAR_BOOK_ERRORS
-//     }
-// }
 
 export const fetchBooking = (bookingId) => (dispatch) => {
     BookingApiUtil.singleBooking(bookingId)
-        .then(
+    .then(
             booking => dispatch(getBooking(booking))
-        )
+            )
 }
 
 export const newBooking = (booking) => (dispatch) => {
     BookingApiUtil.createBooking(booking)
-        .then(
-            booking => dispatch(getBooking(booking)),
+    .then(
+        booking => dispatch(getBooking(booking)),
             errors => dispatch(bookingErrors(errors.responseJSON))
         )
-}
+    }
 
-export const destroyBooking = (bookingId) => (dispatch) => {
+    export const destroyBooking = (bookingId) => (dispatch) => {
     BookingApiUtil.deleteBooking(bookingId)
         .then(
             booking => dispatch(deleteBooking(booking))
         )
 }
     
+                // export const bookingErrors = (errors) => {
+                //     return {
+                //         type: BOOKING_ERRORS,
+                //         errors
+                //     }
+                // }
+                
+                // export const clearBookErrors = () => {
+                //     return {
+                //         type: CLEAR_BOOK_ERRORS
+                //     }
+                // }
