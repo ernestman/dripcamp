@@ -11,7 +11,7 @@ class BookingForm extends React.Component {
             booked_price: this.props.campground.price,
             checkin_date: "",
             checkout_date: "",
-            num_guests: 0
+            num_guests: this.props.campground.max_guests
         };
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInput = this.handleInput.bind(this)
@@ -41,7 +41,8 @@ class BookingForm extends React.Component {
     render() {
 
         const {campground, errors} = this.props;
-
+        const max = String(campground.max_guests);
+        // debugger
 
         return (
             <div className="book-form-container">
@@ -50,25 +51,38 @@ class BookingForm extends React.Component {
                     <p>per night</p>
                 </div>
                 <form className="book-form">
-                    <div className="book-input">
-                        <input
-                            type="date"
-                            onChange={this.handleInput("checkin_date")}
-                            // value={this.state.checkin_date}
-                            placeholder="Select date"
-                        />
-                        <input
-                            type="date"
-                            onChange={this.handleInput("checkout_date")}
-                            // value={this.state.checkout_date}
-                            placeholder="Select date"
-                        />
-                        <input
-                            type="number"
-                            onChange={this.handleInput("num_guests")}
-                            value={this.state.num_guests}
-                            placeholder="Guests"
-                        />
+                    <div className="book-input-container">
+                        <div className="input-label-container">
+                            <p id="checkin-label">Check-in</p>
+                            <p id="checkout-label">Check-out</p>
+                            <p id="guests-label">Guests</p>
+                        </div>
+                        <div className="book-input">
+                            <input
+                                id="checkin"
+                                type="date"
+                                onChange={this.handleInput("checkin_date")}
+                                value={this.state.checkin_date}
+                                placeholder="Select date"
+                            />
+                            <input
+                                id="checkout"
+                                type="date"
+                                onChange={this.handleInput("checkout_date")}
+                                value={this.state.checkout_date}
+                                placeholder="Select date"
+                            />
+                            <input
+                                id="guests"
+                                type="number"
+                                onChange={this.handleInput("num_guests")}
+                                value={this.state.num_guests}
+                                // placeholder="Guests"
+                                name="quantity"
+                                max={max}
+                                min="1"
+                            />
+                        </div>
                     </div>
                     <div className="book-bottom">
                         <h2>{campground.min_nights} nights minimum stay</h2>

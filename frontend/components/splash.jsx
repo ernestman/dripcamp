@@ -9,6 +9,7 @@ const Splash = () => {
         <div className="splash-container">
             <div className="splash-info">
                 <h1 id="splash-head">Find yourself outside.</h1>
+                {/* <h1 id="splash-head">DRIPC<span><img src={window.tempTentUrl}/></span>MP</h1> */}
                 <div id="splash-text">
                     <p>Book unique camping experiences on over <span>300,000</span> campsites, ranches, vineyards, public parks, and more.</p>
                 </div>

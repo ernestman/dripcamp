@@ -1,3 +1,35 @@
+.index-self {
+    // border: 5px solid red;
+
+}
+
+.index-head-img {
+    // border: 5px solid blue;
+    margin: 0 auto;
+    width: 98.5%;
+    background-image: url(https://dripcamp-seed.s3-us-west-1.amazonaws.com/owen.jpeg);
+    background-size: cover;
+    height: 700px;
+    
+}
+
+.index-head-img h1 {
+    padding-top: 40px;
+    font-size: 36px;
+    margin-left: 100px;
+}
+
+.index-head-img p {
+    font-size: 18px;
+    width: 390px;
+    margin-left: 100px;
+}
+
+
+
+
+
+
 .campground-index-container {
     max-width: 1060px;
     // padding: 10px 10px;

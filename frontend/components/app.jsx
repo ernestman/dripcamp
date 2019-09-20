@@ -6,6 +6,7 @@ import Header from "./header/header";
 import Footer from "./footer/footer";
 import Splash from "./splash";
 
+import CampgroundIndexSelf from "../components/campground/campground_index_self";
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import CampgroundShowContainer from "../components/campground/campground_show_container";
 import UserShowContainer from "../components/user/user_show_container";
@@ -27,7 +28,7 @@ class App extends React.Component {
                 
                         <Route exact path="/users/:userId" component={UserShowContainer} />
                         <Route exact path="/campgrounds/:campId" component={CampgroundShowContainer} />
-                        <Route exact path="/campgrounds" component={CampgroundIndexContainer} />
+                        <Route exact path="/campgrounds" component={CampgroundIndexSelf} />
                         <Route exact path="/" component={Splash} />
                     </div>
                 </main>

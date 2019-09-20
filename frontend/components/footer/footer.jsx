@@ -11,12 +11,7 @@ const Footer = () => {
                     <div className="footer-about">
                         <h2>Dripcamp is everywhere you want to camp.</h2>
                         <p>
-                            Welcome to Dripcamp! My name is Ernie and I HATE CSS.
-                            What I have learned so far is that Michelle is a beast and Elliot
-                            is a CSS master. Dolly is also a CSS connoisseur. CSS guru Owen and his pristine, golden man-bun will get you out of any styling jam, guaranteed.
-                            Also, Jason can't debug cause he can't spell but is a debugging master and finds my bugs. Carlos personifies
-                            ball-is-life. Andrew doesn't care anymore and wears rainbows to the office. I will
-                            do the same. Thanks for coming to my TED-Talk.
+                            Welcome to Dripcamp! Discover unique experiences on ranches, nature preserves, farms, vineyards, and public campgrounds across the U.S. Book tent camping, treehouses, cabins, yurts, primitive backcountry sites, car camping, airstreams, tiny houses, RV camping, glamping tents and more.
                         </p>
                     </div>
                     <div className="footer-links">
@@ -35,7 +30,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <div className="footer-bottom-content">
-                    <p>Made in California. A Hipcamp clone</p>
+                    <p>Made in California. A Hipcamp clone. By Ernie Man.</p>
                 </div>
             </div>
         </div>

@@ -1,65 +1,102 @@
 .booking-form-container {
-    border: 5px solid orange;
+    // border: 5px solid orange;
     // height: 250px; // temporary
     width: 30%;
-    height: 400px;
+    // height: 50%;
     // position: sticky;
 }
 
 .book-form-container {
-    border: 5px solid green;
-    height: 300px;
+    border: 1px solid #EBEBEB;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    // width: 100%
+    position: sticky;
 }
 
 .book-form-top {
-    border: 5px solid red;
-    height: 33%;
-    width: 100%;
+    // border: 3px solid red;
+    height: 80px;
+    // width: 100%;
 }
 
-.book-form {
-    border: 5px solid blue;
-    width: 100%;
+.book-form-top h1 {
+    margin: 10px 0 0 10px;
+    font-size: 26px;
+}
+
+.book-form-top p {
+    margin-left: 10px;
+    color: #747474;
+}
+
+// .book-input-container {
+//     border-top: 1px solid #EBEBEB;
+// }
+
+.input-label-container {
+    padding-top: 6px;
     display: flex;
-    flex-direction: column;
-    height: 66%;
+    justify-content: space-around;
+}
+
+#checkin, #checkout {
+    font-size: 10.5px;
+    padding: 4px;
+    border-right: 1px solid #EBEBEB;
 }
 
 .book-input {
-    border: 5px solid pink;
+    border-top: 1px solid #EBEBEB;
     display: flex;
-    height: 50%;
-    width: 100%;
+    justify-content: space-between;
+    height: 60px;
+    // width: 100%;
 }
 
 .book-input input {
-    height: 100%;
-    width: 33%;
+    // border: 2px solid black;
+    font-size: 18px;
+    width: 32%;
+    text-align: center;
 }
 
 .book-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 5px solid purple;
-    width: 100%;
-    height: 50%;
+    border-top: 1px solid #EBEBEB;
+    height: 110px;
+}
+
+.book-bottom h2 {
+    padding: 10px;
+    color: #525252;
 }
 
 .book-button {
     border: 4px solid #51D9AC;
    background-color: #51D9AC;
-   padding: 5px;
+//    padding: 5px;
    color: #FFFFFF;
    height: 30px;
-   width: 250px;
-   padding: 16px;
+   width: 80%;
+   padding: 14px;
    text-align: center;
-   margin-top: 30px;
+   margin: 0 0 6px 12.5px;
    font-size: 19px;
 }
 
 .book-button:hover {
-    background-color: #FFFFFF;
-   color: #51D9AC;
+        background-color: #FFFFFF;
+       color: #51D9AC;
 }
+
+// .book-bottom {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     border: 5px solid purple;
+//     width: 100%;
+//     height: 50%;
+// }
+

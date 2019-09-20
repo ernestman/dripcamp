@@ -41,14 +41,14 @@ class CampgroundShow extends React.Component {
 
                             <div><CampgroundActivities campground={campground}/></div>
 
-                            <div className="show-reviews-container">
+                            {/* <div className="show-reviews-container">
                                 <h1>Placeholder for Reviews Index</h1>
-                            </div>
+                            </div> */}
                         </div>
 
-                        <div className="booking-form-container">
-                            <div><BookingFormContainer campground={campground}/></div>
-                        </div>
+                        {/* <div className="booking-form-container"> */}
+                        <div className="booking-form-container"><BookingFormContainer campground={campground}/></div>
+                        {/* </div> */}
                     </div>
                 </div>
                 <div className="show-map-container">

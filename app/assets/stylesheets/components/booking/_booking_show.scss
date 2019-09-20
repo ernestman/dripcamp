@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 20px;
-    height: 2000px;
+    // height: 2000px;
     // text-align: center;
     // flex-wrap: wrap;
 }
@@ -23,7 +23,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     // padding: 10px;
-    // height: 100%;
+    height: 100%;
     // width: 100%;
     // display: flex;
 }
@@ -34,14 +34,16 @@
     display: flex;
     // padding: 10px;
     margin: 10px;
-    width: 30%;
+    width: 34%;
+    // height: 54%;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .booking-img {
-    height: 50%;
+    height: 46%;
     width: 100%;
+    top: 0;
 }
 
 .booking-info {
