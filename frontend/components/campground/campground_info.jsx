@@ -18,7 +18,7 @@ const CampgroundInfo = (props) => {
             </div>
             <div className="info-bottom">
                 <div className="show-user-icon">
-                    <img src={hostImgUrl}/>
+                    <img id="host-icon-img"src={hostImgUrl}/>
                 </div>
                 <h3>Hosted by {campground.host.first_name} {campground.host.last_name[0]}.</h3>
                 <p>{campground.description}</p>
