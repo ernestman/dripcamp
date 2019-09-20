@@ -16,11 +16,17 @@ class UserShow extends React.Component {
         this.props.fetchUser(this.props.currentUser.id);
     }
 
+    handleDelete(bookingId) {
+        event.preventDefault();
+        this.props.deleteBooking(bookingId)
+    }
+
     render() {
         // debugger
         const {currentUser, bookings, booked_campgrounds} = this.props;
         // debugger
-        if (currentUser === undefined) {
+        // if (!currentUser || Object.keys(currentUser).length === 0) {
+        if (!currentUser) {
             return <Redirect to="/" />
         } else {
 
@@ -33,7 +39,7 @@ class UserShow extends React.Component {
 
             // debugger
             
-            const myBookings = Object.values(bookings).map( book => (
+            const myBookings = bookings.map( book => (
                 
                     <div className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
@@ -72,6 +78,7 @@ class UserShow extends React.Component {
                     </div>
                     <div className="booking-info-container">
                         <p id="booking-header">My Bookings</p>
+
                         <div className="booking-container">
                             {myBookings}
                         </div>

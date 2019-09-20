@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 const Greeting = (props) => {
     // debugger
@@ -15,6 +15,12 @@ const Greeting = (props) => {
         event.preventDefault();
         clearErrors();
         openModal("signup")
+    }
+
+    const handleSignOut = (event) => {
+        event.preventDefault();
+        signOut()
+            .then( () => props.history.push("/"))
     }
     
     // nbsp = non breaking space
