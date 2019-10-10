@@ -27,17 +27,17 @@ const Modal = (props) => {
 
     const loginModal = (
         <div className="login-modal" onClick={e => e.stopPropagation()}>
-            <div className="login-form">
+            {/* <div className="login-form"> */}
                 <LoginContainer />
-            </div>
+            {/* </div> */}
         </div>
     );
 
     const signupModal = (
         <div className="signup-modal" onClick={e => e.stopPropagation()}>
-            <div className="signup-form">
+            {/* <div className="signup-form"> */}
                 <SignupContainer />
-            </div>
+            {/* </div> */}
         </div>
     );
     

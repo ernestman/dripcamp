@@ -72,48 +72,62 @@ class signupForm extends React.Component {
                 <h1>Join Dripcamp</h1>
                 <h2>Discover the best camping near me</h2>
                 <form>
-                    <input 
-                    type="text"
-                    onChange={this.handleInput("first_name")}
-                    value={this.state.first_name}
-                    placeholder="First name..."
-                    />
-                    <div className="errors-cont">
-                        <ul>{firstNameErrors}</ul>
-                    </div>
+                    <div id="name-input">
                         <input
-                        type="text"
-                        onChange={this.handleInput("last_name")}
-                        value={this.state.last_name}
-                        placeholder={"Last name..."}
+                            id="name" 
+                            type="text"
+                            onChange={this.handleInput("first_name")}
+                            value={this.state.first_name}
+                            placeholder="First name..."
                         />
-                    <div className="errors-cont">
+                        <input
+                            id="name" 
+                            type="text"
+                            onChange={this.handleInput("last_name")}
+                            value={this.state.last_name}
+                            placeholder={"Last name..."}
+                        />
+                    </div>
+
+                    <div id="name-errors" className="errors-cont">
+                        <ul>{firstNameErrors}</ul>
                         <ul>{lastNameErrors}</ul>
                     </div>
+
+                    <div className="session-form-input">
                         <input
-                        type="text"
-                        onChange={this.handleInput("email")}
-                        value={this.state.email}
-                        placeholder="Email address..."
+                            type="text"
+                            onChange={this.handleInput("email")}
+                            value={this.state.email}
+                            placeholder="Email address..."
                         />
+                    </div>
+
                     <div className="errors-cont">
                         <ul>{emailErrors}</ul>
                     </div>
+
+                    <div className="session-form-input">
                         <input
-                        type="password"
-                        onChange={this.handleInput("password")}
-                        value={this.state.password}
-                        placeholder="Password..."
+                            type="password"
+                            onChange={this.handleInput("password")}
+                            value={this.state.password}
+                            placeholder="Password..."
                         />
+                    </div>
+
                     <div className="errors-cont">
                         <ul>{passwordErrors}</ul>
                     </div>
+
+                    <div className="session-form-input">
                         <input
-                        type="text"
-                        onChange={this.handleInput("zipcode")}
-                        value={this.state.zipcode}
-                        placeholder="Zip code (optional)..."
+                            type="text"
+                            onChange={this.handleInput("zipcode")}
+                            value={this.state.zipcode}
+                            placeholder="Zip code (optional)..."
                         />
+                    </div>
                     <button className="login-signup-button" onClick={this.handleSubmit}>Join Dripcamp</button>
                 </form>
 

@@ -8,16 +8,16 @@
 }
 
 .dropdown img {
-   width: 40px;
-   height: 40px;
+   width: 60px;
+   height: 54px;
 }
 
 .dropdown-menu {
     font-size: 20px;
     display: none;
-    top: 40px;
+    top: 52px;
     position: absolute;
-    height: 124px;
+    height: 160px;
     width: 200px;
     right: 2px;
     // left: -149px;
@@ -39,7 +39,7 @@
     margin: 20px;
     border-bottom:1px solid #EBEBEB;
     font-size: 16px;
-    padding-bottom: 22px;
+    padding-bottom: 14px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -51,5 +51,5 @@
    display: flex;
    justify-content: flex-end;
    margin-right: 50px;
-   margin-top: 20px;
+   margin-top: 12px;
 }

@@ -17,7 +17,7 @@
     box-shadow: 0 0 10px #EBEBEB;
    display: flex;
    flex-flow: column nowrap;
-   height: 560px;
+   height: 530px;
    justify-content: space-around;
    margin: auto;
    position: relative;
@@ -42,7 +42,7 @@
     box-shadow: 0 0 10px #EBEBEB;
     display: flex;
     flex-flow: column nowrap;
-    height: 708px;
+    height: 590px;
     justify-content: space-around;
     margin: auto;
    position: relative;
@@ -61,11 +61,15 @@
 }
 
 .demo-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 4px solid #3C5A98;
     background-color: #3C5A98;
     color: #FFFFFF;
     height: 34px;
-    width: 270px;
+    width: 80%;
     padding: 16px;
     text-align: center;
     font-size: 19px;
@@ -83,7 +87,7 @@
 .or {
     font-size: 18px;
     height: 9px;
-    width: 100%;
+    width: 90%;
     color: #757575;
     margin-top: 16px;
     margin-bottom: 23px;

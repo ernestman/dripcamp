@@ -5,7 +5,8 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         # debugger
-        file = open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/waterdrop.png")
+        # image will change on reseed
+        file = open("https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/waterdrop1.png")
         # debugger
         @user.avi_photo.attach(io: file, filename: "#{@user.first_name}.png")
         if @user.save

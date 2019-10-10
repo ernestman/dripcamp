@@ -30,7 +30,7 @@ const Greeting = (props) => {
                 <i className="fab fa-github"></i>&nbsp;Github
             </a>
             &nbsp;&nbsp;&nbsp;
-            <a href="http://linkedin.com/in/ernest-man/" id="linkedin" target="_blank">
+            <a href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
                 <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
             </a>
             &nbsp;&nbsp;&nbsp;
@@ -46,7 +46,10 @@ const Greeting = (props) => {
                 <img className="menu-button" src={window.waterDropUrl} />
                 <div className="dropdown-menu">
                     <div className="drop-link-container">
-                        <Link to={`/users/${currentUser.id}`}>My Account</Link>
+                        <Link to={`/users/${currentUser.id}`}>My Trips</Link>
+                    </div>
+                    <div className="drop-link-container">
+                        Manage Account
                     </div>
                     <div className="drop-button-container">
                         <button onClick={signOut}>Logout</button>

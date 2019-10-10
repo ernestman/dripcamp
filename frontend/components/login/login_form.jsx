@@ -53,29 +53,36 @@ class loginForm extends React.Component {
             <div className="session-form">
                 <h1>Welcome back!</h1>
                 <h2>It's about time for another camping trip</h2>
-                <div className="demo-container">
-                    <button className="demo-button" onClick={this.handleDemoUser}>Demo User</button>
+                <div className="demo-button" onClick={this.handleDemoUser}>
+                    Demo User
                 </div>
                 <div className="or">
                     <span>or</span>
                 </div>
                 <form>
-                    <input
-                        type="text"
-                        onChange={this.handleInput("email")}
-                        value={this.state.email}
-                        placeholder="Email address"
+                    <div className="session-form-input">
+                        <input
+                            type="text"
+                            onChange={this.handleInput("email")}
+                            value={this.state.email}
+                            placeholder="Email address"
                         />
+                    </div>
+
                     <div className="errors-cont">
                         <ul>{myErrors}</ul>
                     </div>
-                    <input
-                        type="password"
-                        onChange={this.handleInput("password")}
-                        value={this.state.password}
-                        placeholder="Password"
+                    <div className="session-form-input">
+                        <input
+                            type="password"
+                            onChange={this.handleInput("password")}
+                            value={this.state.password}
+                            placeholder="Password"
                         />
-                    <button className="login-signup-button" onClick={this.handleSubmit}>Log In</button>
+                    </div>
+                    <div className="login-signup-button" onClick={this.handleSubmit}>
+                        Log In
+                    </div>
                 </form>
 
                 <div className="form-redirect">
