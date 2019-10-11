@@ -6,18 +6,18 @@
 .index-head-img {
     // border: 5px solid blue;
     margin: 0 auto;
-    width: 98.5%;
+    max-width: 90%;
     background-image: url(https://dripcamp-seed.s3-us-west-1.amazonaws.com/owen2.jpeg);
     // ig: @owensteven_
     background-size: cover;
-    height: 700px;
+    height: 560px;
     
 }
 
 .index-head-img h1 {
-    padding-top: 40px;
+    padding-top: 30px;
     font-size: 36px;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .index-head-img p {
@@ -36,6 +36,10 @@
 #index-title {
     margin-left: 34px;
     font-size: 34px;
+}
+
+#index-text {
+    margin-left: 34px;
 }
 
 .campground-index-main {
