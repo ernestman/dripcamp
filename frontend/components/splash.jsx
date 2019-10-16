@@ -39,6 +39,23 @@ const Splash = () => {
                 </div>
             </div>
 
+            <div className="bio-container">
+                <div className="bio-img">
+                    <img id="ernie-img" src={ernieUrl}/>
+                </div>
+                <div className="bio-info">
+                    <h1>Ernie, Software Engineer:</h1>
+                    <p>I'm a software engineer with a passion for tackling and 
+                    solving challenging problems. As a software developer, I 
+                    have enjoyed utilizing Ruby, Ruby on Rails, Javascript, 
+                    React / Redux, PostgreSQL, CSS, and HTML5 in my projects. 
+                    When I'm not coding or building cool things, you can find 
+                    me at your local 24 playing pickup basketball, or watching 
+                    the NBA and fanatically cheering for the Golden State 
+                    Warriors.</p>
+                </div>
+            </div>
+
         </div>
     )
 

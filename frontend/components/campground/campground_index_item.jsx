@@ -4,6 +4,7 @@ import {Link, withRouter} from "react-router-dom";
 const CampgroundIndexItem = (props) => {
     // debugger
     const {campground, history} = props;
+    const rating = Math.floor(Math.random() * (100 - 90) + 90);
 
     return (
         <Link to={`/campgrounds/${campground.id}`}>
@@ -22,7 +23,7 @@ const CampgroundIndexItem = (props) => {
                         history.replace("/campgrounds")
                     }}>{campground.location}</p>
                     <div className="item-bottom">
-                        <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;100%</p>
+                        <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;{rating}%</p>
                         <p id="item-price">${campground.price}/night</p>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ class UserShow extends React.Component {
             return <Redirect to="/" />
         }
 
-        this.props.clearCampgrounds();
+        // this.props.clearCampgrounds();
         this.props.clearBookings();
         this.props.fetchUser(this.props.currentUser.id);
     }
@@ -49,13 +49,26 @@ class UserShow extends React.Component {
                     <div key={book.id} className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
                         <div className="booking-info">
-                            <h1>{booked_campgrounds[book.campground_id].name}</h1>
-                            <h2>Location: &nbsp;{booked_campgrounds[book.campground_id].location}</h2>
-                            <p><span>Check-in:</span>&nbsp; {book.checkin_date}</p>
-                            <p><span>Check-out:</span>&nbsp; {book.checkout_date}</p>
-                            <p><span>Guests:</span>&nbsp; {book.num_guests}</p>
+                            <div className="booking-location">
+                                <h1>{booked_campgrounds[book.campground_id].name}</h1>
+                                <h2>{booked_campgrounds[book.campground_id].location}</h2>
+                            </div>
+                            <div className="booking-details">
+                                <div className="book-details">
+                                    <span>Check-in</span>
+                                    {new Date(book.checkin_date).toDateString().slice(4)}
+                                </div>
+                                <div className="book-details">
+                                    <span>Check-out</span>
+                                    {new Date(book.checkout_date).toDateString().slice(4)}
+                                </div>
+                                <div className="book-details">
+                                    <span>Guests</span>
+                                    {book.num_guests}
+                                </div>
+                            </div>
+                            <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel booking</button>
                         </div>
-                        <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel</button>
                     </div>
             ))
 

@@ -1,27 +1,27 @@
 .booking-form-container {
     // border: 5px solid orange;
-    // height: 250px; // temporary
     width: 30%;
     height: fit-content;
     position: sticky;
     top: 70px;
     margin-top: -80px;
     background-color: white;
-}
-
-.book-form-container {
     border: 1px solid #EBEBEB;
-    height: 290px;
+    height: 260px;
+    // height: 500px;
     display: flex;
     flex-direction: column;
+}
+
+// .book-form-container {
     // justify-content: space-between;
     // width: 100%
     // position: sticky;
-}
+// }
 
 .book-form-top {
     // border: 3px solid red;
-    height: 80px;
+    height: 60px;
     // width: 100%;
 }
 
@@ -35,20 +35,40 @@
     color: #747474;
 }
 
-// .book-input-container {
-//     border-top: 1px solid #EBEBEB;
-// }
-
-.input-label-container {
-    padding-top: 6px;
+.book-input-container {
     display: flex;
-    justify-content: space-around;
+    height: 40px;
 }
 
-#checkin, #checkout {
-    font-size: 10.5px;
-    padding: 4px;
+.book-guests {
+    width: 33%;
+    border-left: 1px solid #EBEBEB;
+}
+
+.book-guests input {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.input-label-container {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #EBEBEB;
+    // border-bottom: 1px solid #EBEBEB;
+}
+
+.input-label {
+    width: 32%;
+    // border: 3px solid gold;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#checkout-label {
     border-right: 1px solid #EBEBEB;
+    border-left: 1px solid #EBEBEB;
 }
 
 .book-input {
@@ -59,33 +79,31 @@
     // width: 100%;
 }
 
-.book-input input {
-    // border: 2px solid black;
-    font-size: 18px;
-    width: 32%;
-    text-align: center;
-}
-
 .book-bottom {
     border-top: 1px solid #EBEBEB;
     height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .book-bottom h2 {
-    padding: 10px;
     color: #525252;
+    width: 100%;
+    padding-left: 26px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .book-button {
     border: 4px solid #51D9AC;
    background-color: #51D9AC;
-//    padding: 5px;
    color: #FFFFFF;
    height: 30px;
    width: 80%;
    padding: 14px;
    text-align: center;
-   margin: 0 0 6px 12.5px;
    font-size: 19px;
 }
 
@@ -94,12 +112,15 @@
        color: #51D9AC;
 }
 
-// .book-bottom {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     border: 5px solid purple;
-//     width: 100%;
-//     height: 50%;
+// .book-input input {
+//     // border: 2px solid black;
+//     font-size: 18px;
+//     width: 32%;
+//     text-align: center;
 // }
 
+// #checkin, #checkout {
+//     font-size: 10.5px;
+//     padding: 4px;
+//     border-right: 1px solid #EBEBEB;
+// }

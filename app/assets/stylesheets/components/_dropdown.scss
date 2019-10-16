@@ -15,9 +15,9 @@
 .dropdown-menu {
     font-size: 20px;
     display: none;
-    top: 52px;
+    top: 50px;
     position: absolute;
-    height: 160px;
+    height: 168px;
     width: 200px;
     right: 4px;
     // left: -149px;
@@ -38,7 +38,7 @@
 .drop-link-container {
     margin: 20px;
     border-bottom:1px solid #EBEBEB;
-    font-size: 16px;
+    font-size: 18px;
     padding-bottom: 14px;
     box-shadow: 10px;
 }
@@ -47,10 +47,27 @@
     display: block;
 }
 
-
-.tent-icon {
+.drop-icon {
    display: flex;
    justify-content: flex-end;
-   margin-right: 58px;
-   margin-top: 18px;
+}
+
+.logged-in-header {
+    width: 230px;
+    margin-right: 86px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logged-in-link {
+     font-size: 17px !important;
+     margin-top: 8px !important;
+    border-bottom: 2px solid transparent;
+
+}
+
+.logged-in-link:hover {
+    border-bottom: 2px solid #51D9AC;
 }

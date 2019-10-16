@@ -39,7 +39,7 @@ export const newBooking = (booking) => (dispatch) => {
     BookingApiUtil.createBooking(booking)
     .then(
         booking => dispatch(getBooking(booking)),
-            errors => dispatch(bookingErrors(errors.responseJSON))
+            // errors => dispatch(bookingErrors(errors.responseJSON))
         )
     }
 

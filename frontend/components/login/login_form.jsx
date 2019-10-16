@@ -80,9 +80,9 @@ class loginForm extends React.Component {
                             placeholder="Password"
                         />
                     </div>
-                    <div className="login-signup-button" onClick={this.handleSubmit}>
+                    <button className="login-signup-button" onClick={this.handleSubmit}>
                         Log In
-                    </div>
+                    </button>
                 </form>
 
                 <div className="form-redirect">
