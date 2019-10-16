@@ -5,7 +5,6 @@ const campgroundReducer = (state={}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
-    // replace state instead of merging?
     switch(action.type) {
         case GET_CURRENT_USER :
             return Object.assign({}, state, action.payload.campgrounds)
@@ -13,7 +12,6 @@ const campgroundReducer = (state={}, action) => {
             return action.campgrounds;
         case GET_CAMPGROUND:
             nextState[action.campground.id] = action.campground;
-            // debugger
             return nextState;
         case CLEAR_CAMPGROUNDS:
             return {};

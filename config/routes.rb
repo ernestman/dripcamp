@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     resources :campgrounds, only: [:index, :show]
     resources :bookings, only: [:create, :show, :destroy]
+    resources :reviews, only: [:create, :index, :show, :destroy]
   end
 
 

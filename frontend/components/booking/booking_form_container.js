@@ -6,7 +6,6 @@ import {openModal} from "../../actions/modal_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.bookings

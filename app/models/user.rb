@@ -61,4 +61,8 @@ class User < ApplicationRecord
         through: :bookings,
         source: :campground
 
+    has_many :written_reviews,
+        foreign_key: :author_id,
+        class_name: "Review"
+
 end

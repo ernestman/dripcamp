@@ -24,12 +24,16 @@ export const clearCampgrounds = () => {
     }
 }
 
-export const fetchCampgrounds = () => (dispatch) => (
-    CampgroundApiUtil.allCampgrounds()
-        .then( (campgrounds) => dispatch(getAllCampgrounds(campgrounds)))
-)
+export const fetchCampgrounds = () => (dispatch) => {
+    return (
+        CampgroundApiUtil.allCampgrounds()
+            .then( (campgrounds) => dispatch(getAllCampgrounds(campgrounds)))
+    )
+}
 
-export const fetchCampground = (id) => (dispatch) => (
-    CampgroundApiUtil.campground(id)
-        .then( (campground) => dispatch(getCampground(campground)))
-)
+export const fetchCampground = (id) => (dispatch) => {
+    return (
+        CampgroundApiUtil.campground(id)
+            .then( (campground) => dispatch(getCampground(campground)))
+    )
+}

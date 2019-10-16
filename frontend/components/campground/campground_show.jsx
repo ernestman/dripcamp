@@ -1,12 +1,11 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import {Link} from "react-router-dom";
 
 import Carousel from "./carousel";
 import CampgroundInfo from "./campground_info";
 import CampgroundBuckets from "./campground_buckets";
 import CampgroundDetails from "./campground_details";
 import CampgroundActivities from "./campground_activities";
+import ReviewContainer from "../review/review_show_container";
 import BookingFormContainer from "../booking/booking_form_container";
 
 class CampgroundShow extends React.Component {
@@ -16,7 +15,9 @@ class CampgroundShow extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0,0)
+        this.props.clearCampgrounds();
         this.props.fetchCampground(this.props.match.params.campId);
+        this.props.fetchReviews();
     }
 
     render() {
@@ -28,18 +29,16 @@ class CampgroundShow extends React.Component {
 
         return (
             <div>
-                <Carousel photoUrls={campground.photoUrls}/>
+                {/* <Carousel photoUrls={campground.photoUrls}/> */}
                 <div className="campground-show-container">
 
                     <div className="campground-show-2">
                         <div className="show-main">
-                            <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div>
-                            <div><CampgroundBuckets campground={campground}/></div>
+                            {/* <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div> */}
+                            {/* <div><CampgroundBuckets campground={campground}/></div> */}
                             <div><CampgroundDetails campground={campground}/></div>
                             <div><CampgroundActivities campground={campground}/></div>
-                            {/* <div className="show-reviews-container">
-                                <h1>Placeholder for Reviews Index</h1>
-                            </div> */}
+                            <div><ReviewContainer campground={campground}/></div>
                         </div>
 
                         <div className="booking-form-container"><BookingFormContainer campground={campground}/></div>

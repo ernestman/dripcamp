@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import {fetchUser} from "../../actions/user_actions";
-import {clearCampgrounds} from "../../actions/campground_actions";
 import {destroyBooking, clearBookings} from "../../actions/booking_actions";
 import UserShow from "./user_show";
 
@@ -22,7 +21,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUser: (userId) => dispatch(fetchUser(userId)),
-        clearCampgrounds: () => dispatch(clearCampgrounds()),
         destroyBooking: (bookingId) => dispatch(destroyBooking(bookingId)),
         clearBookings: () => dispatch(clearBookings())
     }

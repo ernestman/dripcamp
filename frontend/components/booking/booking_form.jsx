@@ -1,9 +1,6 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
-
 import "react-dates/initialize";
-// import "react-dates/lib/css/_datepicker.css";
-
 import { DateRangePicker } from "react-dates";
 
 class BookingForm extends React.Component {
@@ -40,8 +37,7 @@ class BookingForm extends React.Component {
             }
 
             this.props.newBooking(booking)
-            this.props.history.push(`/users/${booking.user_id}`)
-            // return <Redirect to={`/users/${currentUserId}`}/>
+                .then( () => this.props.history.push(`/users/${booking.user_id}`))
         } else {
             this.props.openModal("login");
         }

@@ -1,14 +1,12 @@
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {fetchCampground} from "../../actions/campground_actions";
+import {fetchCampground, clearCampgrounds} from "../../actions/campground_actions";
+import {fetchReviews} from "../../actions/review_actions";
 import CampgroundShow from "./campground_show";
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     const campgroundId = ownProps.match.params.campId;
     const hostImgUrl = (state.entities.campgrounds[campgroundId]) ? state.entities.campgrounds[campgroundId].hostImgUrl : "";
-    // const result = state.entities.campgrounds[campgroundId];
-    // debugger
     return {
         campground: state.entities.campgrounds[campgroundId],
         hostImgUrl: hostImgUrl
@@ -17,7 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchCampground: (id) => dispatch(fetchCampground(id))
+        fetchCampground: (id) => dispatch(fetchCampground(id)),
+        fetchReviews: () => dispatch(fetchReviews()),
+        clearCampgrounds: () => dispatch(clearCampgrounds())
     }
 }
 

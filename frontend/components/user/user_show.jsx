@@ -14,8 +14,6 @@ class UserShow extends React.Component {
         if (!this.props.currentUser) {
             return <Redirect to="/" />
         }
-
-        // this.props.clearCampgrounds();
         this.props.clearBookings();
         this.props.fetchUser(this.props.currentUser.id);
     }
@@ -29,7 +27,6 @@ class UserShow extends React.Component {
     render() {
         // debugger
         const {currentUser, bookings, booked_campgrounds} = this.props;
-        // debugger
         // if (!currentUser || Object.keys(currentUser).length === 0) {
         if (!currentUser) {
             return <Redirect to="/" />

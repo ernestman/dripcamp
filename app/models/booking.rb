@@ -23,7 +23,7 @@ class Booking < ApplicationRecord
         class_name: "Campground"
 
     belongs_to :bookee,
-    foreign_key: :user_id,
-    class_name: "User"
+        foreign_key: :user_id,
+        class_name: "User"
 
 end

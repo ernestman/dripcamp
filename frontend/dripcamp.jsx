@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
-import {signup} from "./util/session_api_util";
 
-import {fetchBooking, newBooking, destroyBooking} from "./actions/booking_actions";
+import {newReview, fetchReviews, fetchReview, destroyReview} from "./actions/review_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -26,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;  
     
-    window.fetchBooking = fetchBooking;
-    window.newBooking = newBooking;
-    window.destroyBooking = destroyBooking;
-    
+    window.newReview = newReview;
+    window.fetchReviews = fetchReviews;
+    window.fetchReview = fetchReview;
+    window.destroyReview = destroyReview;
 
     ReactDOM.render(<Root store={store}/>, root);
 })
