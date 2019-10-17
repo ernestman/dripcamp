@@ -7,11 +7,9 @@ class CampgroundMap extends React.Component {
 
     componentDidMount() {
         const mapOptions = {
-            center: {
-                lat: this.props.campground.latitude,
-                lng: this.props.campground.longitude
-            },
-            zoom: 12
+            center: {lat: this.props.campground.latitude, lng: this.props.campground.longitude},
+            zoom: 12,
+            // mapTypeId: "terrain"
         }
         this.map = new google.maps.Map(this.mapNode, mapOptions)
     }
