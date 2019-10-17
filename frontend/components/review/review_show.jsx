@@ -19,7 +19,6 @@ class ReviewShow extends React.Component {
             return null;
         }
 
-        
         const myReviews = campground.reviewIds.map( id => {
             const review = reviews[id];
             const dateOptions = { month: "long", day: "numeric", year: "numeric" };

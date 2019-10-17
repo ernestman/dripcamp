@@ -8,6 +8,8 @@ import CampgroundActivities from "./campground_activities";
 import ReviewContainer from "../review/review_show_container";
 import BookingFormContainer from "../booking/booking_form_container";
 
+import CampgroundMap from "./campground_map";
+
 class CampgroundShow extends React.Component {
     constructor(props) {
         super(props);
@@ -29,13 +31,13 @@ class CampgroundShow extends React.Component {
 
         return (
             <div>
-                {/* <Carousel photoUrls={campground.photoUrls}/> */}
+                <Carousel photoUrls={campground.photoUrls}/>
                 <div className="campground-show-container">
 
                     <div className="campground-show-2">
                         <div className="show-main">
-                            {/* <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div> */}
-                            {/* <div><CampgroundBuckets campground={campground}/></div> */}
+                            <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div>
+                            <div><CampgroundBuckets campground={campground}/></div>
                             <div><CampgroundDetails campground={campground}/></div>
                             <div><CampgroundActivities campground={campground}/></div>
                             <div><ReviewContainer campground={campground}/></div>
@@ -44,9 +46,7 @@ class CampgroundShow extends React.Component {
                         <div className="booking-form-container"><BookingFormContainer campground={campground}/></div>
                     </div>
                 </div>
-                {/* <div className="show-map-container">
-                    <h1>Placeholder for Map</h1>
-                </div> */}
+                <CampgroundMap campground={campground}/>
             </div>
         )
     } 
