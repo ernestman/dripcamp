@@ -30,7 +30,7 @@
 
 .booking-main {
     border: 1px solid #EBEBEB;
-    // height: 100%;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -48,6 +48,7 @@
 }
 
 .booking-img {
+    border-radius: 4px 4px 0 0;
     height: 50%;
     width: 100%;
     top: 0;

@@ -1,7 +1,6 @@
 import React from "react";
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
-import {Link} from "react-router-dom";
-import UserShowContainer from "../components/user/user_show_container";
+import {Link, withRouter} from "react-router-dom";
 
 const Splash = () => {
 
@@ -61,4 +60,4 @@ const Splash = () => {
 
 }
 
-export default Splash;
+export default withRouter(Splash);

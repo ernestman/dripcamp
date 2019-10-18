@@ -9,11 +9,12 @@ const CampgroundInfo = (props) => {
         <div className="show-info">
             <div className="info-top">
                 <Link to="/campgrounds">{campground.location}</Link>
-                <div>
-                    <h1>{campground.name}</h1>
+                <div className="info-head">
+                    <h1>{campground.name} </h1>
+                    <i id="check-icon" className="fas fa-check-circle"></i>
                 </div>
                 <div>
-                    <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;100% <span>Recommended</span></p>
+                    <p id="item-rating"><i className="fas fa-thumbs-up"></i> 100% <span>Recommended</span></p>
                 </div>
             </div>
             <div className="info-bottom">

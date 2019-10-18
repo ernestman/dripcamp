@@ -3,7 +3,7 @@
     border-top: 1px solid #EBEBEB;
 }
 
-.review-main {
+.review-item {
     display: flex;
     // align-items: center;
     margin: 20px 0;
@@ -51,6 +51,10 @@
     font-weight: 400;
 }
 
+.review-text {
+    width: 80%;
+}
+
 
 .review-icon {
     display: flex;
@@ -85,4 +89,30 @@
 
 .review-button:hover {
     background-color: #61C79F;
+}
+
+.review-form-container {
+    padding: 24px 0;
+    border-top: 1px solid #EBEBEB;
+}
+
+.review-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 28px;
+}
+
+#form-body {
+    border-radius: 4px;
+    height: 120px;
+    width: 360px;
+    padding: 8px;
+    border: 1px solid grey;
+    font-size: 15px;
+}
+
+.review-main .review-item:last-of-type .review-body {
+        // border: 5px solid blue;
+        border-bottom: 1px solid transparent;
 }

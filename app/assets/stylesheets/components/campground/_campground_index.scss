@@ -23,7 +23,7 @@
 }
 
 .campground-index-container {
-    max-width: 1060px;
+    max-width: 1080px;
     // padding: 10px 10px;
     margin: 20px auto;
     // font-size: 40px;
@@ -55,10 +55,10 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #EBEBEB;
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: 0 0 5px #EBEBEB;
     height: 280px;
-    width: 300px;
+    width: 338px;
     margin: 10px;
 }
 
@@ -70,6 +70,7 @@
 .item-image img {
     height: 100%;
     width: 100%;
+    border-radius: 4px 4px 0 0;
 }
 
 .item-info {
@@ -83,18 +84,29 @@
 .item-info-top {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     font-size: 24px;
     font-weight: 500;
     padding: 10px 10px 0 10px;
     // padding-top: 10px;
 }
 
-// .item-info-top h1 {
-// }
+.item-info-head {
+    display: flex;
+}
+
+.item-info-head span {
+    font-size: 16px;
+}
+
+#check-icon {
+    color: #4299FB;
+}
 
 .item-info-top h1 {
     font-size: 24px;
     font-weight: 400;
+    margin-right: 3px;
 }
 
 .item-info-top img {
@@ -102,17 +114,11 @@
     width: 30px;
 }
 
-
-// .campground-item:hover .item-info{
-//     background-color: #F9F9F9;
-// }
-
-
-
 #item-loc {
     width: 40%;
     padding-left: 10px;
     padding-bottom: 10px;
+    margin-top: -5px;
     color: #757575;
 }
 
@@ -131,6 +137,12 @@
     justify-content: space-between;
 }
 
+.item-bottom-2 {
+    display: flex;
+    align-items: baseline;
+    color: #757575;
+}
+
 .item-bottom i {
     color: #51D9AC;
 }
@@ -138,7 +150,7 @@
 #item-rating {
     color: #51D9AC;
     // font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     padding-left: 10px;
 }
 

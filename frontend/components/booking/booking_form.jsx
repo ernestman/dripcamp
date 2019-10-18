@@ -37,7 +37,8 @@ class BookingForm extends React.Component {
             }
 
             this.props.newBooking(booking)
-                .then( () => this.props.history.push(`/users/${booking.user_id}`))
+            this.props.history.push(`/users/${booking.user_id}`)
+                // .then( () => this.props.history.push(`/users/${booking.user_id}`))
         } else {
             this.props.openModal("login");
         }

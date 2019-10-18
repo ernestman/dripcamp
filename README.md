@@ -43,3 +43,5 @@ Dripcamp was built with the Ruby on Rails backend framework. All of the data was
 ### Google Maps
 - The campground show page incorporates the Google Maps API, showing users its exact location
 - The location marker was added using Google Maps Circles, using a campground's latitutde and longitude to render a marker at those coordinates
+
+<img src="app/assets/demos/campgroundmap.png" align="center"></img>

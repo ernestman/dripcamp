@@ -14,9 +14,6 @@ import UserShowContainer from "../components/user/user_show_container";
 // don't need routes for login and signup b/c modal
 class App extends React.Component {
     render() {
-
-        // <Route path="/" component={} />
-        
         return (
             <div className="sensei">
                 <header>

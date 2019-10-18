@@ -6,6 +6,7 @@
             :toilets, :pets, :wifi, :bins, :potable_water, :showers,
             :picnic_table, :kitchen, :activities, :checkin_time, :checkout_time,
             :description, :host, :bookings
+        json.reviewIds campground.reviews.map { |review| review.id }
         json.photoUrls campground.photos.map { |file| url_for(file) }
     end
 end
