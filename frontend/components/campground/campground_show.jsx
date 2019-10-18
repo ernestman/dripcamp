@@ -32,14 +32,14 @@ class CampgroundShow extends React.Component {
 
         return (
             <div>
-                {/* <Carousel photoUrls={campground.photoUrls}/> */}
+                <Carousel photoUrls={campground.photoUrls}/>
                 <div className="campground-show-container">
 
                     <div className="campground-show-2">
                         <div className="show-main">
                             <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div>
-                            {/* <div><CampgroundBuckets campground={campground}/></div> */}
-                            {/* <div><CampgroundDetails campground={campground}/></div> */}
+                            <div><CampgroundBuckets campground={campground}/></div>
+                            <div><CampgroundDetails campground={campground}/></div>
                             <div><CampgroundActivities campground={campground}/></div>
                             <div><ReviewContainer campground={campground}/></div>
                         </div>
