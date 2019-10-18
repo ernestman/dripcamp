@@ -3,6 +3,10 @@
     border-top: 1px solid #EBEBEB;
 }
 
+#num-reviews {
+    padding-bottom: 20px;
+}
+
 .review-item {
     display: flex;
     // align-items: center;
@@ -115,4 +119,8 @@
 .review-main .review-item:last-of-type .review-body {
         // border: 5px solid blue;
         border-bottom: 1px solid transparent;
+}
+
+.review-main .review-item:first-child {
+    margin: 0;
 }

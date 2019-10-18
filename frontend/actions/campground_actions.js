@@ -11,10 +11,10 @@ export const getAllCampgrounds = (campgrounds) => {
     }
 }
 
-export const getCampground = (campground) => {
+export const getCampground = (payload) => {
     return {
         type: GET_CAMPGROUND,
-        campground
+        payload
     }
 }
 
@@ -34,6 +34,6 @@ export const fetchCampgrounds = () => (dispatch) => {
 export const fetchCampground = (id) => (dispatch) => {
     return (
         CampgroundApiUtil.campground(id)
-            .then( (campground) => dispatch(getCampground(campground)))
+            .then( payload => dispatch(getCampground(payload)))
     )
 }

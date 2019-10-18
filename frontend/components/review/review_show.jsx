@@ -36,6 +36,7 @@ class ReviewShow extends React.Component {
             }
 
             this.props.newReview(writtenReview);
+            this.setState({ body: "" })
 
         } else {
             this.props.openModal("login")
@@ -46,22 +47,15 @@ class ReviewShow extends React.Component {
         
         const {campground, reviews, currentUserId} = this.props;
 
-        if (!campground.reviewIds || Object.keys(reviews).length === 0) {
-            return null;
-        }
-
-        const myReviews = campground.reviewIds.map( id => {
-            const review = reviews[id];
+        const myReviews = reviews.map( review => {
             const dateOptions = { month: "long", day: "numeric", year: "numeric" };
             const deleteButton = (review && currentUserId && currentUserId === review.author_id) ? (
-                <div className="review-button" onClick={() => this.handleDelete(id)}>Remove</div>
+                <div className="review-button" onClick={() => this.handleDelete(review.id)}>Remove</div>
             ) : (
                 <div></div>
             )
-            if (!review) return null;
-
             return (
-                <div key={id} className="review-item">
+                <div key={review.id} className="review-item">
                     <div className="review-avi">
                         <img id="review-img" src={review.photoUrl}/>
                     </div>
@@ -89,7 +83,7 @@ class ReviewShow extends React.Component {
 
         return (
             <div className="reviews-container">
-                <h1>{myReviews.length} {myReviews.length === 1 ? "Written review" : "Written reviews"}</h1>
+                <h1 id="num-reviews">{myReviews.length} {myReviews.length === 1 ? "Written review" : "Written reviews"}</h1>
                 <div className="review-main">{myReviews}</div>
                 <div className="review-form-container">
                     <h1>Write a review</h1>
@@ -97,6 +91,7 @@ class ReviewShow extends React.Component {
                         <textarea
                             id="form-body"
                             onChange={this.handleInput}
+                            value={this.state.body}
                             cols="30"
                             rows="10"
                             placeholder="Talk about your experience..."

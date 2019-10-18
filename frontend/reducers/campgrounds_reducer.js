@@ -11,8 +11,9 @@ const campgroundReducer = (state={}, action) => {
         case GET_ALL_CAMPGROUNDS:
             return action.campgrounds;
         case GET_CAMPGROUND:
-            nextState[action.campground.id] = action.campground;
-            return nextState;
+            // nextState[action.campground.id] = action.campground;
+            return Object.assign({}, state, action.payload.campgrounds)
+            // return nextState;
         case CLEAR_CAMPGROUNDS:
             return {};
         default:

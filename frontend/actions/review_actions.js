@@ -3,6 +3,7 @@ import * as ReviewApiUtil from "../util/review_api_util";
 export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
 export const GET_REVIEW = "GET_REVIEW";
 export const DESTROY_REVIEW = "DESTROY_REVIEW";
+export const CLEAR_REVIEWS = "CLEAR_REVIEWS"
 
 export const getAllReviews = (reviews) => {
     return {
@@ -22,6 +23,12 @@ export const deleteReview = (review) => {
     return {
         type: DESTROY_REVIEW,
         reviewId: review.id
+    }
+}
+
+export const clearReviews = () => {
+    return {
+        type: CLEAR_REVIEWS
     }
 }
 

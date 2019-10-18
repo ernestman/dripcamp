@@ -20,7 +20,8 @@ class CampgroundShow extends React.Component {
         window.scrollTo(0,0)
         this.props.clearCampgrounds();
         this.props.fetchCampground(this.props.match.params.campId);
-        this.props.fetchReviews();
+        // this.props.fetchReviews();
+        this.props.clearReviews();
     }
 
     render() {
@@ -32,13 +33,13 @@ class CampgroundShow extends React.Component {
 
         return (
             <div>
-                <Carousel photoUrls={campground.photoUrls}/>
+                {/* <Carousel photoUrls={campground.photoUrls}/> */}
                 <div className="campground-show-container">
 
                     <div className="campground-show-2">
                         <div className="show-main">
-                            <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div>
-                            <div><CampgroundBuckets campground={campground}/></div>
+                            {/* <div><CampgroundInfo campground={campground} hostImgUrl={hostImgUrl}/></div> */}
+                            {/* <div><CampgroundBuckets campground={campground}/></div> */}
                             <div><CampgroundDetails campground={campground}/></div>
                             <div><CampgroundActivities campground={campground}/></div>
                             <div><ReviewContainer campground={campground}/></div>

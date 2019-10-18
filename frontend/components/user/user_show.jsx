@@ -15,6 +15,7 @@ class UserShow extends React.Component {
             return <Redirect to="/" />
         }
         this.props.clearBookings();
+        this.props.clearCampgrounds();
         this.props.fetchUser(this.props.currentUser.id);
     }
 
@@ -42,7 +43,7 @@ class UserShow extends React.Component {
             // debugger
             
             const myBookings = bookings.map( book => (
-                
+    
                     <div key={book.id} className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
                         <div className="booking-info">

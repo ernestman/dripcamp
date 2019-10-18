@@ -5,7 +5,7 @@ import {openModal} from "../../actions/modal_actions";
 
 const mapStateToProps = (state) => {
     return {
-        reviews: state.entities.reviews,
+        reviews: Object.values(state.entities.reviews),
         currentUserId: state.session.id
     }
 }
