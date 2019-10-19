@@ -11,12 +11,6 @@ class ReviewShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if ( Object.keys(this.props.reviews).length !== Object.keys(prevProps.reviews).length ) {
-    //         this.props.fetchReviews();
-    //     }
-    // }
-
     handleDelete(reviewId) {
         event.preventDefault();
         this.props.destroyReview(reviewId);

@@ -1,10 +1,4 @@
 
-export const allReviews = () => {
-    return $.ajax({
-        method: "GET",
-        url: "/api/reviews"
-    })
-}
 
 export const singleReview = (id) => {
     return $.ajax({

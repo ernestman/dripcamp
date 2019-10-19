@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBarContainer from "../components/search/search_bar_container";
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import {Link, withRouter} from "react-router-dom";
 
@@ -12,8 +13,8 @@ const Splash = () => {
                     <p>Book unique camping experiences on over <span>300,000</span> campsites, ranches, vineyards, public parks, and more.</p>
                 </div>
             </div>
-
-            <CampgroundIndexContainer />
+            <SearchBarContainer/>
+            <CampgroundIndexContainer/>
     
             <div className="large-icon-container">
                 {/* <h1>Temporary Container for Big Icons</h1> */}

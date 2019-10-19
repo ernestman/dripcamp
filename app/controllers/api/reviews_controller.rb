@@ -11,10 +11,6 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
-    def index
-        @reviews = Review.all
-    end
-
     def show
         @review = Review.find(params[:id])
     end
@@ -34,7 +30,5 @@ class Api::ReviewsController < ApplicationController
             :author_id, :campground_id, :body
         )
     end 
-
-
 
 end

@@ -1,16 +1,16 @@
 import * as ReviewApiUtil from "../util/review_api_util";
 
-export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
+// export const GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
 export const GET_REVIEW = "GET_REVIEW";
 export const DESTROY_REVIEW = "DESTROY_REVIEW";
 export const CLEAR_REVIEWS = "CLEAR_REVIEWS"
 
-export const getAllReviews = (reviews) => {
-    return {
-        type: GET_ALL_REVIEWS,
-        reviews
-    }
-}
+// export const getAllReviews = (reviews) => {
+//     return {
+//         type: GET_ALL_REVIEWS,
+//         reviews
+//     }
+// }
 
 export const getReview = (review) => {
     return {
@@ -36,12 +36,6 @@ export const newReview = (review) => (dispatch) => {
     return (
         ReviewApiUtil.createReview(review)
             .then( review => dispatch(getReview(review)) )
-    )
-}
-export const fetchReviews = () => (dispatch) => {
-    return (
-        ReviewApiUtil.allReviews()
-            .then( reviews => dispatch(getAllReviews(reviews)) )
     )
 }
 

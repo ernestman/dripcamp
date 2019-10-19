@@ -39,14 +39,11 @@
 }
 
 .campground-index-main {
-//    border: 5px solid orange;
    height: 100%;
    margin: 0px auto;
-//    max-width: 1060px;
     width: 100%;
-   padding: 10px 10px;
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    flex-wrap: wrap;
 
 }
@@ -56,7 +53,8 @@
     flex-direction: column;
     border: 1px solid #EBEBEB;
     border-radius: 4px;
-    box-shadow: 0 0 5px #EBEBEB;
+    box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
+    // box-shadow: 0 0 5px #EBEBEB;
     height: 280px;
     width: 338px;
     margin: 10px;

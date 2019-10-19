@@ -6,8 +6,6 @@ const reviewsReducer = (state={}, action) => {
     let nextState = Object.assign({}, state);
 
     switch(action.type) {
-        case GET_ALL_REVIEWS:
-            return action.reviews;
         case GET_CAMPGROUND:
             return Object.assign({}, state, action.payload.reviews)
         case GET_REVIEW:
