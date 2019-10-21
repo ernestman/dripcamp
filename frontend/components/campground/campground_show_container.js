@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchCampground: (id) => dispatch(fetchCampground(id)),
-        fetchReviews: () => dispatch(fetchReviews()),
         clearCampgrounds: () => dispatch(clearCampgrounds()),
         clearReviews: () => dispatch(clearReviews())
     }

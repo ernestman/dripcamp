@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
                         <i id="search-icon" className="fas fa-search fa-lg"></i>
                         <input
                             id="search-input"
-                            type="text"
+                            type="search"
                             placeholder="Search..."
                         />
                     </div>

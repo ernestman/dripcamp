@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;  
     
     window.newReview = newReview;
-    window.fetchReviews = fetchReviews;
     window.fetchReview = fetchReview;
     window.destroyReview = destroyReview;
 

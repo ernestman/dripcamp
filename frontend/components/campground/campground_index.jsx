@@ -14,24 +14,51 @@ class CampgroundIndex extends React.Component{
     
     render() {
         const {campgrounds} = this.props;
-
-        const campgroundsIndex = campgrounds.map( campground => (      
-            <CampgroundIndexItem
-                key={campground.id}
-                campground={campground}
-            />
-        ))
+        const seattle = campgrounds.filter( campground => campground.location === "Seattle")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
+        const sf = campgrounds.filter( campground => campground.location === "San Francisco")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
+        const ny = campgrounds.filter( campground => campground.location === "New York")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
 
         return (
             <div className="campground-index-container">
-                <h1 id="index-title">Discover Camping</h1>
-                <h3 id="index-text">Find your next adventure:</h3>
+                <h1 id="index-title">Discover Dripcamps</h1>
+                <h3 id="index-text">Washington - Seattle</h3>
                 <div className="campground-index-main">
-                    {campgroundsIndex}
-                    <i aria-hidden="true" className="filler-item"></i>
-                    <i aria-hidden="true" className="filler-item"></i>
-                    {/* <i aria-hidden="true" className="filler-item"></i> */}
+                    {seattle}
                 </div>
+
+                <h3 id="index-text">California - San Francisco</h3>
+                <div className="campground-index-main">
+                    {sf}
+                </div>
+
+                <h3 id="index-text">New York - New York</h3>
+                <div className="campground-index-main">
+                    {ny}
+                </div>
+                {/* <i aria-hidden="true" className="filler-item"></i>
+                <i aria-hidden="true" className="filler-item"></i>
+                <i aria-hidden="true" className="filler-item"></i> */}
             </div>
         )
     }

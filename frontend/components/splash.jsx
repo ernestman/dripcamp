@@ -1,7 +1,8 @@
 import React from "react";
 import SearchBarContainer from "../components/search/search_bar_container";
-import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import {Link, withRouter} from "react-router-dom";
+import CampgroundIndexContainer from "../components/campground/campground_index_container";
+import CampgroundSplashContainer from "../components/campground/campground_splash_container";
 
 const Splash = () => {
 
@@ -14,7 +15,8 @@ const Splash = () => {
                 </div>
             </div>
             <SearchBarContainer/>
-            <CampgroundIndexContainer/>
+            {/* <CampgroundIndexContainer/> */}
+            <CampgroundSplashContainer />
     
             <div className="large-icon-container">
                 {/* <h1>Temporary Container for Big Icons</h1> */}
@@ -35,7 +37,7 @@ const Splash = () => {
                     <div className="large-icon-text">
                         <p>Unlocking access to incredible new places to camp</p>
                     </div>
-                    <Link to="/campgrounds">Discover camps</Link>
+                    <Link to="/campgrounds">Discover Dripcamps</Link>
                 </div>
             </div>
 
@@ -45,7 +47,7 @@ const Splash = () => {
                 </div>
                 <div className="bio-info">
                     <h1>Ernie, Software Engineer:</h1>
-                    <p>I'm a software engineer with a passion for tackling and 
+                    <p>Hi! I'm Ernie, a software engineer with a passion for tackling and 
                     solving challenging problems. As a software developer, I 
                     have enjoyed utilizing Ruby, Ruby on Rails, Javascript, 
                     React / Redux, PostgreSQL, CSS, and HTML5 in my projects. 
