@@ -1,9 +1,10 @@
 
 
-export const allCampgrounds = () => {
+export const allCampgrounds = (filters) => {
     return $.ajax({
         method: "GET",
-        url: "/api/campgrounds"
+        url: "/api/campgrounds",
+        data: filters
     })
 }
 

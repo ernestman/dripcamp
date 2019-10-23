@@ -9,7 +9,7 @@ import CampgroundActivities from "./campground_activities";
 import ReviewContainer from "../review/review_show_container";
 import BookingFormContainer from "../booking/booking_form_container";
 
-import CampgroundMap from "./campground_map";
+import CampgroundMap from "../map/campground_map";
 
 class CampgroundShow extends React.Component {
     constructor(props) {
@@ -20,7 +20,6 @@ class CampgroundShow extends React.Component {
         window.scrollTo(0,0)
         this.props.clearCampgrounds();
         this.props.fetchCampground(this.props.match.params.campId);
-        // this.props.fetchReviews();
         this.props.clearReviews();
     }
 

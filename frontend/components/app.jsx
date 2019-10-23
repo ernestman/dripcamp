@@ -7,9 +7,9 @@ import Footer from "./footer/footer";
 import Splash from "./splash";
 
 import CampgroundIndexSelf from "../components/campground/campground_index_self";
-import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import CampgroundShowContainer from "../components/campground/campground_show_container";
 import UserShowContainer from "../components/user/user_show_container";
+import SearchIndexContainer from "../components/search/search_index_container";
 
 // don't need routes for login and signup b/c modal
 class App extends React.Component {
@@ -22,10 +22,10 @@ class App extends React.Component {
 
                 <main>
                     <div className="senpai">
-                
                         <Route exact path="/users/:userId" component={UserShowContainer} />
                         <Route exact path="/campgrounds/:campId" component={CampgroundShowContainer} />
                         <Route exact path="/campgrounds" component={CampgroundIndexSelf} />
+                        <Route path="/search" component={SearchIndexContainer} />
                         <Route exact path="/" component={Splash} />
                     </div>
                 </main>

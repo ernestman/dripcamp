@@ -29,6 +29,7 @@
 #  description   :text             not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  rating        :integer
 #
 
 require 'test_helper'

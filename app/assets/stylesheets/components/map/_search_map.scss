@@ -1,0 +1,30 @@
+.search-index-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 94%;
+    margin: 0 auto;
+}
+
+.search-index {
+    width: 58%;
+    margin-top: 20px;
+}
+
+.search-index-main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.search-map-container {
+    // position: sticky;
+    height: 700px;
+    width: 40%;
+    // position: fixed;
+}
+
+.search-map {
+    height: 100%;
+    width: 100%;
+}

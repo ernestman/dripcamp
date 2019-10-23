@@ -24,9 +24,9 @@ export const clearCampgrounds = () => {
     }
 }
 
-export const fetchCampgrounds = () => (dispatch) => {
+export const fetchCampgrounds = (filters) => (dispatch) => {
     return (
-        CampgroundApiUtil.allCampgrounds()
+        CampgroundApiUtil.allCampgrounds(filters)
             .then( (campgrounds) => dispatch(getAllCampgrounds(campgrounds)))
     )
 }

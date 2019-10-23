@@ -86,8 +86,12 @@
 }
 
 .bio-info {
-    text-align: center;
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 500px;
+    margin-top: 20px;
 }
 
 .bio-info h1 {
@@ -106,4 +110,23 @@
     width: 350px;
     height: 350px;
     border-radius: 4px;
+}
+
+.bio-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border: 3px solid #51D9AC;
+    margin-top: 10px;
+    border-radius: 2px;
+    background: #51D9AC;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.bio-link:hover {
+    background: #FFFFFF;
+    color: #51d9ac;
 }

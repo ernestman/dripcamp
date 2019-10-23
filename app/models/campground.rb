@@ -29,13 +29,15 @@
 #  description   :text             not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  rating        :integer
 #
 
 class Campground < ApplicationRecord
 
     validates :host_id, :name, :location, :price, :latitude, :longitude,
-        :min_nights, :max_guests, :num_sites, :activities, :checkin_time, :checkout_time, :description, 
-        presence: true
+        :min_nights, :max_guests, :num_sites, :activities, :checkin_time, 
+        :checkout_time, :description, presence: true
+        
     validates :cabin, inclusion: { in: [true, false] }
     validates :parking, inclusion: { in: [true, false] }
     validates :campfires, inclusion: { in: [true, false] }
@@ -62,4 +64,32 @@ class Campground < ApplicationRecord
         foreign_key: :campground_id,
         class_name: "Review"
     
+    def in_bounds(bounds)
+        # bounds = {
+        #   "northEast"=> {"lat"=>"37.80971", "lng"=>"-122.39208"},
+        #   "southWest"=> {"lat"=>"37.74187", "lng"=>"-122.47791"}
+        # }
+
+        # lat = horizontal, lng = vertical
+
+        top = bounds["northEast"]["lat"].to_f
+        right = bounds["northEast"]["lng"].to_f
+        bottom = bounds["southWest"]["lat"].to_f
+        left = bounds["southWest"]["lng"].to_f
+        
+        if (self.latitude < top && self.latitude > bottom) && (self.longitude > left && self.longitude < right)
+
+
+            return true
+        end
+
+        return false
+
+        # self.where("lat < ?", bounds[:northEast][:lat])
+        #     .where("lat > ?", bounds[:southWest][:lat])
+        #     .where("lng > ?", bounds[:southWest][:lng])
+        #     .where("lng < ?", bounds[:northEast][:lng])
+    end
+
+
 end

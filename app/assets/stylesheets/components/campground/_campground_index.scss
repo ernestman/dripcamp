@@ -29,6 +29,12 @@
     // font-size: 40px;
 }
 
+@media (max-width: 1100px) {
+    .campground-index-container {
+        max-width: 780px;
+    }
+}
+
 #index-title {
     margin-left: 10px;
     margin-bottom: 6px;

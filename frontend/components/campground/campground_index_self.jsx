@@ -3,9 +3,6 @@ import CampgroundIndexContainer from "./campground_index_container";
 
 const CampgroundIndexSelf = () => {
 
-
-
-
     return (
         <div className="index-self">
             <div className="index-head-img">

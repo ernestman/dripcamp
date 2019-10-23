@@ -39,9 +39,41 @@ class CampgroundIndex extends React.Component{
             )
         )
 
+        const la = campgrounds.filter( campground => campground.location === "Los Angeles")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
+
+        const chicago = campgrounds.filter( campground => campground.location === "Chicago")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
+
+        const denver = campgrounds.filter( campground => campground.location === "Denver")
+            .map( campground => (
+                <CampgroundIndexItem
+                    key={campground.id}
+                    campground={campground}
+                />
+            )
+        )
+
+
+
+        
+
         return (
             <div className="campground-index-container">
                 <h1 id="index-title">Discover Dripcamps</h1>
+                
                 <h3 id="index-text">Washington - Seattle</h3>
                 <div className="campground-index-main">
                     {seattle}
@@ -56,6 +88,24 @@ class CampgroundIndex extends React.Component{
                 <div className="campground-index-main">
                     {ny}
                 </div>
+
+                <h3 id="index-text">California - Los Angeles</h3>
+                <div className="campground-index-main">
+                    {la}
+                </div>
+
+                <h3 id="index-text">Illinois - Chicago</h3>
+                <div className="campground-index-main">
+                    {chicago}
+                </div>
+
+                <h3 id="index-text">Colorado - Denver</h3>
+                <div className="campground-index-main">
+                    {denver}
+                </div>
+
+
+
                 {/* <i aria-hidden="true" className="filler-item"></i>
                 <i aria-hidden="true" className="filler-item"></i>
                 <i aria-hidden="true" className="filler-item"></i> */}
