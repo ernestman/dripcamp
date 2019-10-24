@@ -29,7 +29,7 @@
     margin: 0 12px;
 }
 
-#search-input {
+.search-input {
     font-size: 20px;
     font-weight: 400;
     color: #808080;
@@ -37,7 +37,7 @@
     margin-top: 4px;
 }
 
-#search-input::placeholder {
+.search-input::placeholder {
     color: #808080;
     font-weight: 400;
 }
@@ -80,9 +80,22 @@
     margin-top: 14px;
 }
 
-#header-search-input {
+.header-search-input {
     width: 310px;
     height: 36px;
     font-size: 16px;
     color: #808080;
+}
+
+.pac-container {
+    height: 200px;
+}
+
+.pac-item {
+    line-height: 39px;
+    font-size: 14px;
+}
+
+.pac-item-query {
+    font-size: 16px;
 }

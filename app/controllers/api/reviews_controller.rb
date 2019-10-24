@@ -15,6 +15,16 @@ class Api::ReviewsController < ApplicationController
         @review = Review.find(params[:id])
     end
 
+    def update
+        @review = Review.find(params[:id])
+
+        if @review.update_attributes(review_params)
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 401
+        end
+    end
+
     def destroy
         @review = Review.find(params[:id])
 

@@ -23,6 +23,12 @@ class CampgroundShow extends React.Component {
         this.props.clearReviews();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.userId !== this.props.userId) {
+            this.props.fetchCampground(this.props.match.params.campId)
+        }
+    }
+
     render() {
         const {campground, hostImgUrl} = this.props;
         

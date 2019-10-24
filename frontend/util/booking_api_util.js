@@ -14,6 +14,14 @@ export const singleBooking = (id) => {
     })
 }
 
+// export const updateBooking = (booking) => {
+//     return $.ajax({
+//         method: "PATCH",
+//         url: `/api/bookings/${booking.id}`,
+//         data: {booking}
+//     })
+// }
+
 export const deleteBooking = (id) => {
     // debugger
     return $.ajax({

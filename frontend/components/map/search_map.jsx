@@ -32,15 +32,20 @@ class SearchMap extends React.Component {
                 lat: lat,
                 lng: lng
             },
-            zoom: 8
+            zoom: 8,
+            // mapTypeId: "terrain"
         }
 
         this.map = new google.maps.Map(this.mapNode, mapOptions)
 
         this.idleEventListener();
 
+        const pin = {
+            url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"
+        }
         const centerPin = new google.maps.Marker({
-            position: {lat, lng}
+            position: {lat, lng},
+            // icon: pin
         })
         centerPin.setMap(this.map) 
 

@@ -31,6 +31,8 @@ class UserShow extends React.Component {
         // if (!currentUser || Object.keys(currentUser).length === 0) {
         if (!currentUser) {
             return <Redirect to="/" />
+        } else if (Object.keys(booked_campgrounds).length <= 1) {
+            return null;
         } else {
 
             const months = [
@@ -40,8 +42,6 @@ class UserShow extends React.Component {
             const month = months[joinDate.getMonth()];
             const year = joinDate.getFullYear().toString();
 
-            // debugger
-            
             const myBookings = bookings.map( book => (
     
                     <div key={book.id} className="booking-main">
@@ -65,7 +65,7 @@ class UserShow extends React.Component {
                                     {book.num_guests}
                                 </div>
                             </div>
-                            <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel booking</button>
+                            <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel</button>
                         </div>
                     </div>
             ))

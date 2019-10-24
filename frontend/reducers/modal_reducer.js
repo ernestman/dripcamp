@@ -1,20 +1,24 @@
 import {OPEN_MODAL, CLOSE_MODAL} from "../actions/modal_actions";
 
-const modalReducer = (state=null, action) => {
+const initialState = {
+    modal: ""
+}
+
+const modalReducer = (state=initialState, action) => {
     Object.freeze(state);
     let nextState = state;
 
     switch(action.type) {
         case OPEN_MODAL:
-            return action.modal;
+            // nextState["modal"] = action.modal;
+            return Object.assign({}, state, {modal: action.modal, data: action.data})
+            // return nextState;
         case CLOSE_MODAL:
-            nextState = null;
+            nextState = "";
             return nextState;
         default:
             return state;
     }
-
-
 
 }
 

@@ -1,7 +1,6 @@
 class Api::BookingsController < ApplicationController
 
     before_action :require_logged_in
-    # commented out for testing
 
     def create
         @booking = Booking.new(booking_params)
@@ -9,25 +8,30 @@ class Api::BookingsController < ApplicationController
 
         if @booking.save 
             render :show
-            # render "api/users/show"
         else
             render json: @booking.errors.full_messages, status: 401
         end
     end
 
-    # def index
-        # debugger
-    #     @bookings = current_user.bookings
-    # end
-
     def show
         @booking = current_user.bookings.find(params[:id])
-        # @booking = Booking.find(params[:id])
+    end
+
+    # def edit
+    #     @booking = currentUser.bookings.find(params[:id])
+    # end
+
+    def update
+        @booking = currentUser.bookings.find(params[:id])
+
+        if @booking.update_attributes(booking_params)
+            render :show
+        else
+            render json: @booking.errors.full_messages, status: 401
+        end
     end
     
     def destroy
-        # debugger
-        # debugger
         @booking = Booking.find(params[:id])
         
         @booking.destroy

@@ -27,7 +27,7 @@ const Splash = () => {
                     <p>
                     Hi! I'm Ernie, a software engineer with a passion for tackling and
                     solving challenging problems. As a software developer, I
-                    have enjoyed utilizing Ruby, Ruby on Rails, Javascript,
+                    have enjoyed utilizing Ruby on Rails, Javascript,
                     React / Redux, PostgreSQL, CSS, and HTML5 in my projects.
                     When I'm not coding or building cool things, you can find
                     me at your local 24 playing pickup basketball, or watching

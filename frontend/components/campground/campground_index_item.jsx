@@ -5,7 +5,6 @@ import Carousel from "nuka-carousel";
 const CampgroundIndexItem = (props) => {
     // debugger
     const {campground, history} = props;
-    const rating = Math.floor(Math.random() * (100 - 90) + 90);
 
     if (!campground.reviewIds) {
         return null;
@@ -33,6 +32,8 @@ const CampgroundIndexItem = (props) => {
         else if (campground.location === "San Francisco") locationUrl = sfUrl;
         else if (campground.location === "New York") locationUrl = nyUrl;
 
+        // debugger
+
         return (
             <div className="campground-item">
                 <div className="item-image">
@@ -54,7 +55,7 @@ const CampgroundIndexItem = (props) => {
                     }}>{campground.location}</p>
                     <div className="item-bottom">
                         <div className="item-bottom-2">
-                            <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;{rating}%</p>
+                            <p id="item-rating"><i className="fas fa-thumbs-up"></i>&nbsp;{campground.rating}%</p>
                             &nbsp;- {campground.reviewIds.length} {campground.reviewIds.length === 1 ? "Review" : "Reviews"}
                         </div>
                         <p id="item-price">${campground.price}/night</p>

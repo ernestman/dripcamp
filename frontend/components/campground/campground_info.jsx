@@ -14,7 +14,7 @@ const CampgroundInfo = (props) => {
                     <i id="check-icon" className="fas fa-check-circle"></i>
                 </div>
                 <div>
-                    <p id="item-rating"><i className="fas fa-thumbs-up"></i> 100% <span>Recommended</span></p>
+                    <p id="item-rating"><i className="fas fa-thumbs-up"></i> {campground.rating}% <span>Recommended</span></p>
                 </div>
             </div>
             <div className="info-bottom">

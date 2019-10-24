@@ -683,7 +683,7 @@ end
 
 sf_a = Campground.create!({
     host_id: andre_iguodala.id,
-    name: "Oceanview Corner", 
+    name: "Equator Lane", 
     location: "San Francisco", 
     price: 100, 
     latitude: 38.109487, 
@@ -723,7 +723,7 @@ end
 
 sf_b = Campground.create!({
     host_id: bob_myers.id,
-    name: "Homer Creek", 
+    name: "Ritual Range", 
     location: "San Francisco", 
     price: 95, 
     latitude: 37.951498, 
@@ -766,7 +766,7 @@ end
 
 sf_c = Campground.create!({
     host_id: shaun_livingston.id,
-    name: "Legends Overview", 
+    name: "St. Frank Fort", 
     location: "San Francisco", 
     price: 55, 
     latitude: 37.240914, 
@@ -808,7 +808,7 @@ end
 
 sf_d = Campground.create!({
     host_id: chris_mullin.id,
-    name: "Creekside Camp", 
+    name: "Counter Culture Camp", 
     location: "San Francisco", 
     price: 90, 
     latitude: 37.107933, 
@@ -832,7 +832,7 @@ sf_d = Campground.create!({
     ], 
     checkin_time: "After 2PM", 
     checkout_time: "Before 1PM",
-    description: "Our Creekside Camp offers secluded tranquility on the banks of Salmon Creek, home of collaborative efforts to restore native Coho Salmon. Up to 4 campers are included in the base price and sites can accommodate a few additional people, some more than others. If your group is larger than 4, please utilize the additional person feature.",
+    description: "Counter Culture Camp offers secluded tranquility on the banks of Salmon Creek, home of collaborative efforts to restore native Coho Salmon. Up to 4 campers are included in the base price and sites can accommodate a few additional people, some more than others. If your group is larger than 4, please utilize the additional person feature.",
     rating: 96
 })
 
@@ -850,7 +850,7 @@ end
 
 sf_e = Campground.create!({
     host_id: tim_hardaway.id,
-    name: "Garden By The Sea", 
+    name: "Wrecking Ball Valley", 
     location: "San Francisco", 
     price: 50, 
     latitude: 38.192011, 
@@ -892,7 +892,7 @@ end
 
 sf_f = Campground.create!({
     host_id: andre_iguodala.id,
-    name: "Forest Camping", 
+    name: "Tartine Turnaround", 
     location: "San Francisco", 
     price: 70, 
     latitude: 37.251282, 
@@ -934,7 +934,7 @@ end
 
 sf_g = Campground.create!({
     host_id: bob_myers.id,
-    name: "Bolinas Glamp", 
+    name: "Andytown Townhome", 
     location: "San Francisco", 
     price: 175, 
     latitude: 38.427953, 
@@ -975,8 +975,8 @@ sf_g_urls.each_with_index do |url, i|
 end
 
 sf_h = Campground.create!({
-    host_id: detlef_schrempf.id,
-    name: "The Stepping Stone", 
+    host_id: andre_iguodala.id,
+    name: "Port of Mokha Road", 
     location: "San Francisco", 
     price: 50, 
     latitude: 37.047405, 
@@ -1018,7 +1018,7 @@ end
 
 sf_i = Campground.create!({
     host_id: demo_user.id,
-    name: "The Steep Ravine", 
+    name: "Fellow Farm", 
     location: "San Francisco", 
     price: 40, 
     latitude: 38.005405, 
@@ -1062,7 +1062,7 @@ end
 
 ny_a = Campground.create!({
     host_id: spencer_dinwiddie.id,
-    name: "Malouf Campground", 
+    name: "Parlor Place", 
     location: "New York", 
     price: 55, 
     latitude: 41.059693, 
@@ -1102,7 +1102,7 @@ end
 
 ny_b = Campground.create!({
     host_id: caris_levert.id,
-    name: "Over The Rainbow", 
+    name: "Spectrum Stream", 
     location: "New York", 
     price: 30, 
     latitude: 40.699535, 
@@ -1145,7 +1145,7 @@ end
 
 ny_c = Campground.create!({
     host_id: deandre_jordan.id,
-    name: "Platform Glamp", 
+    name: "Felix Fairgrounds", 
     location: "New York", 
     price: 70, 
     latitude: 41.144728, 
@@ -1187,7 +1187,7 @@ end
 
 ny_d = Campground.create!({
     host_id: kevin_durant.id,
-    name: "Serene Horse Farm", 
+    name: "Stumptown Townhouse", 
     location: "New York", 
     price: 30, 
     latitude: 39.876368, 
@@ -1229,7 +1229,7 @@ end
 
 ny_e = Campground.create!({
     host_id: kyrie_irving.id,
-    name: "Flat-Earth Mountain", 
+    name: "Central Perk Park", 
     location: "New York", 
     price: 88, 
     latitude: 39.937341, 
@@ -1271,7 +1271,7 @@ end
 
 ny_f = Campground.create!({
     host_id: spencer_dinwiddie.id,
-    name: "Robibero's Retreat", 
+    name: "Gibralter Garden", 
     location: "New York", 
     price: 60, 
     latitude: 41.269475, 
@@ -1313,7 +1313,7 @@ end
 
 ny_g = Campground.create!({
     host_id: kyrie_irving.id,
-    name: "Cedar Creek", 
+    name: "Drip Down Driveway", 
     location: "New York", 
     price: 100, 
     latitude: 41.483814, 
@@ -1355,7 +1355,7 @@ end
 
 ny_h = Campground.create!({
     host_id: kevin_durant.id,
-    name: "Finnegan's Yurt", 
+    name: "Flora Fauna", 
     location: "New York", 
     price: 100, 
     latitude: 41.269164, 
@@ -1397,7 +1397,7 @@ end
 
 ny_i = Campground.create!({
     host_id: caris_levert.id,
-    name: "Mustang Stables", 
+    name: "Everyman Everglade", 
     location: "New York", 
     price: 60, 
     latitude: 41.268733, 
@@ -1441,7 +1441,7 @@ end
 
 chi_a = Campground.create!({
     host_id: lauri_markkanen.id,
-    name: "Mini Luxe Cabin", 
+    name: "Metric Metro", 
     location: "Chicago", 
     price: 100, 
     latitude: 41.373866, 
@@ -1481,7 +1481,7 @@ end
 
 chi_b = Campground.create!({
     host_id: derrick_rose.id,
-    name: "The Terrace", 
+    name: "Ipsento Social", 
     location: "Chicago", 
     price: 45, 
     latitude: 41.167634, 
@@ -1524,7 +1524,7 @@ end
 
 chi_c = Campground.create!({
     host_id: luol_deng.id,
-    name: "Sweet Corn Patch", 
+    name: "606 Circle", 
     location: "Chicago", 
     price: 25, 
     latitude: 42.411185, 
@@ -1566,7 +1566,7 @@ end
 
 chi_d = Campground.create!({
     host_id: scottie_pippen.id,
-    name: "Back To Earth", 
+    name: "Bow Truss BLVD", 
     location: "Chicago", 
     price: 25, 
     latitude: 41.952736, 
@@ -1608,7 +1608,7 @@ end
 
 chi_e = Campground.create!({
     host_id: michael_jordan.id,
-    name: "Orchard Farms", 
+    name: "Halfwit Hill", 
     location: "Chicago", 
     price: 50, 
     latitude: 42.085184, 
@@ -1632,7 +1632,7 @@ chi_e = Campground.create!({
     ], 
     checkin_time: "After 2PM", 
     checkout_time: "Before 12PM",
-    description: "This campsite is in the middle of Earth First Farms, an established certified organic apple orchard in SW Michigan. The farm is 49 acres, with the campsite being in a soft hollow about 200 feet wide separating 2 blocks of trees. Very quiet at night. In the day, depending on the season, there are farm activities taking place. Firewood is provided and fresh organic produce is available in season.",
+    description: "This campsite is in the middle of Halfwit Hill, an established certified organic apple orchard in SW Michigan. The farm is 49 acres, with the campsite being in a soft hollow about 200 feet wide separating 2 blocks of trees. Very quiet at night. In the day, depending on the season, there are farm activities taking place. Firewood is provided and fresh organic produce is available in season.",
     rating: 96
 })
 
@@ -1650,7 +1650,7 @@ end
 
 chi_f = Campground.create!({
     host_id: lauri_markkanen.id,
-    name: "Wine Trail Cabins", 
+    name: "Caffe Streets Lane", 
     location: "Chicago", 
     price: 160, 
     latitude: 41.880831, 
@@ -1692,7 +1692,7 @@ end
 
 chi_g = Campground.create!({
     host_id: michael_jordan.id,
-    name: "Breakaway Stables", 
+    name: "Tonic Turnpike", 
     location: "Chicago", 
     price: 30, 
     latitude: 42.598931, 
@@ -1734,7 +1734,7 @@ end
 
 chi_h = Campground.create!({
     host_id: scottie_pippen.id,
-    name: "Driftless Farm", 
+    name: "Long Pull Lake", 
     location: "Chicago", 
     price: 75, 
     latitude: 42.707127, 
@@ -1776,7 +1776,7 @@ end
 
 chi_i = Campground.create!({
     host_id: derrick_rose.id,
-    name: "Derrick's Acres", 
+    name: "Cortado Ranch", 
     location: "Chicago", 
     price: 28, 
     latitude: 42.026932, 
@@ -1820,7 +1820,7 @@ end
 
 la_a = Campground.create!({
     host_id: earvin_johnson.id,
-    name: "Stay Wild Campground", 
+    name: "Go Get'em Greens", 
     location: "Los Angeles", 
     price: 50, 
     latitude: 34.151726, 
@@ -1860,7 +1860,7 @@ end
 
 la_b = Campground.create!({
     host_id: kyle_kuzma.id,
-    name: "The Cutest Casita", 
+    name: "Tiger Trails", 
     location: "Los Angeles", 
     price: 95, 
     latitude: 34.238234, 
@@ -1903,7 +1903,7 @@ end
 
 la_c = Campground.create!({
     host_id: lebron_james.id,
-    name: "Sturtevant Cottage", 
+    name: "Pourover Park", 
     location: "Los Angeles", 
     price: 95, 
     latitude: 34.170961, 
@@ -1927,7 +1927,7 @@ la_c = Campground.create!({
     ], 
     checkin_time: "After 2PM", 
     checkout_time: "Before 12PM",
-    description: "Sturtevant Camp was established in 1893 and is located, ONLY via hiking trails, 4.25 miles from Chantry Flat in the Angeles National Forest. The Honeymoon Cottage is the third oldest building in Camp, dating back to the 1920’s. It is the last of many identical cabins that dotted the grounds of Sturtevant Camp.",
+    description: "Pourover Park was established in 1893 and is located, ONLY via hiking trails, 4.25 miles from Chantry Flat in the Angeles National Forest. The Honeymoon Cottage is the third oldest building in Camp, dating back to the 1920’s. It is the last of many identical cabins that dotted the grounds of Sturtevant Camp.",
     rating: 90
 })
 
@@ -1945,7 +1945,7 @@ end
 
 la_d = Campground.create!({
     host_id: kawhi_leonard.id,
-    name: "Palmrock Ranch", 
+    name: "Tectonic Trailhead", 
     location: "Los Angeles", 
     price: 25, 
     latitude: 34.436056, 
@@ -1987,7 +1987,7 @@ end
 
 la_e = Campground.create!({
     host_id: anthony_davis.id,
-    name: "Love Nest", 
+    name: "Matcha Marsh", 
     location: "Los Angeles", 
     price: 250, 
     latitude: 34.073272, 
@@ -2029,7 +2029,7 @@ end
 
 la_f = Campground.create!({
     host_id: earvin_johnson.id,
-    name: "Angeles Crest", 
+    name: "Latte Landing", 
     location: "Los Angeles", 
     price: 179, 
     latitude: 33.955214, 
@@ -2053,7 +2053,7 @@ la_f = Campground.create!({
     ], 
     checkin_time: "After 3PM", 
     checkout_time: "Before 11AM",
-    description: "The Lake Cabin is great for 2 people  or as a base camp for larger groups. The cabin holds 2 people and there is  lots of room to set up tents around it for up to 50 guests. Private cabin on Lake Caldwell, a small sag pond on our 70 acre regenerative goat ranch, Angeles Crest Creamery, just 90 minutes from Los Angeles.",
+    description: "The Latte Landing is great for 2 people  or as a base camp for larger groups. The cabin holds 2 people and there is  lots of room to set up tents around it for up to 50 guests. Private cabin on Lake Caldwell, a small sag pond on our 70 acre regenerative goat ranch, Angeles Crest Creamery, just 90 minutes from Los Angeles.",
     rating: 90
 })
 
@@ -2071,7 +2071,7 @@ end
 
 la_g = Campground.create!({
     host_id: kyle_kuzma.id,
-    name: "Reptacular Ranch", 
+    name: "Vanilla Latte Ranch", 
     location: "Los Angeles", 
     price: 250, 
     latitude: 34.094556, 
@@ -2113,7 +2113,7 @@ end
 
 la_h = Campground.create!({
     host_id: lebron_james.id,
-    name: "Camp NadaLotta", 
+    name: "Piccolo Place", 
     location: "Los Angeles", 
     price: 48, 
     latitude: 33.681933, 
@@ -2155,7 +2155,7 @@ end
 
 la_i = Campground.create!({
     host_id: kawhi_leonard.id,
-    name: "Cuyama Badlands", 
+    name: "Demitasse Dream", 
     location: "Los Angeles", 
     price: 80, 
     latitude: 34.051205, 
@@ -2199,7 +2199,7 @@ end
 
 den_a = Campground.create!({
     host_id: mahmoud_rauf.id,
-    name: "Resort Valley Ranch", 
+    name: "Huckleberry Hill", 
     location: "Denver", 
     price: 30, 
     latitude: 39.882905, 
@@ -2239,7 +2239,7 @@ end
 
 den_b = Campground.create!({
     host_id: paul_millsap.id,
-    name: "Glen Isle Resort", 
+    name: "MiddleState Lane", 
     location: "Denver", 
     price: 25, 
     latitude: 39.597825, 
@@ -2263,7 +2263,7 @@ den_b = Campground.create!({
     ], 
     checkin_time: "After 3PM", 
     checkout_time: "Before 11AM",
-    description: "There are countless reasons why you would want to camp at Glen Isle Resort!  Glen Isle is located in Bailey, Colorado which is the perfect vacation spot for friends, family, reunions, or a private get away. Glen Isle was originally built for an escape from hectic Denver. Once you cross the bridge into the resort, you’ll understand why it has served as a peaceful getaway for over a century.",
+    description: "There are countless reasons why you would want to camp at MiddleState Lane!  MiddleState is located in Bailey, Colorado which is the perfect vacation spot for friends, family, reunions, or a private get away. Glen Isle was originally built for an escape from hectic Denver. Once you cross the bridge into the resort, you’ll understand why it has served as a peaceful getaway for over a century.",
     rating: 93
 })
 
@@ -2282,7 +2282,7 @@ end
 
 den_c = Campground.create!({
     host_id: nikola_jokic.id,
-    name: "Weston Pass Hut", 
+    name: "Amethyst Acres", 
     location: "Denver", 
     price: 65, 
     latitude: 39.428762, 
@@ -2306,7 +2306,7 @@ den_c = Campground.create!({
     ], 
     checkin_time: "After 12PM", 
     checkout_time: "Before 2PM",
-    description: "Weston Pass Hut is located on the first road that was built to bring people into Lake County and originally the road was a toll road. The property was a mining claim and there are still some remnants of mining activity that occurred over a century ago. A group of about six people and many volunteers spent six years building the hut. It is completely off of the grid. The beams used to construct the hut are from locally harvested trees and we milled them ourselves. Many other materials are recycled or obtained with a priority placed on sustainability.",
+    description: "Amethyst Acres is located on the first road that was built to bring people into Lake County and originally the road was a toll road. The property was a mining claim and there are still some remnants of mining activity that occurred over a century ago. A group of about six people and many volunteers spent six years building the hut. It is completely off of the grid. The beams used to construct the hut are from locally harvested trees and we milled them ourselves. Many other materials are recycled or obtained with a priority placed on sustainability.",
     rating: 90
 })
 
@@ -2324,7 +2324,7 @@ end
 
 den_d = Campground.create!({
     host_id: mahmoud_rauf.id,
-    name: "Hay Zee Ranch", 
+    name: "Method Marsh", 
     location: "Denver", 
     price: 90, 
     latitude: 39.955918, 
@@ -2366,7 +2366,7 @@ end
 
 den_e = Campground.create!({
     host_id: paul_millsap.id,
-    name: "Rocky Peaks", 
+    name: "Batch Brew Bounty", 
     location: "Denver", 
     price: 90, 
     latitude: 39.330770, 
@@ -2408,7 +2408,7 @@ end
 
 den_f = Campground.create!({
     host_id: nikola_jokic.id,
-    name: "Executive Farmer", 
+    name: "Pinwheel Peak", 
     location: "Denver", 
     price: 68, 
     latitude: 39.933095, 

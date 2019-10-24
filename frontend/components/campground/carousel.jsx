@@ -24,11 +24,22 @@ class Carousel extends React.Component {
                 // if (carouselImages[counter].id === "last-clone") {
                 //     this.setState({ counter: this.state.counter - 2 })
                 //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
+
+                // if (carouselImages[this.state.counter].id === "last-clone") {
+                //     carouselSlide.style.transition = "none";
+                //     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
+                //     this.setState({ counter: carouselImages.length - 2})
+                //     carouselSlide.style.transition = "transform 0.75s ease-in-out"
+                // }
+
                 if (this.state.counter < 0) {
                     // carouselSlide.style.transition = "none";
                     carouselSlide.style.transform = "translateX(" + ((-size * (this.props.photoUrls.length - 1))) + "px)";
                     this.setState({ counter: this.props.photoUrls.length - 1 });
-                } else {
+                    // carouselSlide.style.transition = "transform 0.75s ease-in-out"
+                }
+                
+                else {
                     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 }
             }, 0
@@ -54,6 +65,7 @@ class Carousel extends React.Component {
                     // carouselSlide.style.transition = "none";
                     carouselSlide.style.transform = "translateX(" + ((-size * 0)) + "px)";
                     this.setState({ counter: 0});
+                    // carouselSlide.style.transition = "transform 0.75s ease-in-out"
                 } else {
                     carouselSlide.style.transform = "translateX(" + ((-size * this.state.counter)) + "px)";
                 }

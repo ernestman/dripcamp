@@ -5,18 +5,37 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            address: "San Francisco"
+            address: ""
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        let input = document.getElementById("search-field");
+        let autocomplete = new google.maps.places.Autocomplete(input);
+
+        let address;
+
+        let that = this;
+        autocomplete.addListener( "place_changed", () => {
+            if (!autocomplete.getPlace().formatted_address) {
+                address = autocomplete.getPlace().name;
+                that.setState( {address: address} )
+                that.handleSubmit();
+            } else {
+                address = autocomplete.getPlace().formatted_address;
+                that.setState( {address: address} );
+                that.handleSubmit();
+            }
+        })
     }
 
     handleInput(event) {
         this.setState({ address: event.target.value})
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit() {
         this.props.clearCampgrounds();
         let latitude;
         let longitude;
@@ -43,7 +62,8 @@ class SearchBar extends React.Component {
                     <div className="search-with-icon">
                         <i id="search-icon" className="fas fa-search fa-lg"></i>
                         <input
-                            id="search-input"
+                            id="search-field"
+                            className="search-input"
                             type="search"
                             placeholder="Search..."
                             value={this.state.address}
@@ -59,7 +79,8 @@ class SearchBar extends React.Component {
                     <div className="header-search">
                         <i id="header-search-icon" className="fas fa-search fa-sm"></i>
                         <input
-                            id="header-search-input"
+                            id="search-field"
+                            className="header-search-input"
                             type="text"
                             placeholder="Search..."
                             // value={this.state.address}

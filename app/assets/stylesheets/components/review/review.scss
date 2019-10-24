@@ -89,6 +89,8 @@
     color: #FFFFFF;
     font-size: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .review-button:hover {
@@ -123,4 +125,38 @@
 
 .review-main .review-item:first-child {
     margin: 0;
+}
+
+.review-modal {
+    // display: flex;
+    // justify-content: center;
+    margin: 180px auto;
+    width: 500px;
+    height: 260px;
+    border: 2px solid #EBEBEB;
+    border-radius: 2px;
+}
+
+.review-update-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // margin: auto;
+    background-color: #FFFFFF;
+}
+
+#review-edit-name {
+    margin-left: 28px;
+}
+
+#review-edit-date {
+    margin-right: 20px;
+}
+
+#edit-review-btn {
+    width: 14%;
+    margin-left: 40px;
+    margin-top: 6px;
 }

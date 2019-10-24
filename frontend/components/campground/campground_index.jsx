@@ -14,6 +14,7 @@ class CampgroundIndex extends React.Component{
     
     render() {
         const {campgrounds} = this.props;
+        const seattleUrl = "/search?lat=47.6062095&lng=-122.3320708"
         const seattle = campgrounds.filter( campground => campground.location === "Seattle")
             .map( campground => (
                 <CampgroundIndexItem
@@ -22,6 +23,7 @@ class CampgroundIndex extends React.Component{
                 />
             )
         )
+        const sfUrl = "/search?lat=37.7749295&lng=-122.41941550000001"
         const sf = campgrounds.filter( campground => campground.location === "San Francisco")
             .map( campground => (
                 <CampgroundIndexItem
@@ -30,6 +32,7 @@ class CampgroundIndex extends React.Component{
                 />
             )
         )
+        const nyUrl = "/search?lat=40.7127753&lng=-74.0059728"
         const ny = campgrounds.filter( campground => campground.location === "New York")
             .map( campground => (
                 <CampgroundIndexItem
@@ -38,7 +41,7 @@ class CampgroundIndex extends React.Component{
                 />
             )
         )
-
+        const laUrl = "/search?lat=34.0522342&lng=-118.2436849"
         const la = campgrounds.filter( campground => campground.location === "Los Angeles")
             .map( campground => (
                 <CampgroundIndexItem
@@ -47,7 +50,7 @@ class CampgroundIndex extends React.Component{
                 />
             )
         )
-
+        const chicagoUrl = "search?lat=41.8781136&lng=-87.62979819999998"
         const chicago = campgrounds.filter( campground => campground.location === "Chicago")
             .map( campground => (
                 <CampgroundIndexItem
@@ -56,7 +59,7 @@ class CampgroundIndex extends React.Component{
                 />
             )
         )
-
+        const denverUrl = "/search?lat=39.7392358&lng=-104.990251"
         const denver = campgrounds.filter( campground => campground.location === "Denver")
             .map( campground => (
                 <CampgroundIndexItem
@@ -67,41 +70,50 @@ class CampgroundIndex extends React.Component{
         )
 
 
-
-        
-
         return (
             <div className="campground-index-container">
                 <h1 id="index-title">Discover Dripcamps</h1>
-                
-                <h3 id="index-text">Washington - Seattle</h3>
-                <div className="campground-index-main">
-                    {seattle}
+
+                <div className="city-index-container">
+                    <h3 id="index-text">Washington - <Link to={seattleUrl}>Seattle</Link></h3>
+                    <div className="campground-index-main">
+                        {seattle}
+                    </div>
                 </div>
 
-                <h3 id="index-text">California - San Francisco</h3>
-                <div className="campground-index-main">
-                    {sf}
+                <div className="city-index-container">
+                    <h3 id="index-text">California - <Link to={sfUrl}>San Francisco</Link></h3>
+                    <div className="campground-index-main">
+                        {sf}
+                    </div>
                 </div>
 
-                <h3 id="index-text">New York - New York</h3>
-                <div className="campground-index-main">
-                    {ny}
+                <div className="city-index-container">
+                    <h3 id="index-text">New York - <Link to={nyUrl}>New York</Link></h3>
+                    <div className="campground-index-main">
+                        {ny}
+                    </div>
                 </div>
 
-                <h3 id="index-text">California - Los Angeles</h3>
-                <div className="campground-index-main">
-                    {la}
+                <div className="city-index-container">
+                    <h3 id="index-text">California - <Link to={laUrl}>Los Angeles</Link></h3>
+                    <div className="campground-index-main">
+                        {la}
+                    </div>
                 </div>
 
-                <h3 id="index-text">Illinois - Chicago</h3>
-                <div className="campground-index-main">
-                    {chicago}
+                <div className="city-index-container">
+                    <h3 id="index-text">Illinois - <Link to={chicagoUrl}>Chicago</Link></h3>
+                    <div className="campground-index-main">
+                        {chicago}
+                    </div>
                 </div>
 
-                <h3 id="index-text">Colorado - Denver</h3>
-                <div className="campground-index-main">
-                    {denver}
+                <div className="city-index-container">
+                    <h3 id="index-text">Colorado - <Link to={denverUrl}>Denver</Link></h3>
+                    <div className="campground-index-main">
+                        {denver}
+                    </div>
                 </div>
 
 

@@ -2,12 +2,13 @@ import React from "react";
 import {closeModal} from "../../actions/modal_actions";
 import LoginContainer from "../login/login_container";
 import SignupContainer from "../signup/signup_container";
+import ReviewUpdateContainer from "../review/review_update_container";
 import { connect } from "react-redux";
 
 
 const mapStateToProps = (state) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal.modal
     }
 };
 
@@ -27,21 +28,29 @@ const Modal = (props) => {
 
     const loginModal = (
         <div className="login-modal" onClick={e => e.stopPropagation()}>
-            {/* <div className="login-form"> */}
-                <LoginContainer />
-            {/* </div> */}
+            <LoginContainer />
         </div>
     );
 
     const signupModal = (
         <div className="signup-modal" onClick={e => e.stopPropagation()}>
-            {/* <div className="signup-form"> */}
-                <SignupContainer />
-            {/* </div> */}
+            <SignupContainer />
         </div>
     );
+
+    const reviewUpdateModal = (
+        <div className="review-modal" onClick={e => e.stopPropagation()}>
+            <ReviewUpdateContainer />
+        </div>
+    )
     
-    const myModal = (modal === "login") ? loginModal : signupModal;
+    // const myModal = (modal === "login") ? loginModal : signupModal;
+
+    let myModal;
+    if (modal === "login") myModal = loginModal;
+    if (modal === "signup") myModal = signupModal;
+    if (modal === "review") myModal = reviewUpdateModal;
+
 
     return (
         <div className="modal-background" onClick={closeModal}>

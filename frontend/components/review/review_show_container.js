@@ -1,7 +1,8 @@
 import {connect} from "react-redux";
 import ReviewShow from "./review_show";
-import {newReview, destroyReview} from "../../actions/review_actions";
+import {newReview, destroyReview, updateReview} from "../../actions/review_actions";
 import {openModal} from "../../actions/modal_actions";
+import {fetchCampground} from "../../actions/campground_actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -12,9 +13,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        // fetchCampground: (id) => dispatch(fetchCampground(id)),
         newReview: (review) => dispatch(newReview(review)),
+        updateReview: (review) => dispatch(updateReview(review)),
         destroyReview: (reviewId) => dispatch(destroyReview(reviewId)),
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal, review) => dispatch(openModal(modal, review))
     }
 }
 

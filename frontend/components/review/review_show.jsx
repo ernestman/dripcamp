@@ -5,11 +5,26 @@ class ReviewShow extends React.Component {
         super(props);
         this.handleDelete = this.handleDelete.bind(this);
         this.state = {
-            body: ""
+            body: "",
+            // currentUserId: null
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReviewModal = this.handleReviewModal.bind(this);
     }
+
+    // componentDidMount() {
+    //     this.setState( {currentUserId: this.props.currentUserId} )
+    // }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     console.log("udpated")
+    //     if (prevState.currentUserId !== this.state.currentUserId) {
+    //         console.log("states do not match")
+    //         this.setState({ currentUserId: this.props.currentUserId })
+            
+    //     }
+    // }
 
     handleDelete(reviewId) {
         event.preventDefault();
@@ -18,6 +33,11 @@ class ReviewShow extends React.Component {
 
     handleInput(event) {
         this.setState({body: event.target.value})
+    }
+
+    handleReviewModal(reviewId) {
+        event.preventDefault();
+        this.props.openModal("review", reviewId)
     }
 
     handleSubmit(event) {
@@ -43,11 +63,19 @@ class ReviewShow extends React.Component {
 
         const myReviews = reviews.map( review => {
             const dateOptions = { month: "long", day: "numeric", year: "numeric" };
+
             const deleteButton = (review && currentUserId && currentUserId === review.author_id) ? (
                 <div className="review-button" onClick={() => this.handleDelete(review.id)}>Remove</div>
             ) : (
                 <div></div>
             )
+
+            const updateButton = (review && currentUserId && currentUserId === review.author_id) ? (
+                <div className="review-button" onClick={() => this.handleReviewModal(review.id)}>Edit review</div>
+            ) : (
+                <div></div>
+            )
+
             return (
                 <div key={review.id} className="review-item">
                     <div className="review-avi">
@@ -67,7 +95,7 @@ class ReviewShow extends React.Component {
                         </div>
                         <div id="review-text">{review.body}</div>
                         <div className="review-foot">
-                            <div className="review-button">Helpful {review.helpful_count}</div>
+                            {updateButton}
                             {deleteButton}
                         </div>
                     </div>
@@ -98,9 +126,6 @@ class ReviewShow extends React.Component {
         )
 
     }
-
-
-
 
 }
 

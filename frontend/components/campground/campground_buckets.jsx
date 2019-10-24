@@ -27,7 +27,7 @@ const CampgroundBuckets = (props) => {
                     <div className="bucket-line">
                         <img src={campground.parking ? window.parkingTrueUrl : window.parkingFalseUrl}/>
                         &nbsp;
-                        <ul>{campground.parking ? "Park at listing" : <span>Short walk</span>}</ul>
+                        <ul>{campground.parking ? "Park at listing" : "Short walk"}</ul>
                     </div>
                 </div>
             </div>

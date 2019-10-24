@@ -27,6 +27,13 @@ export const clearBookings = () => {
     }
 }
 
+export const fetchBooking = (bookingId) => (dispatch) => {
+    return (
+        BookingApiUtil.singleBooking(bookingId)
+            .then( booking => dispatch(getBooking(booking)) )
+    )
+}
+
 export const newBooking = (booking) => (dispatch) => {
     return (
         BookingApiUtil.createBooking(booking)
@@ -35,12 +42,12 @@ export const newBooking = (booking) => (dispatch) => {
     )
 }
 
-export const fetchBooking = (bookingId) => (dispatch) => {
-    return (
-        BookingApiUtil.singleBooking(bookingId)
-            .then( booking => dispatch(getBooking(booking)) )
-    )
-}
+// export const updateBooking = (booking) => (dispatch) => {
+//     return (
+//         BookingApiUtil.updateBooking(booking)
+//             .then( booking => dispatch(getBooking(booking)) )
+//     )
+// }
 
 export const destroyBooking = (bookingId) => (dispatch) => {
     return (

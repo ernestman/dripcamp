@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     const hostImgUrl = (state.entities.campgrounds[campgroundId]) ? state.entities.campgrounds[campgroundId].hostImgUrl : "";
     return {
         campground: state.entities.campgrounds[campgroundId],
-        hostImgUrl: hostImgUrl
+        hostImgUrl: hostImgUrl,
+        userId: state.session.id
     }
 }
 

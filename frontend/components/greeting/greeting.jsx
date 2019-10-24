@@ -22,7 +22,6 @@ const Greeting = (props) => {
             .then( () => props.history.push("/"))
     }
     
-    // nbsp = non breaking space
     const modalLinks = () => (
         <div className="header-nav">
             <a href="http://github.com/ernestman/" id="github" target="_blank">
@@ -55,9 +54,9 @@ const Greeting = (props) => {
                         <div className="drop-link-container">
                             <Link to={`/users/${currentUser.id}`}>My Trips</Link>
                         </div>
-                        <div className="drop-link-container">
+                        {/* <div className="drop-link-container">
                             Manage Account
-                        </div>
+                        </div> */}
                         <div className="drop-button-container">
                             <button onClick={handleSignOut}>Logout</button>
                         </div>
