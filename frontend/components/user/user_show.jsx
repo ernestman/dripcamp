@@ -31,8 +31,8 @@ class UserShow extends React.Component {
         // if (!currentUser || Object.keys(currentUser).length === 0) {
         if (!currentUser) {
             return <Redirect to="/" />
-        } else if (Object.keys(booked_campgrounds).length <= 1) {
-            return null;
+        // } else if (Object.keys(booked_campgrounds).length <= 1) {
+            // return null;
         } else {
 
             const months = [
