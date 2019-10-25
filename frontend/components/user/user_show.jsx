@@ -14,8 +14,8 @@ class UserShow extends React.Component {
         if (!this.props.currentUser) {
             return <Redirect to="/" />
         }
-        this.props.clearBookings();
-        this.props.clearCampgrounds();
+        // this.props.clearBookings();
+        // this.props.clearCampgrounds();
         this.props.fetchUser(this.props.currentUser.id);
     }
 
@@ -28,11 +28,8 @@ class UserShow extends React.Component {
     render() {
         // debugger
         const {currentUser, bookings, booked_campgrounds} = this.props;
-        // if (!currentUser || Object.keys(currentUser).length === 0) {
         if (!currentUser) {
-            return <Redirect to="/" />
-        // } else if (Object.keys(booked_campgrounds).length <= 1) {
-            // return null;
+            return <div></div>
         } else {
 
             const months = [
@@ -42,7 +39,11 @@ class UserShow extends React.Component {
             const month = months[joinDate.getMonth()];
             const year = joinDate.getFullYear().toString();
 
-            const myBookings = bookings.map( book => (
+            let myBookings;
+            if (bookings.length < 1) {
+                myBookings = <div></div>
+            } else {
+                myBookings = bookings.map( book => (
     
                     <div key={book.id} className="booking-main">
                         <img className="booking-img" src={booked_campgrounds[book.campground_id].photoUrls[0]}/>
@@ -68,9 +69,8 @@ class UserShow extends React.Component {
                             <button onClick={() => this.handleDelete(book.id)} className="booking-delete">Cancel</button>
                         </div>
                     </div>
-            ))
-
-            // debugger
+                ))
+            }
 
             return (
                 <div className="user-show-main">
@@ -105,7 +105,6 @@ class UserShow extends React.Component {
             )
         }
     }
-
 }
 
 UserShow.defaultProps = {

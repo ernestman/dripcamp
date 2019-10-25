@@ -2,7 +2,7 @@ import React from "react";
 import {Link, withRouter} from "react-router-dom";
 
 const Greeting = (props) => {
-    const {currentUser, signOut, openModal, clearErrors} = props;
+    const {currentUser, signOut, openModal, clearErrors, clearCampgrounds, clearBookings} = props;
     
     const handleLoginModal = (event) => {
         event.preventDefault()
@@ -20,6 +20,13 @@ const Greeting = (props) => {
         event.preventDefault();
         signOut()
             .then( () => props.history.push("/"))
+    }
+
+    const handleUserShow = (event) => {
+        event.preventDefault();
+        clearCampgrounds()
+        clearBookings()
+        props.history.push(`/users/${currentUser.id}`)
     }
     
     const modalLinks = () => (
@@ -51,8 +58,9 @@ const Greeting = (props) => {
                 <div className="dropdown">
                     <img className="menu-button" src={window.waterDropUrl} />
                     <div className="dropdown-menu">
-                        <div className="drop-link-container">
-                            <Link to={`/users/${currentUser.id}`}>My Trips</Link>
+                        <div className="drop-link-container" onClick={handleUserShow}>
+                            {/* <Link to={`/users/${currentUser.id}`}>My Trips</Link> */}
+                            My Trips
                         </div>
                         {/* <div className="drop-link-container">
                             Manage Account
