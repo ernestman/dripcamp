@@ -41,7 +41,10 @@ class UserShow extends React.Component {
 
             let myBookings;
             if (bookings.length < 1) {
-                myBookings = <div></div>
+                myBookings = 
+                    <div className="no-bookings">
+                        No trips booked - <Link to="/campgrounds">Book Today!</Link>
+                    </div>
             } else {
                 myBookings = bookings.map( book => (
     

@@ -60,13 +60,13 @@ const Greeting = (props) => {
                     <div className="dropdown-menu">
                         <div className="drop-link-container" onClick={handleUserShow}>
                             {/* <Link to={`/users/${currentUser.id}`}>My Trips</Link> */}
-                            My Trips
+                            <div className="drop-link">My Trips</div>
                         </div>
                         {/* <div className="drop-link-container">
                             Manage Account
                         </div> */}
-                        <div className="drop-button-container">
-                            <button onClick={handleSignOut}>Logout</button>
+                        <div className="drop-link-container" onClick={handleSignOut}>
+                            <div className="drop-link">Logout</div>
                         </div>
                     </div>
                 </div>
