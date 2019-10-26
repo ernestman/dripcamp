@@ -44,20 +44,8 @@ const Greeting = (props) => {
                     <i className="fab fa-angellist"></i>&nbsp;Angellist
                 </a>
             </div>
-            {/* <a href="http://github.com/ernestman/" id="github" target="_blank">
-                <i className="fab fa-github"></i>&nbsp;Github
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
-                <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
-            </a>
-            &nbsp;&nbsp;&nbsp;
-            <a className="logged-in-link" href="http://angel.co/ernestman/" id="angellist" target="_blank">
-                <i className="fab fa-angellist"></i>&nbsp;Angellist
-            </a>
-            &nbsp;&nbsp;&nbsp; */}
             <button onClick={handleSignupModal}><span>Sign up</span></button>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <button onClick={handleLoginModal}><span>Log in</span></button>
         </div>
     );
@@ -68,7 +56,6 @@ const Greeting = (props) => {
                 <a className="logged-in-link" href="http://github.com/ernestman/" id="github" target="_blank">
                     <i className="fab fa-github fa-sm"></i>&nbsp;Github
                 </a>
-                {/* &nbsp;&nbsp;&nbsp; */}
                 <a className="logged-in-link" href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
                     <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
                 </a>
