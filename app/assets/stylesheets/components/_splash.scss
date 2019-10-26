@@ -61,14 +61,15 @@
     font-weight: 700;
 }
 
-.large-icon a {
+.icon-link {
     font-size: 16px;
     margin: 12px 0;
     border-bottom: 1px solid transparent;
     padding-bottom: 1px;
+    cursor: pointer;
 }
 
-.large-icon a:hover {
+.icon-link:hover {
     border-bottom: 1px solid black;
     padding-bottom: 1px;
 }
@@ -112,6 +113,14 @@
     border-radius: 4px;
 }
 
+.bio-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-top: 30px;
+}
+
 .bio-link {
     display: flex;
     justify-content: center;
@@ -119,11 +128,27 @@
     width: 80px;
     height: 40px;
     border: 3px solid #51D9AC;
-    margin-top: 10px;
     border-radius: 2px;
     background: #51D9AC;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+.dripcamping-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 10px;
+    border: 1px solid #EBEBEB;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.dripcamping-link:hover {
+    border: 1px solid #51D9AC;
+    color: #51D9AC;
 }
 
 .bio-link:hover {

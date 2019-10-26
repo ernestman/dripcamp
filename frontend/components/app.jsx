@@ -4,7 +4,7 @@ import {Link, Route, Redirect, Switch} from "react-router-dom";
 
 import Header from "./header/header";
 import Footer from "./footer/footer";
-import Splash from "./splash";
+import SplashContainer from "./splash_container";
 
 import CampgroundIndexSelf from "../components/campground/campground_index_self";
 import CampgroundShowContainer from "../components/campground/campground_show_container";
@@ -26,7 +26,7 @@ class App extends React.Component {
                         <Route exact path="/campgrounds/:campId" component={CampgroundShowContainer} />
                         <Route exact path="/campgrounds" component={CampgroundIndexSelf} />
                         <Route path="/search" component={SearchIndexContainer} />
-                        <Route exact path="/" component={Splash} />
+                        <Route exact path="/" component={SplashContainer} />
                     </div>
                 </main>
 

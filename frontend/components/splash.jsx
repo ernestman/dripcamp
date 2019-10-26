@@ -4,7 +4,18 @@ import {Link, withRouter} from "react-router-dom";
 import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import CampgroundSplashContainer from "../components/campground/campground_splash_container";
 
-const Splash = () => {
+const Splash = (props) => {
+
+    const {openModal, currentUserId} = props;
+
+    const handleUserShow = (event) => {
+        event.preventDefault;
+        if (currentUserId) {
+            props.history.push(`/users/${currentUserId}`)
+        } else {
+            openModal("signup")
+        }
+    }
 
     return (
         <div className="splash-container">
@@ -15,7 +26,6 @@ const Splash = () => {
                 </div>
             </div>
             <SearchBarContainer/>
-            {/* <CampgroundIndexContainer/> */}
             <CampgroundSplashContainer />
 
             <div className="bio-container">
@@ -34,18 +44,21 @@ const Splash = () => {
                     the NBA and fanatically cheering for the Golden State
                     Warriors.
                     </p>
-                    {/* <div className="bio-link"> */}
-                    <a className="bio-link" id="profile-link" href="https://ernestman.github.io/PersonalSite" target="_blank">Learn more</a>
-                    {/* </div> */}
+                    <div className="bio-links">
+                        <a className="bio-link" id="profile-link" href="https://ernestman.github.io/PersonalSite" target="_blank">Learn more</a>
+                        <div className="dripcamping-link" onClick={handleUserShow}> Start Dripcamping</div>
+                    </div>
                 </div>
             </div>
     
             <div className="large-icon-container">
-                {/* <h1>Temporary Container for Big Icons</h1> */}
                 <div className="large-icon">
                     <img src={window.tentArmsUrl}/>
                     <div className="large-icon-text">
                         <p>Dripcamp empowers people to share their land with campers.</p>
+                    </div>
+                    <div className="icon-link" onClick={handleUserShow}>
+                        Start Dripcamping
                     </div>
                 </div>
                 <div className="large-icon">
@@ -53,13 +66,18 @@ const Splash = () => {
                     <div className="large-icon-text">
                         <p>Creating sustainable revenue and fostering community</p>
                     </div>
+                    <div className="icon-link">
+                        <a href="https://ernestman.github.io/PersonalSite" target="_blank">Learn more</a>
+                    </div>
                 </div>
                 <div className="large-icon">
                     <img src={window.palmEyeUrl}/>
                     <div className="large-icon-text">
                         <p>Unlocking access to incredible new places to camp</p>
                     </div>
-                    <Link to="/campgrounds">Discover Dripcamps</Link>
+                    <div className="icon-link">
+                        <Link to="/campgrounds">Discover Dripcamps</Link>
+                    </div>
                 </div>
             </div>
 

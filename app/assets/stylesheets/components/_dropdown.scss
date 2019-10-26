@@ -57,6 +57,10 @@
     transform: translateX(26px);
 }
 
+.drop-link i {
+    margin-right: 8px;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }

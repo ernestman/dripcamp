@@ -33,7 +33,7 @@
 .footer-info {
    display: flex;
    justify-content: space-around;
-   margin: 0 80px;
+   margin: 0 110px;
 }
 
 .footer-info h2 {
@@ -84,6 +84,14 @@
 
 #spotify:hover i {
    color: #45CA5A;
+}
+
+#angellist:hover i {
+   color: #252A2E;
+}
+
+#personalsite:hover i {
+   color: #252A2E;
 }
 
 .footer-bottom {

@@ -59,14 +59,10 @@ const Greeting = (props) => {
                     <img className="menu-button" src={window.waterDropUrl} />
                     <div className="dropdown-menu">
                         <div className="drop-link-container" onClick={handleUserShow}>
-                            {/* <Link to={`/users/${currentUser.id}`}>My Trips</Link> */}
-                            <div className="drop-link">My Trips</div>
+                            <div className="drop-link"><i className="fas fa-suitcase"></i>My Trips</div>
                         </div>
-                        {/* <div className="drop-link-container">
-                            Manage Account
-                        </div> */}
                         <div className="drop-link-container" onClick={handleSignOut}>
-                            <div className="drop-link">Logout</div>
+                            <div className="drop-link"><i className="fas fa-sign-out-alt"></i>Logout</div>
                         </div>
                     </div>
                 </div>

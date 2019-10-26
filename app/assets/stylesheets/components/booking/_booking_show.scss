@@ -88,11 +88,6 @@
     align-items: center;
 }
 
-// .booking-info p {
-    // margin-left: 15px;
-    // margin-top: 8px;
-// }
-
 .booking-details span {
     text-decoration: underline;
 }
@@ -103,8 +98,10 @@
     color: white;
     text-align: center;
     background-color: #51D9AC;
-    padding: 8px;
-    margin: 8px 90px;
+    width: 60px;
+    height: 20px;
+    padding: 6px 0px 0px;
+    margin: 8px auto;
 }
 
 .booking-delete:hover{
