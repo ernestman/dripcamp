@@ -31,7 +31,20 @@ const Greeting = (props) => {
     
     const modalLinks = () => (
         <div className="header-nav">
-            <a href="http://github.com/ernestman/" id="github" target="_blank">
+            <div className="modal-links">
+                <a className="logged-in-link" href="http://github.com/ernestman/" id="github" target="_blank">
+                    <i className="fab fa-github fa-sm"></i>&nbsp;Github
+                </a>
+                {/* &nbsp;&nbsp;&nbsp; */}
+                <a className="logged-in-link" href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
+                    <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
+                </a>
+
+                <a className="logged-in-link" href="http://angel.co/ernestman/" id="angellist" target="_blank">
+                    <i className="fab fa-angellist"></i>&nbsp;Angellist
+                </a>
+            </div>
+            {/* <a href="http://github.com/ernestman/" id="github" target="_blank">
                 <i className="fab fa-github"></i>&nbsp;Github
             </a>
             &nbsp;&nbsp;&nbsp;
@@ -39,6 +52,10 @@ const Greeting = (props) => {
                 <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
             </a>
             &nbsp;&nbsp;&nbsp;
+            <a className="logged-in-link" href="http://angel.co/ernestman/" id="angellist" target="_blank">
+                <i className="fab fa-angellist"></i>&nbsp;Angellist
+            </a>
+            &nbsp;&nbsp;&nbsp; */}
             <button onClick={handleSignupModal}><span>Sign up</span></button>
             &nbsp;&nbsp;&nbsp;
             <button onClick={handleLoginModal}><span>Log in</span></button>
@@ -47,13 +64,20 @@ const Greeting = (props) => {
 
     const myGreeting = () => (
         <div className="logged-in-header">
-            <a className="logged-in-link" href="http://github.com/ernestman/" id="github" target="_blank">
-                <i className="fab fa-github fa-sm"></i>&nbsp;Github
-            </a>
-            {/* &nbsp;&nbsp;&nbsp; */}
-            <a className="logged-in-link" href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
-                <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
-            </a>
+            <div className="logged-in-links">
+                <a className="logged-in-link" href="http://github.com/ernestman/" id="github" target="_blank">
+                    <i className="fab fa-github fa-sm"></i>&nbsp;Github
+                </a>
+                {/* &nbsp;&nbsp;&nbsp; */}
+                <a className="logged-in-link" href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
+                    <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
+                </a>
+
+                <a className="logged-in-link" href="http://angel.co/ernestman/" id="angellist" target="_blank">
+                    <i className="fab fa-angellist"></i>&nbsp;Angellist
+                </a>
+            </div>
+
             <div className="drop-icon">
                 <div className="dropdown">
                     <img className="menu-button" src={window.waterDropUrl} />
