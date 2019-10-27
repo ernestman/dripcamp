@@ -1,62 +1,34 @@
 import React from "react";
 import CampgroundIndexItem from "../campground/campground_index_item";
+import filterUtil from "../../util/filter_util";
 import SearchMap from "../map/search_map";
-
-// import {withRouter} from "react-router-dom"
 
 class CampgroundSearch extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = this.props.filters
-        this.handlePetsFilter = this.handlePetsFilter.bind(this);
-        this.handleTentFilter = this.handleTentFilter.bind(this);
-        this.handleCabinFilter = this.handleCabinFilter.bind(this);
+        super(props);
+        this.state = this.props.filters;
+
+        this.handleFilter = this.handleFilter.bind(this);
     }
     componentDidMount() {
         window.scrollTo(0, 0);
-    }
-    componentDidUpdate(prevProps) {
-        if (prevProps.location.search !== this.props.location.search) {
-            this.render();
-        }
     }
     componentWillUnmount() {
         this.props.clearFilters();
     }
 
-    handlePetsFilter(event) {
+    handleFilter(filter) {
         event.preventDefault();
-        let that = this;
-        if (!this.state.pets) {
-            this.setState( {pets: true}, () => that.props.newFilter("pets", true) )
+        if (this.props.filters[filter] === false) {
+            this.props.singleFilter(filter);
         } else {
-            this.setState( {pets: null}, () => that.props.updateFilter("pets", null) )
-        }
-    }
-
-    handleTentFilter(event) {
-        event.preventDefault();
-        let that = this;
-        if (this.state.cabin === null) {
-            this.setState( {cabin: false}, () => that.props.newFilter("cabin", false) )
-        } else {
-            this.setState( {cabin: null}, () => that.props.updateFilter("cabin", null) )
-        }
-    }
-
-    handleCabinFilter(event) {
-        event.preventDefault();
-        let that = this;
-        if (this.state.cabin === null) {
-            this.setState( {cabin: true}, () => that.props.newFilter("cabin", true) )
-        } else {
-            this.setState( {cabin: null}, () => that.props.updateFilter("cabin", null) )
+            this.props.removeFilter(filter);
         }
     }
 
     render() {
 
-        const {campgrounds, updateFilter} = this.props;
+        const {campgrounds, filters, bounds, updateFilter} = this.props;
 
         let address = "";
         let tagline1 = "";
@@ -90,7 +62,7 @@ class CampgroundSearch extends React.Component {
                     tagline4 = "Located at the southern tip of the state of New York, the city is the center of the New York metropolitan area, the largest metropolitan area in the world by urban landmass[11] and one of the world's most populous megacities."
                     tagline5 = "Malouf’s Mountain Sunset Campground is only accessible by hiking in, but tents can be rented and cooking amenities are provided in case you packed light."
                     break;
-                case "Chicago":
+                    case "Chicago":
                     address = "Chicago, Illinois";
                     tagline1 = "From beach camping on Lake Michigan to peaceful forest campsites, the Chicagoland area has it all."
                     tagline2 = "In Chicago, the trails and marinas along Lake Michigan provide a respite from city life. When only serious wilderness will do, however, you’re in luck. Within 100 miles of downtown, a wealth of campgrounds provide peace and quiet. From lakeside retreats to grassland getaways, this part of the midwest has it all.";
@@ -116,15 +88,17 @@ class CampgroundSearch extends React.Component {
                     break;
                 default:
                     address = "";
-            }
+                }
         }
 
-        const searchCampgrounds = campgrounds.map( campground => (
+        const searchCampgrounds = filterUtil(campgrounds, filters).map( campground => (
             <CampgroundIndexItem
                 key={campground.id}
                 campground={campground}
             />
         ))
+
+        console.log(searchCampgrounds)
 
         const campgroundsOne = searchCampgrounds.slice(0, 2);
         const campgroundsTwo = searchCampgrounds.slice(2, 4);
@@ -132,28 +106,23 @@ class CampgroundSearch extends React.Component {
         const campgroundsFour = searchCampgrounds.slice(6, 8);
         const campgroundsFive = searchCampgrounds.slice(8);
 
-        const tag3 = campgroundsTwo.length > 0 ? (<h3 className="tagline" id="tag-3">{tagline3}</h3>)
-            : (<p></p>)
-
-        const tag4 = campgroundsThree.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline4}</h3>)
-            : (<p></p>)
-
-        const tag5 = campgroundsFour.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline5}</h3>)
-            : (<p></p>)
-
+        const tag3 = campgroundsTwo.length > 0 ? (<h3 className="tagline" id="tag-3">{tagline3}</h3>) : (<p></p>)
+        const tag4 = campgroundsThree.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline4}</h3>) : (<p></p>)
+        const tag5 = campgroundsFour.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline5}</h3>) : (<p></p>)
+            
         return (
             <div className="search-index-container">
                 <div className="search-index">
                     <div className="select-filters">
-                        <div className="filter-button" onClick={this.handlePetsFilter}>
+                        <div className="filter-button" onClick={ () => this.handleFilter("petFriendly") }>
                             <img className="filter-img" src={petsTrueUrl}/>
                             <p>Pet-friendly</p>
                         </div>
-                        <div className="filter-button" onClick={this.handleTentFilter}>
+                        <div className="filter-button" onClick={ () => this.handleFilter("tentCamps") }>
                             <img className="filter-img" src={tentIconUrl}/>
                             <p>Tents</p>
                         </div>
-                        <div className="filter-button" onClick={this.handleCabinFilter}>
+                        <div className="filter-button" onClick={ () => this.handleFilter("cabinCamps") }>
                             <img className="filter-img" src={cabinUrl} />
                             <p>Cabins</p>
                         </div>
@@ -163,34 +132,23 @@ class CampgroundSearch extends React.Component {
                     </div>
                     <h1>{address ? `The best dripcamps near ${address}` : "Could not find any Dripcamps"}</h1>
                     <h3 className="tagline" id="tag-1">{tagline1}</h3>
-                    <div className="search-index-main">
-                        {campgroundsOne}
-                    </div>
+
+                    <div className="search-index-main">{campgroundsOne}</div>
                     <h3 className="tagline" id="tag-2">{tagline2}</h3>
-                    <div className="search-index-main">
-                        {campgroundsTwo}
-                    </div>
+
+                    <div className="search-index-main">{campgroundsTwo}</div>
                     {tag3}
-                    <div className="search-index-main">
-                        {campgroundsThree}
-                    </div>
+
+                    <div className="search-index-main">{campgroundsThree}</div>
                     {tag4}
-                    <div className="search-index-main">
-                        {campgroundsFour}
-                    </div>
 
+                    <div className="search-index-main">{campgroundsFour}</div>
                     {tag5}
-                    <div className="search-index-main">
-                        {campgroundsFive}
-                    </div>
 
-                    
+                    <div className="search-index-main">{campgroundsFive}</div>
                 </div>
                 <div className="search-map-container">
-                    <SearchMap
-                        updateFilter={updateFilter}
-                        campgrounds={campgrounds}
-                    />
+                    <SearchMap updateFilter={updateFilter} campgrounds={campgrounds}/>
                 </div>
             </div>
         )
@@ -199,3 +157,9 @@ class CampgroundSearch extends React.Component {
 }
 
 export default CampgroundSearch;
+
+// componentDidUpdate(prevProps) {
+//     if (prevProps.location.search !== this.props.location.search) {
+//         this.render();
+//     }
+// }
