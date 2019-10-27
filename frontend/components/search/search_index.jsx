@@ -7,15 +7,50 @@ import SearchMap from "../map/search_map";
 class CampgroundSearch extends React.Component {
     constructor(props) {
         super(props)
+        this.state = this.props.filters
+        this.handlePetsFilter = this.handlePetsFilter.bind(this);
+        this.handleTentFilter = this.handleTentFilter.bind(this);
+        this.handleCabinFilter = this.handleCabinFilter.bind(this);
     }
-
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-
     componentDidUpdate(prevProps) {
         if (prevProps.location.search !== this.props.location.search) {
             this.render();
+        }
+    }
+    componentWillUnmount() {
+        this.props.clearFilters();
+    }
+
+    handlePetsFilter(event) {
+        event.preventDefault();
+        let that = this;
+        if (!this.state.pets) {
+            this.setState( {pets: true}, () => that.props.newFilter("pets", true) )
+        } else {
+            this.setState( {pets: null}, () => that.props.updateFilter("pets", null) )
+        }
+    }
+
+    handleTentFilter(event) {
+        event.preventDefault();
+        let that = this;
+        if (this.state.cabin === null) {
+            this.setState( {cabin: false}, () => that.props.newFilter("cabin", false) )
+        } else {
+            this.setState( {cabin: null}, () => that.props.updateFilter("cabin", null) )
+        }
+    }
+
+    handleCabinFilter(event) {
+        event.preventDefault();
+        let that = this;
+        if (this.state.cabin === null) {
+            this.setState( {cabin: true}, () => that.props.newFilter("cabin", true) )
+        } else {
+            this.setState( {cabin: null}, () => that.props.updateFilter("cabin", null) )
         }
     }
 
@@ -97,30 +132,35 @@ class CampgroundSearch extends React.Component {
         const campgroundsFour = searchCampgrounds.slice(6, 8);
         const campgroundsFive = searchCampgrounds.slice(8);
 
-        const tag3 = campgroundsTwo.length > 0 ? 
-            (
-                <h3 className="tagline" id="tag-3">{tagline3}</h3>
-            ) : (
-                <p></p>
-            )
+        const tag3 = campgroundsTwo.length > 0 ? (<h3 className="tagline" id="tag-3">{tagline3}</h3>)
+            : (<p></p>)
 
-        const tag4 = campgroundsThree.length > 0 ? 
-            (
-                <h3 className="tagline" id="tag-4">{tagline4}</h3>
-            ) : (
-                <p></p>
-            )
+        const tag4 = campgroundsThree.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline4}</h3>)
+            : (<p></p>)
 
-        const tag5 = campgroundsFour.length > 0 ? 
-            (
-                <h3 className="tagline" id="tag-4">{tagline5}</h3>
-            ) : (
-                <p></p>
-            )
+        const tag5 = campgroundsFour.length > 0 ? (<h3 className="tagline" id="tag-4">{tagline5}</h3>)
+            : (<p></p>)
 
         return (
             <div className="search-index-container">
                 <div className="search-index">
+                    <div className="select-filters">
+                        <div className="filter-button" onClick={this.handlePetsFilter}>
+                            <img className="filter-img" src={petsTrueUrl}/>
+                            <p>Pet-friendly</p>
+                        </div>
+                        <div className="filter-button" onClick={this.handleTentFilter}>
+                            <img className="filter-img" src={tentIconUrl}/>
+                            <p>Tents</p>
+                        </div>
+                        <div className="filter-button" onClick={this.handleCabinFilter}>
+                            <img className="filter-img" src={cabinUrl} />
+                            <p>Cabins</p>
+                        </div>
+                        <div id="clear-filter" className="filter-button">
+                            <p id="clear-text">Clear filters</p>
+                        </div>
+                    </div>
                     <h1>{address ? `The best dripcamps near ${address}` : "Could not find any Dripcamps"}</h1>
                     <h3 className="tagline" id="tag-1">{tagline1}</h3>
                     <div className="search-index-main">

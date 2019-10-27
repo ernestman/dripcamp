@@ -75,16 +75,16 @@ class CampgroundIndex extends React.Component{
                 <h1 id="index-title">Discover Dripcamps</h1>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">Washington - <Link to={seattleUrl}>Seattle</Link></h3>
+                    <h3 id="index-text">California - <Link to={sfUrl}>San Francisco</Link></h3>
                     <div className="campground-index-main">
-                        {seattle}
+                        {sf}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">California - <Link to={sfUrl}>San Francisco</Link></h3>
+                    <h3 id="index-text">Washington - <Link to={seattleUrl}>Seattle</Link></h3>
                     <div className="campground-index-main">
-                        {sf}
+                        {seattle}
                     </div>
                 </div>
 

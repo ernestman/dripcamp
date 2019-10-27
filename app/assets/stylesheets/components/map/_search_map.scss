@@ -43,3 +43,56 @@
 #tag-1 {
     margin-top: 4px;
 }
+
+.select-filters {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #EBEBEB;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.filter-button {
+    border: 1px solid #EBEBEB;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    border: 1px solid black;
+}
+
+#clear-filter {
+    border: 3px solid #51D9AC;
+    background-color: #51D9AC;
+    height: 34px;
+    padding: 0 4px;
+}
+
+#clear-filter:hover {
+    background-color: #FFFFFF;
+}
+
+#clear-filter:hover #clear-text {
+    color: #51D9AC;
+}
+
+#clear-text {
+    color: #FFFFFF;
+    margin-top: 4px;
+}
+
+
+
+.filter-button p {
+    margin: 7px 0 0 4px;
+}
+
+.filter-img {
+    width: 30px;
+    height: 30px;
+}

@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {updateFilter} from "../../actions/filter_actions";
+import {newFilter, updateFilter, clearFilter, clearFilters} from "../../actions/filter_actions";
 import {fetchCampgrounds} from "../../actions/campground_actions";
 
 import CampgroundSearch from "./search_index";
@@ -7,7 +7,7 @@ import CampgroundSearch from "./search_index";
 const mapStateToProps = (state, ownProps) => {
     return {
         campgrounds: Object.values(state.entities.campgrounds),
-        // queryString: ownProps.location.search
+        filters: state.ui.filters
         // bounds: state.ui.filters["bounds"]
     }
 }
@@ -15,7 +15,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         // fetchCampgrounds: (filters) => dispatch(fetchCampgrounds(filters)),
-        updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+        // changeFilter: (filter, value) => dispatch(changeFilter(filter, value)),
+        newFilter: (filter, value) => dispatch(newFilter(filter, value)),
+        updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+        clearFilters: () => dispatch(clearFilters())
     }
 }
 

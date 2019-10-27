@@ -2,7 +2,6 @@ class Api::CampgroundsController < ApplicationController
 
     def index 
         if params[:bounds]
-
             @campgrounds = Campground.all.select { |campground| campground.in_bounds(params[:bounds]) }
         else
             @campgrounds = Campground.all

@@ -78,17 +78,10 @@ class Campground < ApplicationRecord
         left = bounds["southWest"]["lng"].to_f
         
         if (self.latitude < top && self.latitude > bottom) && (self.longitude > left && self.longitude < right)
-
-
             return true
         end
 
         return false
-
-        # self.where("lat < ?", bounds[:northEast][:lat])
-        #     .where("lat > ?", bounds[:southWest][:lat])
-        #     .where("lng > ?", bounds[:southWest][:lng])
-        #     .where("lng < ?", bounds[:northEast][:lng])
     end
 
 
