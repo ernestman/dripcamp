@@ -3,12 +3,23 @@ import Modal from "../modal/modal";
 import GreetingContainer from "../greeting/greeting_container";
 import SearchBarContainer from "../search/search_bar_container";
 import {Link, withRouter} from "react-router-dom";
+import {connect} from "react-redux";
+
+import {clearCampgrounds} from "../../actions/campground_actions";
+
+// const mapStateToProps = (state) => {
+//     return {
+
+//     }
+// }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        clearCampgrounds: () => dispatch(clearCampgrounds())
+    }
+}
 
 const Header = (props) => {
-
-    // debugger
-
-    // /users/1
 
     let headSearchBar;
     if (props.location.pathname === "/" || props.location.pathname.slice(0, 6) === "/users") {
@@ -17,11 +28,17 @@ const Header = (props) => {
         headSearchBar = <SearchBarContainer />
     }
 
+    const handleHomepage = (event) => {
+        event.preventDefault();
+        props.clearCampgrounds();
+        props.history.push("/")
+    }
+
     return (
         <div className="header-container">
             <Modal />
-            <div className="header-icon">
-                <Link to="/"><img src={window.logoUrl} /></Link>
+            <div className="header-icon" onClick={handleHomepage}>
+                <img src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/mainlogo.png" />
             </div>
 
             {headSearchBar}
@@ -34,4 +51,4 @@ const Header = (props) => {
 
 }
 
-export default withRouter(Header);
+export default withRouter(connect(null, mapDispatchToProps)(Header));

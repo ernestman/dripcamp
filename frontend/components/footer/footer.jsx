@@ -19,7 +19,7 @@ const Footer = () => {
                         <a href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
                             <i className="fab fa-linkedin fa-s"></i>&nbsp;LinkedIn
                         </a>
-                        <a href="http://angel.co/ernestman/" id="angellist" target="_blank">
+                        <a href="http://angel.co/ernestman/" id="angellist-ftr" target="_blank">
                             <i className="fab fa-angellist"></i>&nbsp;Angellist
                         </a>
                         <a href="http://ernestman.github.io/PersonalSite/" id="personalsite" target="_blank">
@@ -29,7 +29,7 @@ const Footer = () => {
                     </div>
                     <div className="footer-links">
                         <h2>Social</h2>
-                        <a href="http://github.com/ernestman/" id="github" target="_blank">
+                        <a href="http://github.com/ernestman/" id="github-ftr" target="_blank">
                             <i className="fab fa-github"></i>&nbsp;Github
                         </a>
                         

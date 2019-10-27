@@ -67,7 +67,7 @@ const Greeting = (props) => {
 
             <div className="drop-icon">
                 <div className="dropdown">
-                    <img className="menu-button" src={window.waterDropUrl} />
+                    <img className="menu-button" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/users/waterdrop.png" />
                     <div className="dropdown-menu">
                         <div className="drop-link-container" onClick={handleUserShow}>
                             <div className="drop-link"><i className="fas fa-suitcase"></i>My Trips</div>

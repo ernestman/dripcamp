@@ -43,7 +43,18 @@
 #index-title {
     margin-left: 10px;
     margin-bottom: 6px;
-    font-size: 32px;
+    font-size: 28px;
+}
+
+#index-title a {
+    font-size: 23px;
+    color: #606060;
+    font-weight: 400;
+    border-bottom: 2px solid #EBEBEB;
+}
+
+#index-title a:hover {
+    border-bottom: 2px solid #51D9AC;
 }
 
 #index-text {
@@ -227,8 +238,8 @@
     align-items: center;
 }
 
-.campground-splash-header a {
-    text-decoration: underline;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
+// .campground-splash-header a {
+//     text-decoration: underline;
+//     font-size: 18px;
+//     margin-bottom: 8px;
+// }

@@ -50,6 +50,7 @@
     border: 1px solid #EBEBEB;
     border-radius: 2px;
     padding: 10px;
+    margin-bottom: 24px;
 }
 
 .filter-button {
@@ -62,9 +63,22 @@
     cursor: pointer;
 }
 
+.filter-button.clicked {
+    border: 1px solid #51D9AC;
+}
+
+.filter-button.clicked p {
+    color: #51D9AC;
+}
+
 .filter-button:hover {
     border: 1px solid black;
 }
+
+.filter-button.clicked:hover {
+    border: 1px solid #51D9AC;
+}
+
 
 #clear-filter {
     border: 3px solid #51D9AC;

@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import Splash from "./splash";
 
 import {openModal} from "../actions/modal_actions";
+import {singleFilter} from "../actions/filter_actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal)),
+        singleFilter: (filter) => dispatch(singleFilter(filter))
     }
 }
 

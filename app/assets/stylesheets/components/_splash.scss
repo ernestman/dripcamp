@@ -155,3 +155,46 @@
     background: #FFFFFF;
     color: #51d9ac;
 }
+
+.splash-filters-container {
+    max-width: 1060px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.splash-filters-container h1 {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.splash-filter {
+    border: 1px solid #EBEBEB;
+    width: 280px;
+    height: 340px;
+    cursor: pointer;
+}
+
+.splash-filter:hover .splash-filter-info h2 {
+    text-decoration: underline;
+}
+
+.splash-filter-info p {
+    color: #757575;
+}
+
+#splash-filter-img {
+    width: 280px;
+    height: 280px;
+}
+
+.splash-filter-info {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+}

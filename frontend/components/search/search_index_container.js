@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
         singleFilter: (filter) => dispatch(singleFilter(filter)),
         removeFilter: (filter) => dispatch(removeFilter(filter)),
         updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+        clearFilters: () => dispatch(clearFilters())
     }
 }
 

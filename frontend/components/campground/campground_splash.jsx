@@ -9,13 +9,16 @@ class CampgroundSplash extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
-        this.props.fetchCampgrounds();
+        for (let i = 0; i < 3; i++) {
+            let randomInt = Math.floor(Math.random() * 50) + 1;
+            this.props.fetchCampground(randomInt);
+        }
     }
 
     render() {
         const { campgrounds } = this.props;
 
-        const featured = campgrounds.sort( () => 0.5 - Math.random() ).slice(0, 3)
+        const featured = campgrounds
             .map( campground => (
                 <CampgroundIndexItem
                     key={campground.id}
@@ -26,8 +29,7 @@ class CampgroundSplash extends React.Component {
         return (
             <div className="campground-index-container">
                 <div className="campground-splash-header">
-                    <h1 id="index-title">Featured Dripcamps -&nbsp;</h1>
-                    <Link to="/campgrounds">View all Dripcamps</Link>
+                    <h1 id="index-title">Featured Dripcamps - <Link to="/campgrounds">All Dripcamps</Link></h1>
                 </div>
                 <div className="campground-index-main">
                     {featured}

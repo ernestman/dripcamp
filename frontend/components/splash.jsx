@@ -9,12 +9,18 @@ const Splash = (props) => {
     const {openModal, currentUserId} = props;
 
     const handleUserShow = (event) => {
-        event.preventDefault;
+        event.preventDefault();
         if (currentUserId) {
             props.history.push(`/users/${currentUserId}`)
         } else {
             openModal("signup")
         }
+    }
+
+    const handleSplashFilter = (filter, id) => {
+        event.preventDefault();
+        props.singleFilter(filter);
+        props.history.push("/search?lat=37.7749295&lng=-122.41941550000001")
     }
 
     return (
@@ -28,9 +34,36 @@ const Splash = (props) => {
             <SearchBarContainer/>
             <CampgroundSplashContainer />
 
+            <div className="splash-filters-container">
+                <h1>Discover Dripcamps</h1>
+                <div className="splash-filter" onClick={ () => handleSplashFilter("tentCamps") }>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-tents.jpg"/>
+                    <div className="splash-filter-info">
+                        <h2>Tent Dripcamps</h2>
+                        <p>Best options near San Francisco</p>
+                    </div>
+                </div>
+
+                <div className="splash-filter" onClick={ () => handleSplashFilter("cabinCamps") }>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-cabins.jpg" />
+                    <div className="splash-filter-info">
+                        <h2>Cabin Dripcamps</h2>
+                        <p>Best options near San Francisco</p>
+                    </div>
+                </div>
+
+                <div className="splash-filter" onClick={ () => handleSplashFilter("petFriendly") }>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-pets.jpg" />
+                    <div className="splash-filter-info">
+                        <h2>Pet-Friendly Dripcamps</h2>
+                        <p>Best options near San Francisco</p>
+                    </div>
+                </div>
+            </div>
+
             <div className="bio-container">
                 <div className="bio-img">
-                    <img id="ernie-img" src={ernieUrl} />
+                    <img id="ernie-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/hipcampernie.jpg" />
                 </div>
                 <div className="bio-info">
                     <h1>Ernie, Software Engineer:</h1>

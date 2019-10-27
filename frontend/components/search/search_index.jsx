@@ -12,13 +12,25 @@ class CampgroundSearch extends React.Component {
     }
     componentDidMount() {
         window.scrollTo(0, 0);
+        if (this.props.filters.petFriendly === true) {
+            $("#pet-filter").toggleClass("clicked")
+        }
+        if (this.props.filters.tentCamps === true) {
+            $("#tent-filter").toggleClass("clicked")
+        }
+        if (this.props.filters.cabinCamps === true) {
+            $("#cabin-filter").toggleClass("clicked")
+        }
     }
     componentWillUnmount() {
         this.props.clearFilters();
     }
 
-    handleFilter(filter) {
+    handleFilter(filter, id) {
         event.preventDefault();
+
+        $(`#${id}`).toggleClass("clicked")
+
         if (this.props.filters[filter] === false) {
             this.props.singleFilter(filter);
         } else {
@@ -92,13 +104,8 @@ class CampgroundSearch extends React.Component {
         }
 
         const searchCampgrounds = filterUtil(campgrounds, filters).map( campground => (
-            <CampgroundIndexItem
-                key={campground.id}
-                campground={campground}
-            />
+            <CampgroundIndexItem key={campground.id} campground={campground} />
         ))
-
-        console.log(searchCampgrounds)
 
         const campgroundsOne = searchCampgrounds.slice(0, 2);
         const campgroundsTwo = searchCampgrounds.slice(2, 4);
@@ -114,15 +121,15 @@ class CampgroundSearch extends React.Component {
             <div className="search-index-container">
                 <div className="search-index">
                     <div className="select-filters">
-                        <div className="filter-button" onClick={ () => this.handleFilter("petFriendly") }>
+                        <div className="filter-button" id="pet-filter" onClick={ () => this.handleFilter("petFriendly", "pet-filter") }>
                             <img className="filter-img" src={petsTrueUrl}/>
-                            <p>Pet-friendly</p>
+                            <p>Pets allowed</p>
                         </div>
-                        <div className="filter-button" onClick={ () => this.handleFilter("tentCamps") }>
+                        <div className="filter-button" id="tent-filter" onClick={ () => this.handleFilter("tentCamps", "tent-filter") }>
                             <img className="filter-img" src={tentIconUrl}/>
                             <p>Tents</p>
                         </div>
-                        <div className="filter-button" onClick={ () => this.handleFilter("cabinCamps") }>
+                        <div className="filter-button" id="cabin-filter" onClick={ () => this.handleFilter("cabinCamps", "cabin-filter") }>
                             <img className="filter-img" src={cabinUrl} />
                             <p>Cabins</p>
                         </div>
