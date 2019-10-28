@@ -18,7 +18,7 @@ const Greeting = (props) => {
 
     const handleSignOut = (event) => {
         event.preventDefault();
-        clearCampgrounds();
+        // clearCampgrounds();
         signOut()
             // .then( () => props.history.push("/"))
         props.history.push("/")

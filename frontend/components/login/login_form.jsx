@@ -25,6 +25,7 @@ class loginForm extends React.Component {
             email: "guest@aa.io",
             password: "password"
         }
+
         this.props.login(demoUser)
             .then( () => this.props.closeModal())
     }
@@ -95,3 +96,22 @@ class loginForm extends React.Component {
 }
 
 export default loginForm;
+
+// let stateEmail = "";
+        // for (let i = 0; i < demoUser["email"].length; i++) {
+        //     stateEmail += demoUser["email"][i];
+        //     // console.log(stateEmail)
+        //     this.set
+
+        //     setTimeout(this.setState({ "email": stateEmail }), 2000)
+        //     console.log(this.state.email)
+        // }
+
+        // let statePassword = "";
+        // for (let i = 0; i < demoUser["password"].length; i++) {
+        //     statePassword += demoUser["password"][i];
+        //     // console.log(statePassword)
+        //     // debugger
+        //     setTimeout(this.setState({ "password": statePassword }), 2000)
+        //     console.log(this.state.password)
+        // }

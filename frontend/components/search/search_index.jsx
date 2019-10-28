@@ -27,6 +27,7 @@ class CampgroundSearch extends React.Component {
 
     componentWillUnmount() {
         this.props.clearFilters();
+        this.props.removeAllFilters();
     }
 
     handleFilter(filter, id) {

@@ -43,6 +43,7 @@
 .book-guests {
     width: 33%;
     border-left: 1px solid #EBEBEB;
+    display: flex;
 }
 
 .book-guests input {
@@ -110,6 +111,11 @@
 .book-button:hover {
         background-color: #FFFFFF;
        color: #51D9AC;
+}
+
+#step-btn {
+    font-size: 30px;
+    margin: 0 16px;
 }
 
 // .book-input input {

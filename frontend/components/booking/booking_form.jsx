@@ -21,6 +21,7 @@ class BookingForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleGuests = this.handleGuests.bind(this);
     }
 
     handleSubmit(event) {
@@ -47,6 +48,16 @@ class BookingForm extends React.Component {
     handleInput(type) {
         return(event) => {
             this.setState({[type]: event.target.value})
+        }
+    }
+
+    handleGuests(btn) {
+        event.preventDefault();
+        if (btn === "down" && this.state.num_guests > 1) {
+            this.setState( {"num_guests": this.state.num_guests - 1})
+        } 
+        if (btn === "up" && this.state.num_guests < this.props.campground.max_guests) {
+            this.setState({ "num_guests": this.state.num_guests + 1 })
         }
     }
     
@@ -80,6 +91,7 @@ class BookingForm extends React.Component {
                             endDatePlaceholderText={"Select date"}
                         />
                         <div className="book-guests">
+                            <button id="step-btn" onClick={ () => this.handleGuests("down")}>-</button>
                             <input
                                 id="guests"
                                 type="number"
@@ -89,6 +101,7 @@ class BookingForm extends React.Component {
                                 max={max}
                                 min="1"
                             />
+                            <button id="step-btn" onClick={ () => this.handleGuests("up")}>+</button>
                         </div>
                         
                     </div>
