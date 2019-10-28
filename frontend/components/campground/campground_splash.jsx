@@ -9,8 +9,9 @@ class CampgroundSplash extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
+        // this.props.clearCampgrounds();
         for (let i = 0; i < 3; i++) {
-            let randomInt = Math.floor(Math.random() * 36) + 1;
+            let randomInt = Math.floor(Math.random() * 35) + 1;
             this.props.fetchCampground(randomInt);
         }
     }

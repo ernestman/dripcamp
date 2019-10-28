@@ -9,6 +9,7 @@ class CampgroundSearch extends React.Component {
         this.state = this.props.filters;
 
         this.handleFilter = this.handleFilter.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     componentDidMount() {
@@ -38,6 +39,12 @@ class CampgroundSearch extends React.Component {
         } else {
             this.props.removeFilter(filter);
         }
+    }
+
+    handleRemove() {
+        event.preventDefault();
+        $(".clicked").toggleClass("clicked")
+        this.props.removeAllFilters()
     }
 
     render() {
@@ -107,7 +114,7 @@ class CampgroundSearch extends React.Component {
                     <div className="select-filters">
                         <div className="filter-button" id="pet-filter" onClick={ () => this.handleFilter("petFriendly", "pet-filter") }>
                             <img className="filter-img" src={petsTrueUrl}/>
-                            <p>Pets allowed</p>
+                            <p>Pets</p>
                         </div>
                         <div className="filter-button" id="tent-filter" onClick={ () => this.handleFilter("tentCamps", "tent-filter") }>
                             <img className="filter-img" src={tentIconUrl}/>
@@ -117,8 +124,20 @@ class CampgroundSearch extends React.Component {
                             <img className="filter-img" src={cabinUrl} />
                             <p>Cabins</p>
                         </div>
-                        <div id="clear-filter" className="filter-button">
-                            <p id="clear-text">Clear filters</p>
+                        <div className="filter-button" id="fire-filter" onClick={ () => this.handleFilter("hasCampfires", "fire-filter") }>
+                            <img className="filter-img" src={campfireTrueUrl} />
+                            <p>Campfires</p>
+                        </div>
+                        <div className="filter-button" id="shower-filter" onClick={ () => this.handleFilter("hasShowers", "shower-filter") }>
+                            <img className="filter-img" src={showerTrueUrl} />
+                            <p>Showers</p>
+                        </div>
+                        <div className="filter-button" id="water-filter" onClick={ () => this.handleFilter("hasWater", "water-filter") }>
+                            <img className="filter-img" src={waterTrueUrl} />
+                            <p>Water</p>
+                        </div>
+                        <div id="clear-filter" className="filter-button" onClick={ () => this.handleRemove()}>
+                            <p id="clear-text">Clear</p>
                         </div>
                     </div>
                     <h1>{address ? `The best dripcamps near ${address}` : "Could not find any Dripcamps"}</h1>

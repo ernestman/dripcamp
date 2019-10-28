@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchCampground } from "../../actions/campground_actions";
+import { fetchCampground, clearCampgrounds } from "../../actions/campground_actions";
 import CampgroundSplash from "./campground_splash";
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchCampground: (id) => dispatch(fetchCampground(id))
+        fetchCampground: (id) => dispatch(fetchCampground(id)),
+        // clearCampgrounds: () => dispatch(clearCampgrounds())
     }
 }
 

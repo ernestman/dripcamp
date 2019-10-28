@@ -19,6 +19,24 @@ const filterUtil = (campgrounds, filters) => {
         })
     }
 
+    if (filters["hasCampfires"] === true) {
+        filteredCampgrounds = filteredCampgrounds.filter(camp => {
+            if (camp.campfires === true) return camp;
+        })
+    }
+
+    if (filters["hasShowers"] === true) {
+        filteredCampgrounds = filteredCampgrounds.filter(camp => {
+            if (camp.showers === true) return camp;
+        })
+    }
+
+    if (filters["hasWater"] === true) {
+        filteredCampgrounds = filteredCampgrounds.filter(camp => {
+            if (camp.potable_water === true) return camp;
+        })
+    }
+
     return filteredCampgrounds;
 }
 

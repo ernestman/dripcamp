@@ -20,7 +20,8 @@ const Greeting = (props) => {
         event.preventDefault();
         clearCampgrounds();
         signOut()
-            .then( () => props.history.push("/"))
+            // .then( () => props.history.push("/"))
+        props.history.push("/")
     }
 
     const handleUserShow = (event) => {
