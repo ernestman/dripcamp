@@ -35,7 +35,6 @@ class CampgroundVibes extends React.Component {
     }
 
     handleWeather(result) {
-        console.log(result)
         const resultTemp = Math.floor(result.main.temp);
         const resultClouds = result.weather[0].description[0].toUpperCase() + result.weather[0].description.slice(1);
         const resultHumidity = result.main.humidity;

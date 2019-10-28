@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;  
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;  
     
-    window.newReview = newReview;
-    window.fetchReview = fetchReview;
-    window.destroyReview = destroyReview;
+    // window.newReview = newReview;
+    // window.fetchReview = fetchReview;
+    // window.destroyReview = destroyReview;
 
     ReactDOM.render(<Root store={store}/>, root);
 })
