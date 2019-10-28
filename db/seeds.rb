@@ -10,9 +10,13 @@ require "open-uri"
 
 User.destroy_all
 Campground.destroy_all
-# Booking.destroy_all
+Booking.destroy_all
+Review.destroy_all
+
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("campgrounds")
+ActiveRecord::Base.connection.reset_pk_sequence!("bookings")
+ActiveRecord::Base.connection.reset_pk_sequence!("reviews")
 # ActiveRecord::Base.connection.reset_pk_sequence!("bookings")
 
 # ============================ Users ========================================
@@ -342,47 +346,47 @@ seattle_a_urls.each_with_index do |url, i|
     seattle_a.photos.attach(io: open(url), filename: "seattlea#{i+1}.jpg")
 end
 
-seattle_b = Campground.create!({
-    host_id: shawn_kemp.id,
-    name: "Espresso Camp", 
-    location: "Seattle", 
-    price: 30, 
-    latitude: 47.386671, 
-    longitude: -121.716942,
-    min_nights: 1, 
-    max_guests: 8, 
-    num_sites: 1, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: false, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: false, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Biking", "Fishing", "Hiking", "Horseback Riding", "Wildlife Watching"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Espresso Camp is a great spot to get away from the city life and have a moment to relax. Near camp you will find easy access to the Cedar River Trail as well as an old artistic railroad bridge overlooking the Cedar River itself. The trail is very flat and great for walking, running, biking, or even horse back riding. Lots of trees to provide shade and a sense of seclusion without another home in sight. At night you may hear the frogs in the near by wetlands. Feel free to bring your tents, yurts, trailer, or small camper and prepare to relax in nature.",
-    rating: 93
-})
+# seattle_b = Campground.create!({
+#     host_id: shawn_kemp.id,
+#     name: "Espresso Camp", 
+#     location: "Seattle", 
+#     price: 30, 
+#     latitude: 47.386671, 
+#     longitude: -121.716942,
+#     min_nights: 1, 
+#     max_guests: 8, 
+#     num_sites: 1, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: false, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: false, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Biking", "Fishing", "Hiking", "Horseback Riding", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Espresso Camp is a great spot to get away from the city life and have a moment to relax. Near camp you will find easy access to the Cedar River Trail as well as an old artistic railroad bridge overlooking the Cedar River itself. The trail is very flat and great for walking, running, biking, or even horse back riding. Lots of trees to provide shade and a sense of seclusion without another home in sight. At night you may hear the frogs in the near by wetlands. Feel free to bring your tents, yurts, trailer, or small camper and prepare to relax in nature.",
+#     rating: 93
+# })
 
-seattle_b_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb5.jpg"
-]
+# seattle_b_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleb/seattleb5.jpg"
+# ]
 
-seattle_b_urls.each_with_index do |url, i|
-    seattle_b.photos.attach(io: open(url), filename: "seattle_b#{i+1}.jpg")
-end
+# seattle_b_urls.each_with_index do |url, i|
+#     seattle_b.photos.attach(io: open(url), filename: "seattle_b#{i+1}.jpg")
+# end
 
 
 seattle_c = Campground.create!({
@@ -427,47 +431,47 @@ seattle_c_urls.each_with_index do |url, i|
     seattle_c.photos.attach(io: open(url), filename: "seattle_c#{i+1}.jpg")
 end
 
-seattle_d = Campground.create!({
-    host_id: isaiah_thomas.id,
-    name: "Macchiato Ranch", 
-    location: "Seattle", 
-    price: 50, 
-    latitude: 47.637416, 
-    longitude: -122.976604,
-    min_nights: 1, 
-    max_guests: 5, 
-    num_sites: 1, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: false, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: true, 
-    wifi: true, 
-    bins: true, 
-    activities: [
-        "Hiking", "Horseback Riding", "Biking", "Boating", "Fishing", "Wildlife Watching"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "The ranch is 23 acres partially wooded with a nature trail and open fenced paddocks and fields. We have a herd of horses on the property and offer Equine Assisted Learning and riding lessons onsite. There is an RV hookup next to the main house for electricity and sewage. We offer a porta-potty as well.",
-    rating: 96
-})
+# seattle_d = Campground.create!({
+#     host_id: isaiah_thomas.id,
+#     name: "Macchiato Ranch", 
+#     location: "Seattle", 
+#     price: 50, 
+#     latitude: 47.637416, 
+#     longitude: -122.976604,
+#     min_nights: 1, 
+#     max_guests: 5, 
+#     num_sites: 1, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: false, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: true, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Horseback Riding", "Biking", "Boating", "Fishing", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "The ranch is 23 acres partially wooded with a nature trail and open fenced paddocks and fields. We have a herd of horses on the property and offer Equine Assisted Learning and riding lessons onsite. There is an RV hookup next to the main house for electricity and sewage. We offer a porta-potty as well.",
+#     rating: 96
+# })
 
-seattle_d_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled5.jpg"
-]
+# seattle_d_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattled/seattled5.jpg"
+# ]
 
-seattle_d_urls.each_with_index do |url, i|
-    seattle_d.photos.attach(io: open(url), filename: "seattle_d#{i+1}.jpg")
-end
+# seattle_d_urls.each_with_index do |url, i|
+#     seattle_d.photos.attach(io: open(url), filename: "seattle_d#{i+1}.jpg")
+# end
 
 seattle_e = Campground.create!({
     host_id: jamal_crawford.id,
@@ -595,50 +599,50 @@ seattle_g_urls.each_with_index do |url, i|
     seattle_g.photos.attach(io: open(url), filename: "seattle_g#{i+1}.jpg")
 end
 
-seattle_h = Campground.create!({
-    host_id: detlef_schrempf.id,
-    name: "Cento Landing", 
-    location: "Seattle", 
-    price: 93, 
-    latitude: 47.694003, 
-    longitude: -121.654910,
-    min_nights: 1, 
-    max_guests: 12, 
-    num_sites: 4, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: false, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: true, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Hiking", "Paddling", "Biking", "Boating", "Fishing", "Wildlife Watching", "Swimming", "Climbing", "Horseback Riding"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Welcome to The Cento Landing - located on the South Fork Skykomish River, in the western foothills of the Cascade Mountains, off of Highway 2. With 16 acres of beautiful, private woods and breathtaking views of Mt. Index, this is a wonderful getaway to kick back and relax after your day of adventures, or just to escape the city rush. The campsite is at the bottom of a rugged drive so an SUV or AWD vehicle are recommended, especially during the wetter seasons of Spring and Fall.",
-    rating: 98
-})
+# seattle_h = Campground.create!({
+#     host_id: detlef_schrempf.id,
+#     name: "Cento Landing", 
+#     location: "Seattle", 
+#     price: 93, 
+#     latitude: 47.694003, 
+#     longitude: -121.654910,
+#     min_nights: 1, 
+#     max_guests: 12, 
+#     num_sites: 4, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: false, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Hiking", "Paddling", "Biking", "Boating", "Fishing", "Wildlife Watching", "Swimming", "Climbing", "Horseback Riding"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Welcome to The Cento Landing - located on the South Fork Skykomish River, in the western foothills of the Cascade Mountains, off of Highway 2. With 16 acres of beautiful, private woods and breathtaking views of Mt. Index, this is a wonderful getaway to kick back and relax after your day of adventures, or just to escape the city rush. The campsite is at the bottom of a rugged drive so an SUV or AWD vehicle are recommended, especially during the wetter seasons of Spring and Fall.",
+#     rating: 98
+# })
 
-seattle_h_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh5.jpg"
-]
+# seattle_h_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/seattle/seattleh/seattleh5.jpg"
+# ]
 
-seattle_h_urls.each_with_index do |url, i|
-    seattle_h.photos.attach(io: open(url), filename: "seattle_h#{i+1}.jpg")
-end
+# seattle_h_urls.each_with_index do |url, i|
+#     seattle_h.photos.attach(io: open(url), filename: "seattle_h#{i+1}.jpg")
+# end
 
 seattle_i = Campground.create!({
-    host_id: demo_user.id,
+    host_id: isaiah_thomas.id,
     name: "Blue Bottle Hill", 
     location: "Seattle", 
     price: 40, 
@@ -721,90 +725,90 @@ sf_a_urls.each_with_index do |url, i|
     sf_a.photos.attach(io: open(url), filename: "sf_a#{i+1}.jpg")
 end
 
-sf_b = Campground.create!({
-    host_id: bob_myers.id,
-    name: "Ritual Range", 
-    location: "San Francisco", 
-    price: 95, 
-    latitude: 37.951498, 
-    longitude: -122.654811,
-    min_nights: 1, 
-    max_guests: 2, 
-    num_sites: 2, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: false, 
-    potable_water: true, 
-    kitchen: true, 
-    showers: true,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Biking", "Hiking", "Paddling", "Climbing", "Swimming", "Wildlife Watching"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Our peaceful eight acre parcel is 13 miles from Santa Cruz, CA, minutes away from Big Basin and walking distance to downtown Boulder Creek. Your site is nestled in the redwoods with a gorgeous swimming pool available until midnight. The pool area has an outdoor shower, bathroom, and BBQ available to our campers.",
-    rating: 93
-})
+# sf_b = Campground.create!({
+#     host_id: bob_myers.id,
+#     name: "Ritual Range", 
+#     location: "San Francisco", 
+#     price: 95, 
+#     latitude: 37.951498, 
+#     longitude: -122.654811,
+#     min_nights: 1, 
+#     max_guests: 2, 
+#     num_sites: 2, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: false, 
+#     potable_water: true, 
+#     kitchen: true, 
+#     showers: true,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Biking", "Hiking", "Paddling", "Climbing", "Swimming", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Our peaceful eight acre parcel is 13 miles from Santa Cruz, CA, minutes away from Big Basin and walking distance to downtown Boulder Creek. Your site is nestled in the redwoods with a gorgeous swimming pool available until midnight. The pool area has an outdoor shower, bathroom, and BBQ available to our campers.",
+#     rating: 93
+# })
 
-sf_b_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb5.jpg"
-]
+# sf_b_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfb/sfb5.jpg"
+# ]
 
-sf_b_urls.each_with_index do |url, i|
-    sf_b.photos.attach(io: open(url), filename: "sf_b#{i+1}.jpg")
-end
+# sf_b_urls.each_with_index do |url, i|
+#     sf_b.photos.attach(io: open(url), filename: "sf_b#{i+1}.jpg")
+# end
 
 
-sf_c = Campground.create!({
-    host_id: shaun_livingston.id,
-    name: "St. Frank Fort", 
-    location: "San Francisco", 
-    price: 55, 
-    latitude: 37.240914, 
-    longitude: -122.400996,
-    min_nights: 1, 
-    max_guests: 2, 
-    num_sites: 1, 
-    cabin: false,
-    parking: true, 
-    campfires: false,
-    toilets: true, 
-    pets: false, 
-    potable_water: false, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: false, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Hiking", "Biking", "Wildlife Watching"
-    ], 
-    checkin_time: "After 5PM", 
-    checkout_time: "Before 9AM",
-    description: "This is a quiet, safe, beautiful and basic camp site (bring all you need) and place to park while on a coastal adventure. We provide long and detailed directions that will make perfect sense when you are traveling the nondescript country roads (be sure to have a saved copy that doesn't require connection) - to get you smoothly through horse fields with gates and safety considerations for all.",
-    rating: 90
-})
+# sf_c = Campground.create!({
+#     host_id: shaun_livingston.id,
+#     name: "St. Frank Fort", 
+#     location: "San Francisco", 
+#     price: 55, 
+#     latitude: 37.240914, 
+#     longitude: -122.400996,
+#     min_nights: 1, 
+#     max_guests: 2, 
+#     num_sites: 1, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: false,
+#     toilets: true, 
+#     pets: false, 
+#     potable_water: false, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: false, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Hiking", "Biking", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 5PM", 
+#     checkout_time: "Before 9AM",
+#     description: "This is a quiet, safe, beautiful and basic camp site (bring all you need) and place to park while on a coastal adventure. We provide long and detailed directions that will make perfect sense when you are traveling the nondescript country roads (be sure to have a saved copy that doesn't require connection) - to get you smoothly through horse fields with gates and safety considerations for all.",
+#     rating: 90
+# })
 
-sf_c_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc5.jpg"
-]
+# sf_c_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfc/sfc5.jpg"
+# ]
 
-sf_c_urls.each_with_index do |url, i|
-    sf_c.photos.attach(io: open(url), filename: "sf_c#{i+1}.jpg")
-end
+# sf_c_urls.each_with_index do |url, i|
+#     sf_c.photos.attach(io: open(url), filename: "sf_c#{i+1}.jpg")
+# end
 
 sf_d = Campground.create!({
     host_id: chris_mullin.id,
@@ -891,7 +895,7 @@ sf_e_urls.each_with_index do |url, i|
 end
 
 sf_f = Campground.create!({
-    host_id: andre_iguodala.id,
+    host_id: shaun_livingston.id,
     name: "Tartine Turnaround", 
     location: "San Francisco", 
     price: 70, 
@@ -974,50 +978,50 @@ sf_g_urls.each_with_index do |url, i|
     sf_g.photos.attach(io: open(url), filename: "sf_g#{i+1}.jpg")
 end
 
-sf_h = Campground.create!({
-    host_id: andre_iguodala.id,
-    name: "Port of Mokha Road", 
-    location: "San Francisco", 
-    price: 50, 
-    latitude: 37.047405, 
-    longitude: -121.201844,
-    min_nights: 1, 
-    max_guests: 5, 
-    num_sites: 5, 
-    cabin: false,
-    parking: true, 
-    campfires: false,
-    toilets: true, 
-    pets: false, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Hiking", "Biking", "Fishing"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "We are the working mini farm. If you like to wake up with the roosters and enjoy the farm life, this place is for you. If you are a light sleeper we recommend to bring the ear plugs. We have chickens, pigeons, pet emu and rhea, ponies and goats. Please, let us know if you will be arriving with the RV or the tent - it will help us to provide you with an appropriate site for your stay.",
-    rating: 98
-})
+# sf_h = Campground.create!({
+#     host_id: andre_iguodala.id,
+#     name: "Port of Mokha Road", 
+#     location: "San Francisco", 
+#     price: 50, 
+#     latitude: 37.047405, 
+#     longitude: -121.201844,
+#     min_nights: 1, 
+#     max_guests: 5, 
+#     num_sites: 5, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: false,
+#     toilets: true, 
+#     pets: false, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Biking", "Fishing"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "We are the working mini farm. If you like to wake up with the roosters and enjoy the farm life, this place is for you. If you are a light sleeper we recommend to bring the ear plugs. We have chickens, pigeons, pet emu and rhea, ponies and goats. Please, let us know if you will be arriving with the RV or the tent - it will help us to provide you with an appropriate site for your stay.",
+#     rating: 98
+# })
 
-sf_h_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh5.jpg"
-]
+# sf_h_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/sanfrancisco/sfh/sfh5.jpg"
+# ]
 
-sf_h_urls.each_with_index do |url, i|
-    sf_h.photos.attach(io: open(url), filename: "sf_h#{i+1}.jpg")
-end
+# sf_h_urls.each_with_index do |url, i|
+#     sf_h.photos.attach(io: open(url), filename: "sf_h#{i+1}.jpg")
+# end
 
 sf_i = Campground.create!({
-    host_id: demo_user.id,
+    host_id: shaun_livingston.id,
     name: "Fellow Farm", 
     location: "San Francisco", 
     price: 40, 
@@ -1060,45 +1064,45 @@ end
 
 ## New York ====================================
 
-ny_a = Campground.create!({
-    host_id: spencer_dinwiddie.id,
-    name: "Parlor Place", 
-    location: "New York", 
-    price: 55, 
-    latitude: 41.059693, 
-    longitude: -74.321836,
-    min_nights: 2, 
-    max_guests: 3, 
-    num_sites: 5, 
-    cabin: false,
-    parking: false, 
-    campfires: true,
-    toilets: true, 
-    pets: false, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: true,
-    picnic_table: true, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Fishing", "Hiking", "Paddling", "Wildlife Watching"
-    ], 
-    checkin_time: "After 1PM", 
-    checkout_time: "Before 11AM",
-    description: "No Car? No Gear ? No Problem! We are a Hike in-Hike out Campground. The easiest way to access the campground is to take the Metro North Hudson Line to the Beacon Train Station. If arriving by car, you can park at the Beacon train station free on weekends. While you enjoy your hike in, we can take your gear to your campsite.",
-    rating: 100
-})
-ny_a_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya5.jpg",
-]
-ny_a_urls.each_with_index do |url, i|
-    ny_a.photos.attach(io: open(url), filename: "ny_a#{i+1}.jpg")
-end
+# ny_a = Campground.create!({
+#     host_id: spencer_dinwiddie.id,
+#     name: "Parlor Place", 
+#     location: "New York", 
+#     price: 55, 
+#     latitude: 41.059693, 
+#     longitude: -74.321836,
+#     min_nights: 2, 
+#     max_guests: 3, 
+#     num_sites: 5, 
+#     cabin: false,
+#     parking: false, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: false, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: true,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Fishing", "Hiking", "Paddling", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 1PM", 
+#     checkout_time: "Before 11AM",
+#     description: "No Car? No Gear ? No Problem! We are a Hike in-Hike out Campground. The easiest way to access the campground is to take the Metro North Hudson Line to the Beacon Train Station. If arriving by car, you can park at the Beacon train station free on weekends. While you enjoy your hike in, we can take your gear to your campsite.",
+#     rating: 100
+# })
+# ny_a_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nya/nya5.jpg",
+# ]
+# ny_a_urls.each_with_index do |url, i|
+#     ny_a.photos.attach(io: open(url), filename: "ny_a#{i+1}.jpg")
+# end
 
 ny_b = Campground.create!({
     host_id: caris_levert.id,
@@ -1269,89 +1273,89 @@ ny_e_urls.each_with_index do |url, i|
     ny_e.photos.attach(io: open(url), filename: "ny_e#{i+1}.jpg")
 end
 
-ny_f = Campground.create!({
-    host_id: spencer_dinwiddie.id,
-    name: "Gibralter Garden", 
-    location: "New York", 
-    price: 60, 
-    latitude: 41.269475, 
-    longitude: -74.080280,
-    min_nights: 1, 
-    max_guests: 12, 
-    num_sites: 1, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Hiking", "Wildlife Watching", "Biking", "Climbing", "Fishing"
-    ], 
-    checkin_time: "After 3PM", 
-    checkout_time: "Before 11AM",
-    description: "Winery by day, campgrounds by night. Our secluded field is the perfect spot to pitch a tent and enjoy a night away from the noise. A roaring fire is a must as many can sit around in our tables and chairs and feel the heat from our 5 foot diameter fire pit! Many local hiking, fishing, and climbing spots nearby just a few miles away from our location.",
-    rating: 90
-})
+# ny_f = Campground.create!({
+#     host_id: spencer_dinwiddie.id,
+#     name: "Gibralter Garden", 
+#     location: "New York", 
+#     price: 60, 
+#     latitude: 41.269475, 
+#     longitude: -74.080280,
+#     min_nights: 1, 
+#     max_guests: 12, 
+#     num_sites: 1, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Wildlife Watching", "Biking", "Climbing", "Fishing"
+#     ], 
+#     checkin_time: "After 3PM", 
+#     checkout_time: "Before 11AM",
+#     description: "Winery by day, campgrounds by night. Our secluded field is the perfect spot to pitch a tent and enjoy a night away from the noise. A roaring fire is a must as many can sit around in our tables and chairs and feel the heat from our 5 foot diameter fire pit! Many local hiking, fishing, and climbing spots nearby just a few miles away from our location.",
+#     rating: 90
+# })
 
-ny_f_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf5.jpg"
-]
+# ny_f_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyf/nyf5.jpg"
+# ]
 
-ny_f_urls.each_with_index do |url, i|
-    ny_f.photos.attach(io: open(url), filename: "ny_f#{i+1}.jpg")
-end
+# ny_f_urls.each_with_index do |url, i|
+#     ny_f.photos.attach(io: open(url), filename: "ny_f#{i+1}.jpg")
+# end
 
-ny_g = Campground.create!({
-    host_id: kyrie_irving.id,
-    name: "Drip Down Driveway", 
-    location: "New York", 
-    price: 100, 
-    latitude: 41.483814, 
-    longitude: -73.446773,
-    min_nights: 1, 
-    max_guests: 55, 
-    num_sites: 5, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: false, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: false, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Hiking", "Paddling", "Biking", "Fishing", "Wildlife Watching", "Horseback Riding"
-    ], 
-    checkin_time: "After 11AM", 
-    checkout_time: "Before 12PM",
-    description: "Pitch your tent in our hay field or set up a spot in the woods. Fish off our dock. Dark skies for viewing the stars.",
-    rating: 99
-})
+# ny_g = Campground.create!({
+#     host_id: kyrie_irving.id,
+#     name: "Drip Down Driveway", 
+#     location: "New York", 
+#     price: 100, 
+#     latitude: 41.483814, 
+#     longitude: -73.446773,
+#     min_nights: 1, 
+#     max_guests: 55, 
+#     num_sites: 5, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: false, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: false, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Hiking", "Paddling", "Biking", "Fishing", "Wildlife Watching", "Horseback Riding"
+#     ], 
+#     checkin_time: "After 11AM", 
+#     checkout_time: "Before 12PM",
+#     description: "Pitch your tent in our hay field or set up a spot in the woods. Fish off our dock. Dark skies for viewing the stars.",
+#     rating: 99
+# })
 
-ny_g_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg5.jpg"
-]
+# ny_g_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/newyork/nyg/nyg5.jpg"
+# ]
 
-ny_g_urls.each_with_index do |url, i|
-    ny_g.photos.attach(io: open(url), filename: "ny_g#{i+1}.jpg")
-end
+# ny_g_urls.each_with_index do |url, i|
+#     ny_g.photos.attach(io: open(url), filename: "ny_g#{i+1}.jpg")
+# end
 
 ny_h = Campground.create!({
     host_id: kevin_durant.id,
@@ -1396,7 +1400,7 @@ ny_h_urls.each_with_index do |url, i|
 end
 
 ny_i = Campground.create!({
-    host_id: caris_levert.id,
+    host_id: spencer_dinwiddie.id,
     name: "Everyman Everglade", 
     location: "New York", 
     price: 60, 
@@ -1522,47 +1526,47 @@ chi_b_urls.each_with_index do |url, i|
 end
 
 
-chi_c = Campground.create!({
-    host_id: luol_deng.id,
-    name: "606 Circle", 
-    location: "Chicago", 
-    price: 25, 
-    latitude: 42.411185, 
-    longitude: -88.325969,
-    min_nights: 1, 
-    max_guests: 6, 
-    num_sites: 6, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: true,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Hiking", "Biking", "Wildlife Watching", "Climbing"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Pitch your tent in under the shade of our mature oak trees. Our park like camping area over looks our own Triple Sweet Bi-Color Sweet Corn field and Honeycrisp Apple Orchard. Free firewood is available for your own personal bon fire under the stars.",
-    rating: 90
-})
+# chi_c = Campground.create!({
+#     host_id: luol_deng.id,
+#     name: "606 Circle", 
+#     location: "Chicago", 
+#     price: 25, 
+#     latitude: 42.411185, 
+#     longitude: -88.325969,
+#     min_nights: 1, 
+#     max_guests: 6, 
+#     num_sites: 6, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: true,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Biking", "Wildlife Watching", "Climbing"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Pitch your tent in under the shade of our mature oak trees. Our park like camping area over looks our own Triple Sweet Bi-Color Sweet Corn field and Honeycrisp Apple Orchard. Free firewood is available for your own personal bon fire under the stars.",
+#     rating: 90
+# })
 
-chi_c_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic5.jpg"
-]
+# chi_c_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chic/chic5.jpg"
+# ]
 
-chi_c_urls.each_with_index do |url, i|
-    chi_c.photos.attach(io: open(url), filename: "chi_c#{i+1}.jpg")
-end
+# chi_c_urls.each_with_index do |url, i|
+#     chi_c.photos.attach(io: open(url), filename: "chi_c#{i+1}.jpg")
+# end
 
 chi_d = Campground.create!({
     host_id: scottie_pippen.id,
@@ -1606,50 +1610,50 @@ chi_d_urls.each_with_index do |url, i|
     chi_d.photos.attach(io: open(url), filename: "chi_d#{i+1}.jpg")
 end
 
-chi_e = Campground.create!({
-    host_id: michael_jordan.id,
-    name: "Halfwit Hill", 
-    location: "Chicago", 
-    price: 50, 
-    latitude: 42.085184, 
-    longitude: -86.264329,
-    min_nights: 1, 
-    max_guests: 8, 
-    num_sites: 1, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: false,
-    picnic_table: true, 
-    wifi: false, 
-    bins: false, 
-    activities: [
-        "Biking", "Wildlife Watching", "Hiking", "Climbing"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "This campsite is in the middle of Halfwit Hill, an established certified organic apple orchard in SW Michigan. The farm is 49 acres, with the campsite being in a soft hollow about 200 feet wide separating 2 blocks of trees. Very quiet at night. In the day, depending on the season, there are farm activities taking place. Firewood is provided and fresh organic produce is available in season.",
-    rating: 96
-})
+# chi_e = Campground.create!({
+#     host_id: michael_jordan.id,
+#     name: "Halfwit Hill", 
+#     location: "Chicago", 
+#     price: 50, 
+#     latitude: 42.085184, 
+#     longitude: -86.264329,
+#     min_nights: 1, 
+#     max_guests: 8, 
+#     num_sites: 1, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: false, 
+#     activities: [
+#         "Biking", "Wildlife Watching", "Hiking", "Climbing"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "This campsite is in the middle of Halfwit Hill, an established certified organic apple orchard in SW Michigan. The farm is 49 acres, with the campsite being in a soft hollow about 200 feet wide separating 2 blocks of trees. Very quiet at night. In the day, depending on the season, there are farm activities taking place. Firewood is provided and fresh organic produce is available in season.",
+#     rating: 96
+# })
 
-chi_e_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie5.jpg"
-]
+# chi_e_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chie/chie5.jpg"
+# ]
 
-chi_e_urls.each_with_index do |url, i|
-    chi_e.photos.attach(io: open(url), filename: "chi_e#{i+1}.jpg")
-end
+# chi_e_urls.each_with_index do |url, i|
+#     chi_e.photos.attach(io: open(url), filename: "chi_e#{i+1}.jpg")
+# end
 
 chi_f = Campground.create!({
-    host_id: lauri_markkanen.id,
+    host_id: luol_deng.id,
     name: "Caffe Streets Lane", 
     location: "Chicago", 
     price: 160, 
@@ -1690,50 +1694,50 @@ chi_f_urls.each_with_index do |url, i|
     chi_f.photos.attach(io: open(url), filename: "chi_f#{i+1}.jpg")
 end
 
-chi_g = Campground.create!({
-    host_id: michael_jordan.id,
-    name: "Tonic Turnpike", 
-    location: "Chicago", 
-    price: 30, 
-    latitude: 42.598931, 
-    longitude: -88.174043,
-    min_nights: 1, 
-    max_guests: 6, 
-    num_sites: 2, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: true, 
-    showers: true,
-    picnic_table: false, 
-    wifi: true, 
-    bins: false, 
-    activities: [
-        "Hiking", "Paddling", "Biking", "Fishing", "Wildlife Watching", "Horseback Riding", "Swimming", "Climbing", "Boating"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Breakaway from it all, grab your gear and head to Breakaway Stables where you will experience a beautiful panoramic view of Blue Mounds State Park located in the Driftless Area of southern WI. Enjoy being in the presence of equine energy from near or far depending on your comfort level.",
-    rating: 99
-})
+# chi_g = Campground.create!({
+#     host_id: michael_jordan.id,
+#     name: "Tonic Turnpike", 
+#     location: "Chicago", 
+#     price: 30, 
+#     latitude: 42.598931, 
+#     longitude: -88.174043,
+#     min_nights: 1, 
+#     max_guests: 6, 
+#     num_sites: 2, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: true, 
+#     showers: true,
+#     picnic_table: false, 
+#     wifi: true, 
+#     bins: false, 
+#     activities: [
+#         "Hiking", "Paddling", "Biking", "Fishing", "Wildlife Watching", "Horseback Riding", "Swimming", "Climbing", "Boating"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Breakaway from it all, grab your gear and head to Breakaway Stables where you will experience a beautiful panoramic view of Blue Mounds State Park located in the Driftless Area of southern WI. Enjoy being in the presence of equine energy from near or far depending on your comfort level.",
+#     rating: 99
+# })
 
-chi_g_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig5.jpg"
-]
+# chi_g_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/chicago/chig/chig5.jpg"
+# ]
 
-chi_g_urls.each_with_index do |url, i|
-    chi_g.photos.attach(io: open(url), filename: "chi_g#{i+1}.jpg")
-end
+# chi_g_urls.each_with_index do |url, i|
+#     chi_g.photos.attach(io: open(url), filename: "chi_g#{i+1}.jpg")
+# end
 
 chi_h = Campground.create!({
-    host_id: scottie_pippen.id,
+    host_id: michael_jordan.id,
     name: "Long Pull Lake", 
     location: "Chicago", 
     price: 75, 
@@ -1901,134 +1905,134 @@ la_b_urls.each_with_index do |url, i|
 end
 
 
-la_c = Campground.create!({
-    host_id: lebron_james.id,
-    name: "Pourover Park", 
-    location: "Los Angeles", 
-    price: 95, 
-    latitude: 34.170961, 
-    longitude: -117.608683,
-    min_nights: 1, 
-    max_guests: 2, 
-    num_sites: 1, 
-    cabin: true,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: true, 
-    showers: true,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Hiking", "Biking", "Wildlife Watching"
-    ], 
-    checkin_time: "After 2PM", 
-    checkout_time: "Before 12PM",
-    description: "Pourover Park was established in 1893 and is located, ONLY via hiking trails, 4.25 miles from Chantry Flat in the Angeles National Forest. The Honeymoon Cottage is the third oldest building in Camp, dating back to the 1920’s. It is the last of many identical cabins that dotted the grounds of Sturtevant Camp.",
-    rating: 90
-})
+# la_c = Campground.create!({
+#     host_id: lebron_james.id,
+#     name: "Pourover Park", 
+#     location: "Los Angeles", 
+#     price: 95, 
+#     latitude: 34.170961, 
+#     longitude: -117.608683,
+#     min_nights: 1, 
+#     max_guests: 2, 
+#     num_sites: 1, 
+#     cabin: true,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: true, 
+#     showers: true,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Biking", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 2PM", 
+#     checkout_time: "Before 12PM",
+#     description: "Pourover Park was established in 1893 and is located, ONLY via hiking trails, 4.25 miles from Chantry Flat in the Angeles National Forest. The Honeymoon Cottage is the third oldest building in Camp, dating back to the 1920’s. It is the last of many identical cabins that dotted the grounds of Sturtevant Camp.",
+#     rating: 90
+# })
 
-la_c_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac5.jpg"
-]
+# la_c_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lac/lac5.jpg"
+# ]
 
-la_c_urls.each_with_index do |url, i|
-    la_c.photos.attach(io: open(url), filename: "la_c#{i+1}.jpg")
-end
+# la_c_urls.each_with_index do |url, i|
+#     la_c.photos.attach(io: open(url), filename: "la_c#{i+1}.jpg")
+# end
 
-la_d = Campground.create!({
-    host_id: kawhi_leonard.id,
-    name: "Tectonic Trailhead", 
-    location: "Los Angeles", 
-    price: 25, 
-    latitude: 34.436056, 
-    longitude: -118.438822,
-    min_nights: 1, 
-    max_guests: 6, 
-    num_sites: 6, 
-    cabin: false,
-    parking: true, 
-    campfires: true,
-    toilets: true, 
-    pets: true, 
-    potable_water: true, 
-    kitchen: true, 
-    showers: false,
-    picnic_table: true, 
-    wifi: false, 
-    bins: true, 
-    activities: [
-        "Hiking", "Fishing", "Biking", "Climbing", "Wildlife Watching"
-    ], 
-    checkin_time: "After 9AM", 
-    checkout_time: "Before 1PM",
-    description: "We are fully fenced and private. Direct access to the desert for OHV riding and less than 2 miles to the Angeles National Forest. Plenty of hiking and exploring to do. It's a short drive into the Angeles National Forest and to dedicated climbing and hiking areas. Your dogs can run off-leash here.",
-    rating: 96
-})
+# la_d = Campground.create!({
+#     host_id: kawhi_leonard.id,
+#     name: "Tectonic Trailhead", 
+#     location: "Los Angeles", 
+#     price: 25, 
+#     latitude: 34.436056, 
+#     longitude: -118.438822,
+#     min_nights: 1, 
+#     max_guests: 6, 
+#     num_sites: 6, 
+#     cabin: false,
+#     parking: true, 
+#     campfires: true,
+#     toilets: true, 
+#     pets: true, 
+#     potable_water: true, 
+#     kitchen: true, 
+#     showers: false,
+#     picnic_table: true, 
+#     wifi: false, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Fishing", "Biking", "Climbing", "Wildlife Watching"
+#     ], 
+#     checkin_time: "After 9AM", 
+#     checkout_time: "Before 1PM",
+#     description: "We are fully fenced and private. Direct access to the desert for OHV riding and less than 2 miles to the Angeles National Forest. Plenty of hiking and exploring to do. It's a short drive into the Angeles National Forest and to dedicated climbing and hiking areas. Your dogs can run off-leash here.",
+#     rating: 96
+# })
 
-la_d_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad1.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad2.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad3.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad4.jpg",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad5.jpg"
-]
+# la_d_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad1.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad2.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad3.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad4.jpg",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lad/lad5.jpg"
+# ]
 
-la_d_urls.each_with_index do |url, i|
-    la_d.photos.attach(io: open(url), filename: "la_d#{i+1}.jpg")
-end
+# la_d_urls.each_with_index do |url, i|
+#     la_d.photos.attach(io: open(url), filename: "la_d#{i+1}.jpg")
+# end
 
-la_e = Campground.create!({
-    host_id: anthony_davis.id,
-    name: "Matcha Marsh", 
-    location: "Los Angeles", 
-    price: 250, 
-    latitude: 34.073272, 
-    longitude: -118.652800,
-    min_nights: 1, 
-    max_guests: 2, 
-    num_sites: 1, 
-    cabin: true,
-    parking: true, 
-    campfires: false,
-    toilets: true, 
-    pets: false, 
-    potable_water: true, 
-    kitchen: false, 
-    showers: true,
-    picnic_table: true, 
-    wifi: true, 
-    bins: true, 
-    activities: [
-        "Hiking", "Swimming", "Biking", "Wildlife Watching", "Climbing", "Horseback Riding"
-    ], 
-    checkin_time: "After 3PM", 
-    checkout_time: "Before 11AM",
-    description: "Lovely studio with jaw-dropping, with expansive, spectacular outdoor room overlooking mind-blowing mountain views. Located in Topanga, the legendary bohemian citadel of love. A lush fountain emits water-spraying sound. There is a king-sized bed inside and a brass bed outside under a canopy. Ten minutes to the beach, five minutes to town. Convenient little kitchen.",
-    rating: 96
-})
+# la_e = Campground.create!({
+#     host_id: anthony_davis.id,
+#     name: "Matcha Marsh", 
+#     location: "Los Angeles", 
+#     price: 250, 
+#     latitude: 34.073272, 
+#     longitude: -118.652800,
+#     min_nights: 1, 
+#     max_guests: 2, 
+#     num_sites: 1, 
+#     cabin: true,
+#     parking: true, 
+#     campfires: false,
+#     toilets: true, 
+#     pets: false, 
+#     potable_water: true, 
+#     kitchen: false, 
+#     showers: true,
+#     picnic_table: true, 
+#     wifi: true, 
+#     bins: true, 
+#     activities: [
+#         "Hiking", "Swimming", "Biking", "Wildlife Watching", "Climbing", "Horseback Riding"
+#     ], 
+#     checkin_time: "After 3PM", 
+#     checkout_time: "Before 11AM",
+#     description: "Lovely studio with jaw-dropping, with expansive, spectacular outdoor room overlooking mind-blowing mountain views. Located in Topanga, the legendary bohemian citadel of love. A lush fountain emits water-spraying sound. There is a king-sized bed inside and a brass bed outside under a canopy. Ten minutes to the beach, five minutes to town. Convenient little kitchen.",
+#     rating: 96
+# })
 
-la_e_urls = [
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae1.png",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae2.png",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae3.png",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae4.png",
-    "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae5.png"
-]
+# la_e_urls = [
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae1.png",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae2.png",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae3.png",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae4.png",
+#     "https://dripcamp-seed.s3-us-west-1.amazonaws.com/losangeles/lae/lae5.png"
+# ]
 
-la_e_urls.each_with_index do |url, i|
-    la_e.photos.attach(io: open(url), filename: "la_e#{i+1}.png")
-end
+# la_e_urls.each_with_index do |url, i|
+#     la_e.photos.attach(io: open(url), filename: "la_e#{i+1}.png")
+# end
 
 la_f = Campground.create!({
-    host_id: earvin_johnson.id,
+    host_id: anthony_davis.id,
     name: "Latte Landing", 
     location: "Los Angeles", 
     price: 179, 
