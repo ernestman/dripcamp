@@ -30,8 +30,10 @@ const Header = (props) => {
 
     const handleHomepage = (event) => {
         event.preventDefault();
-        props.clearCampgrounds();
-        props.history.push("/")
+        if (props.location.pathname !== "/") {
+            props.clearCampgrounds();
+            props.history.push("/")
+        }
     }
 
     return (

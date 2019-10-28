@@ -18,13 +18,12 @@ class CampgroundSplash extends React.Component {
     render() {
         const { campgrounds } = this.props;
 
-        const featured = campgrounds
-            .map( campground => (
-                <CampgroundIndexItem
-                    key={campground.id}
-                    campground={campground}
-                />
-            ))
+        const featured = campgrounds.map( campground => (
+            <CampgroundIndexItem
+                key={campground.id}
+                campground={campground}
+            />
+        ))
 
         return (
             <div className="campground-index-container">

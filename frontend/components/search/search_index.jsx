@@ -10,6 +10,7 @@ class CampgroundSearch extends React.Component {
 
         this.handleFilter = this.handleFilter.bind(this);
     }
+
     componentDidMount() {
         window.scrollTo(0, 0);
         if (this.props.filters.petFriendly === true) {
@@ -22,6 +23,7 @@ class CampgroundSearch extends React.Component {
             $("#cabin-filter").toggleClass("clicked")
         }
     }
+
     componentWillUnmount() {
         this.props.clearFilters();
     }

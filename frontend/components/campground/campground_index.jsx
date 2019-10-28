@@ -13,6 +13,7 @@ class CampgroundIndex extends React.Component{
     }
     
     render() {
+
         const {campgrounds} = this.props;
         const seattleUrl = "/search?lat=47.6062095&lng=-122.3320708"
         const seattle = campgrounds.filter( campground => campground.location === "Seattle")

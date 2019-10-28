@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBarContainer from "../components/search/search_bar_container";
 import {Link, withRouter} from "react-router-dom";
-import CampgroundIndexContainer from "../components/campground/campground_index_container";
 import CampgroundSplashContainer from "../components/campground/campground_splash_container";
 
 const Splash = (props) => {
