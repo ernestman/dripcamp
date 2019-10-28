@@ -1,0 +1,33 @@
+.vibes-container {
+    border-top: 1px solid #EBEBEB;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+#vibe-header {
+    width: 100%;
+    margin: 24px 0 10px 0;
+}
+
+.campground-vibe {
+    border: 1px solid #EBEBEB;
+    height: 180px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campground-vibe h1 {
+    font-size: 45px;
+    height: 45px;
+}
+
+.campground-vibe p {
+    font-weight: 300;
+    font-size: 18px;
+    color: #505050;
+}

@@ -6,6 +6,7 @@ import CampgroundInfo from "./campground_info";
 import CampgroundBuckets from "./campground_buckets";
 import CampgroundDetails from "./campground_details";
 import CampgroundActivities from "./campground_activities";
+import CampgroundVibes from "./campground_vibes";
 import ReviewContainer from "../review/review_show_container";
 import BookingFormContainer from "../booking/booking_form_container";
 
@@ -47,6 +48,7 @@ class CampgroundShow extends React.Component {
                             <div><CampgroundBuckets campground={campground}/></div>
                             <div><CampgroundDetails campground={campground}/></div>
                             <div><CampgroundActivities campground={campground}/></div>
+                            <div><CampgroundVibes campground={campground}/></div>
                             <div><ReviewContainer campground={campground}/></div>
                         </div>
 

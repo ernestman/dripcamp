@@ -19,18 +19,19 @@ const Footer = () => {
                         <a href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
                             <i className="fab fa-linkedin fa-s"></i>&nbsp;LinkedIn
                         </a>
+                        <a href="http://github.com/ernestman/" id="github-ftr" target="_blank">
+                            <i className="fab fa-github"></i>&nbsp;Github
+                        </a>
                         <a href="http://angel.co/ernestman/" id="angellist-ftr" target="_blank">
                             <i className="fab fa-angellist"></i>&nbsp;Angellist
                         </a>
-                        <a href="http://ernestman.github.io/PersonalSite/" id="personalsite" target="_blank">
-                            <i className="far fa-user"></i>&nbsp;Personal Site
-                        </a>
+                        
 
                     </div>
                     <div className="footer-links">
                         <h2>Social</h2>
-                        <a href="http://github.com/ernestman/" id="github-ftr" target="_blank">
-                            <i className="fab fa-github"></i>&nbsp;Github
+                        <a href="http://ernestman.github.io/PersonalSite/" id="personalsite" target="_blank">
+                            <i className="far fa-user"></i>&nbsp;Personal Site
                         </a>
                         
                         <a href="https://open.spotify.com/user/ernestman?si=KXLgRmtoTH-fwD44bLknBQ" id="spotify" target="_blank">
