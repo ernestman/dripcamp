@@ -39,11 +39,11 @@ const Header = (props) => {
     return (
         <div className="header-container">
             <Modal />
-            <div className="header-icon" onClick={handleHomepage}>
-                <img src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/mainlogo.png" />
+            <div className="header-icon">
+                <img src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/mainlogo.png" onClick={handleHomepage}/>
+                {headSearchBar}
             </div>
 
-            {headSearchBar}
             
             <div className="header-greeting">
                 <GreetingContainer />
