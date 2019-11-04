@@ -3,7 +3,6 @@ import {Link, withRouter} from "react-router-dom";
 import Carousel from "nuka-carousel";
 
 const CampgroundIndexItem = (props) => {
-    // debugger
     const {campground, history} = props;
 
     if (!campground.reviewIds) {
@@ -23,17 +22,6 @@ const CampgroundIndexItem = (props) => {
                 </Carousel>
         )
 
-        const seattleUrl = "/search?lat=47.6062095&lng=-122.3320708";
-        const sfUrl = "/search?lat=37.7749295&lng=-122.41941550000001";
-        const nyUrl = "/search?lat=40.7127753&lng=-74.0059728";
-
-        let locationUrl;
-        if (campground.location === "Seattle") locationUrl = seattleUrl;
-        else if (campground.location === "San Francisco") locationUrl = sfUrl;
-        else if (campground.location === "New York") locationUrl = nyUrl;
-
-        // debugger
-
         return (
             <div className="campground-item">
                 <div className="item-image">
@@ -47,11 +35,9 @@ const CampgroundIndexItem = (props) => {
                         </div>
                         <img src={campground.cabin ? window.cabinUrl : window.tentIconUrl} />
                     </div>
-                    {/* <Link to="/campgrounds" id="item-loc">{campground.location}</Link> */}
                     <p id="item-loc" onMouseDown={(e) => {
                         e.stopPropagation()
                         history.replace("/campgrounds")
-                        // history.push({locationUrl})
                     }}>{campground.location}</p>
                     <div className="item-bottom">
                         <div className="item-bottom-2">

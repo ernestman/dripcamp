@@ -5,7 +5,8 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            address: ""
+            address: "",
+            filter: "All camping"
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,6 +38,12 @@ class SearchBar extends React.Component {
 
     handleSubmit() {
         this.props.clearCampgrounds();
+        if (this.state.filter === "Tents") {
+            this.props.singleFilter("tentCamps")
+        }
+        if (this.state.filter === "Cabins") {
+            this.props.singleFilter("cabinCamps")
+        }
         let latitude;
         let longitude;
         let location = new google.maps.Geocoder();
@@ -56,7 +63,7 @@ class SearchBar extends React.Component {
 
     render() {
 
-        const headSearchBar = (this.props.location.pathname === "/" || this.props.location.pathname.slice(0, 6) === "/users") ? (
+        const searchBar = (this.props.location.pathname === "/" || this.props.location.pathname.slice(0, 6) === "/users") ? (
             <div className="search-bar-container">
                 <form className="search-form">
                     <div className="search-with-icon">
@@ -65,10 +72,29 @@ class SearchBar extends React.Component {
                             id="search-field"
                             className="search-input"
                             type="search"
-                            placeholder="Search..."
+                            placeholder="Find camping near..."
                             value={this.state.address}
                             onChange={this.handleInput}
                         />
+                    </div>
+                    <div className="search-dropdown">
+                        <div className="search-filter-select">
+                            <i className="fas fa-check"></i>
+                            <p className="search-filter-btn">{this.state.filter}</p>
+                        </div>
+                        <div className="search-menu">
+                            <div className="dropdown-filter" onClick={ () => this.setState( {filter: "Tents"} )}>
+                                <img className="filter-img" src={tentIconUrl}/>
+                                <p>Tents</p>
+                            </div>
+                            <div className="dropdown-filter" onClick={() => this.setState({ filter: "Cabins" })}>
+                                <img className="filter-img" src={cabinUrl}/>
+                                <p>Cabins</p>
+                            </div>
+                            <div className="dropdown-filter" onClick={ () => this.setState( {filter: "All camping"} )}>
+                                <p>All camping</p>
+                            </div>
+                        </div>
                     </div>
                     <button id="search-button" onClick={this.handleSubmit}>Search</button>
                 </form>
@@ -83,7 +109,6 @@ class SearchBar extends React.Component {
                             className="header-search-input"
                             type="text"
                             placeholder="Search..."
-                            // value={this.state.address}
                             onChange={this.handleInput}
                         />
                     </div>
@@ -94,15 +119,10 @@ class SearchBar extends React.Component {
         
         return (
             <div>
-                {headSearchBar}
+                {searchBar}
             </div>
         )
-
-
     }
-
-
-
 }
 
 export default withRouter(SearchBar);

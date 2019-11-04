@@ -1,10 +1,12 @@
 .splash-info {
     display: flex;
     flex-direction: column;
-    background-image: url("https://dripcamp-seed.s3-us-west-1.amazonaws.com/main12final.jpg");
+    // background-image: url("https://dripcamp-seed.s3-us-west-1.amazonaws.com/main12final.jpg");
     background-size: cover;
-    max-width: 90%;
-    height: 510px;
+    // max-width: 90%;
+    // height: 510px;
+    max-width: 1090px;
+    height: 190px;
     margin: 0 auto;
     // margin-top: 50px;
 }
@@ -13,15 +15,16 @@
     // letter-spacing: 0.15em;
     font-size: 40px;
     font-weight: 600;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 50px;
+    // margin-left: 30px;
 }
 
 #splash-text {
     font-size: 20px;
     width: 500px;
     // padding-top: 10px;
-    margin-left: 30px;
+    // margin-left: 30px;
+    margin-top: 20px;
 }
 
 #splash-text span {
@@ -168,13 +171,14 @@
 .splash-filters-container h1 {
     width: 100%;
     margin-bottom: 10px;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .splash-filter {
     border: 1px solid #EBEBEB;
-    width: 280px;
+    width: 300px;
     height: 340px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -187,7 +191,7 @@
 }
 
 #splash-filter-img {
-    width: 280px;
+    width: 300px;
     height: 280px;
 }
 

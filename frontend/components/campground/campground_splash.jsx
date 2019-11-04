@@ -29,7 +29,7 @@ class CampgroundSplash extends React.Component {
         return (
             <div className="campground-index-container">
                 <div className="campground-splash-header">
-                    <h1 id="index-title">Featured Dripcamps - <Link to="/campgrounds">All Dripcamps</Link></h1>
+                    <h1 id="index-title">Featured Dripcamps</h1>
                 </div>
                 <div className="campground-index-main">
                     {featured}

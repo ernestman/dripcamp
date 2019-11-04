@@ -16,7 +16,7 @@ const Splash = (props) => {
         }
     }
 
-    const handleSplashFilter = (filter, id) => {
+    const handleSplashFilter = (filter) => {
         event.preventDefault();
         props.singleFilter(filter);
         props.history.push("/search?lat=37.7749295&lng=-122.41941550000001")
@@ -35,6 +35,29 @@ const Splash = (props) => {
 
             <div className="splash-filters-container">
                 <h1>Discover Dripcamps</h1>
+
+                <div className="splash-filter" onClick={() => props.history.push("/search?lat=47.6062095&lng=-122.3320708")}>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-seattle.jpg" />
+                    <div className="splash-filter-info">
+                        <h2>Seattle</h2>
+                        <p>Washington</p>
+                    </div>
+                </div>
+                <div className="splash-filter" onClick={() => props.history.push("/campgrounds")}>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-index.jpg" />
+                    <div className="splash-filter-info">
+                        <h2>All Dripcamps</h2>
+                        <p>View all Dripcamps</p>
+                    </div>
+                </div>
+                <div className="splash-filter" onClick={() => props.history.push("/search?lat=41.8781136&lng=-87.62979819999998")}>
+                    <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-chicago.jpg" />
+                    <div className="splash-filter-info">
+                        <h2>Chicago</h2>
+                        <p>Illinois</p>
+                    </div>
+                </div>
+
                 <div className="splash-filter" onClick={ () => handleSplashFilter("tentCamps") }>
                     <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-tents.jpg"/>
                     <div className="splash-filter-info">
@@ -42,7 +65,6 @@ const Splash = (props) => {
                         <p>Best options near San Francisco</p>
                     </div>
                 </div>
-
                 <div className="splash-filter" onClick={ () => handleSplashFilter("cabinCamps") }>
                     <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-cabins.jpg" />
                     <div className="splash-filter-info">
@@ -50,7 +72,6 @@ const Splash = (props) => {
                         <p>Best options near San Francisco</p>
                     </div>
                 </div>
-
                 <div className="splash-filter" onClick={ () => handleSplashFilter("petFriendly") }>
                     <img id="splash-filter-img" src="https://dripcamp-seed.s3-us-west-1.amazonaws.com/dripcamp-pets.jpg" />
                     <div className="splash-filter-info">
@@ -82,7 +103,7 @@ const Splash = (props) => {
                     </div>
                 </div>
             </div>
-    
+
             <div className="large-icon-container">
                 <div className="large-icon">
                     <img src={window.tentArmsUrl}/>

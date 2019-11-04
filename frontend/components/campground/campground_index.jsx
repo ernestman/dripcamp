@@ -73,45 +73,44 @@ class CampgroundIndex extends React.Component{
 
         return (
             <div className="campground-index-container">
-                <h1 id="index-title">Discover Dripcamps</h1>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">California - <Link to={sfUrl}>San Francisco</Link></h3>
+                    <Link to={sfUrl} id="index-text">San Francisco</Link>
                     <div className="campground-index-main">
                         {sf}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">Washington - <Link to={seattleUrl}>Seattle</Link></h3>
+                    <Link to={seattleUrl} id="index-text">Seattle</Link>
                     <div className="campground-index-main">
                         {seattle}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">New York - <Link to={nyUrl}>New York</Link></h3>
+                    <Link to={nyUrl} id="index-text">New York</Link>
                     <div className="campground-index-main">
                         {ny}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">California - <Link to={laUrl}>Los Angeles</Link></h3>
+                    <Link to={laUrl} id="index-text">Los Angeles</Link>
                     <div className="campground-index-main">
                         {la}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">Illinois - <Link to={chicagoUrl}>Chicago</Link></h3>
+                    <Link to={chicagoUrl} id="index-text">Chicago</Link>
                     <div className="campground-index-main">
                         {chicago}
                     </div>
                 </div>
 
                 <div className="city-index-container">
-                    <h3 id="index-text">Colorado - <Link to={denverUrl}>Denver</Link></h3>
+                    <Link to={denverUrl} id="index-text">Denver</Link>
                     <div className="campground-index-main">
                         {denver}
                     </div>

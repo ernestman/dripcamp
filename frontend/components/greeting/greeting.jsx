@@ -37,7 +37,6 @@ const Greeting = (props) => {
                 <a className="logged-in-link" href="http://github.com/ernestman/" id="github" target="_blank">
                     <i className="fab fa-github fa-sm"></i>&nbsp;Github
                 </a>
-                {/* &nbsp;&nbsp;&nbsp; */}
                 <a className="logged-in-link" href="http://linkedin.com/in/ernestman/" id="linkedin" target="_blank">
                     <i className="fab fa-linkedin fa-sm"></i>&nbsp;LinkedIn
                 </a>

@@ -2,18 +2,19 @@
 .index-head-img {
     // border: 5px solid blue;
     margin: 0 auto;
-    max-width: 90%;
-    background-image: url(https://dripcamp-seed.s3-us-west-1.amazonaws.com/owen2.jpeg);
+    max-width: 1090px;
+    // max-width: 90%;
+    // background-image: url(https://dripcamp-seed.s3-us-west-1.amazonaws.com/owen2.jpeg);
     // ig: @owensteven_
     background-size: cover;
-    height: 560px;
+    // height: 560px;
     
 }
 
 .index-head-img h1 {
     padding-top: 30px;
     font-size: 36px;
-    margin-left: 50px;
+    // margin-left: 50px;
 }
 
 .index-head-img p {
@@ -23,7 +24,7 @@
 }
 
 .campground-index-container {
-    max-width: 1080px;
+    max-width: 1090px;
     // padding: 10px 10px;
     margin: 20px auto;
     // font-size: 40px;
@@ -36,41 +37,41 @@
 }
 
 .city-index-container {
-    margin-bottom: 40px;
-    border-top: 1px solid #EBEBEB;
+    margin-bottom: 30px;
+    // border-top: 1px solid #EBEBEB;
 }
 
 #index-title {
     margin-left: 10px;
     margin-bottom: 6px;
-    font-size: 28px;
-}
-
-#index-title a {
-    font-size: 23px;
-    color: #606060;
-    font-weight: 400;
+    font-size: 34px;
     border-bottom: 2px solid #EBEBEB;
 }
 
-#index-title a:hover {
-    border-bottom: 2px solid #51D9AC;
+// #index-title a {
+//     font-size: 21px;
+//     color: #606060;
+//     font-weight: 400;
+// }
+
+#index-title:hover {
+    border-bottom: 2px solid black;
 }
 
 #index-text {
     margin-top: 30px;
     margin-left: 10px;
-    font-size: 22px;
+    font-size: 32px;
+    border-bottom: 2px solid transparent;
 }
 
-#index-text a {
-    color: #606060;
-    font-weight: 400;
-    border-bottom: 2px solid #EBEBEB;
-}
+// #index-text a {
+//     color: #606060;
+//     font-weight: 400;
+// }
 
-#index-text a:hover {
-    border-bottom: 2px solid #51D9AC;
+#index-text:hover {
+    border-bottom: 2px solid black;
 }
 
 .campground-index-main {
@@ -91,8 +92,8 @@
     border-radius: 3px;
     box-shadow: 1px 2px 5px 2px rgba(0,0,0,0.1);
     // box-shadow: 0 0 5px #EBEBEB;
-    height: 280px;
-    width: 320px;
+    height: 340px;
+    width: 340px;
     margin: 10px;
 }
 
@@ -101,23 +102,16 @@
     height: 65%; //temporary
 }
 
-.slider-list {
-    height: 180px !important;
-}
-
-.slider-slide.slide-visible {
-    height: 180px !important;
+.slider {
+    height: 230px !important;
 }
 
 .slider-slide.slide-visible img {
-    height: 180px;
+    // height: 180px;
     width: 100%;
     border-radius: 3px 3px 0 0;
 }
 
-.slider {
-    height: 100% !important;
-}
 
 .slider:hover #carousel-btn {
     display: inherit;

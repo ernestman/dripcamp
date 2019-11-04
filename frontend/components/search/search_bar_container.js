@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import SearchBar from "./search_bar";
 
 import {clearCampgrounds} from "../../actions/campground_actions";
+import {singleFilter} from "../../actions/filter_actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        clearCampgrounds: () => dispatch(clearCampgrounds())
+        clearCampgrounds: () => dispatch(clearCampgrounds()),
+        singleFilter: (filter) => dispatch(singleFilter(filter))
     }
 }
 

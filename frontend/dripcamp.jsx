@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
 
-import {newReview, fetchReviews, fetchReview, destroyReview} from "./actions/review_actions";
-
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
@@ -21,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-    
+
+    window.getState = store.getState;
+
     ReactDOM.render(<Root store={store}/>, root);
 })
