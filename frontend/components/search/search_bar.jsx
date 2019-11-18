@@ -36,7 +36,8 @@ class SearchBar extends React.Component {
         this.setState({ address: event.target.value})
     }
 
-    handleSubmit() {
+    handleSubmit(event) {
+        event.preventDefault();
         this.props.clearCampgrounds();
         if (this.state.filter === "Tents") {
             this.props.singleFilter("tentCamps")
@@ -65,7 +66,7 @@ class SearchBar extends React.Component {
 
         const searchBar = (this.props.location.pathname === "/" || this.props.location.pathname.slice(0, 6) === "/users") ? (
             <div className="search-bar-container">
-                <form className="search-form">
+                <form className="search-form" onSubmit={this.handleSubmit}>
                     <div className="search-with-icon">
                         <i id="search-icon" className="fas fa-search fa-lg"></i>
                         <input
@@ -96,7 +97,7 @@ class SearchBar extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <button id="search-button" onClick={this.handleSubmit}>Search</button>
+                    <button id="search-button">Search</button>
                 </form>
             </div>
         ) : (

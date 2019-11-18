@@ -98,7 +98,7 @@ const Splash = (props) => {
                     Warriors.
                     </p>
                     <div className="bio-links">
-                        <a className="bio-link" id="profile-link" href="https://ernestman.github.io/PersonalSite" target="_blank">Learn more</a>
+                        <a className="bio-link" id="profile-link" href="https://ernieman.com" target="_blank">Learn more</a>
                         <div className="dripcamping-link" onClick={handleUserShow}> Start Dripcamping</div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ const Splash = (props) => {
                         <p>Creating sustainable revenue and fostering community</p>
                     </div>
                     <div className="icon-link">
-                        <a href="https://ernestman.github.io/PersonalSite" target="_blank">Learn more</a>
+                        <a href="https://ernieman.com" target="_blank">Learn more</a>
                     </div>
                 </div>
                 <div className="large-icon">

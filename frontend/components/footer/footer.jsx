@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                     <div className="footer-links">
                         <h2>Social</h2>
-                        <a href="http://ernestman.github.io/PersonalSite/" id="personalsite" target="_blank">
+                        <a href="https://ernieman.com" id="personalsite" target="_blank">
                             <i className="far fa-user"></i>&nbsp;Personal Site
                         </a>
                         
