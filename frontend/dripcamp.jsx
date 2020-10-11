@@ -24,3 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ReactDOM.render(<Root store={store}/>, root);
 })
+
+// comment
